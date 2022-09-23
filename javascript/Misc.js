@@ -71,7 +71,7 @@ function photosInit( ) {
       element.innerHTML = "";
       for( let fileName of fileNames ) {
         nameText = fileName.replace(/-/g, " - ").replace(/_/g, " ")
-        if( fileName ) element.innerHTML += `<span class="PhotoFrame"><img src="Photos/${fileName}"><span>${nameText}</span></span>`;
+        if( fileName ) element.innerHTML += `<span class="PhotoFrame"><img src="photos/${fileName}"><span>${nameText}</span></span>`;
       }
     }
   });
