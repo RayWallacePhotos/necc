@@ -1,0 +1,39 @@
+/*    tutorial_v3.css
+
+ */
+
+.Tutorial {
+  margin-top: 2rem;
+}
+
+
+.Tutorial h2 {
+  text-align: center;
+}
+
+
+.Tutorial h3 {
+  margin-top: 0.5rem;
+}
+
+
+.Tutorial p {
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+
+.Tutorial ol, .Tutorial ul {
+  /* list-style-type: ""; */
+  padding-left: 2rem; /* 1rem is better if we set style-type to "" (disable #'s') */
+}
+
+
+.Tutorial li {
+  margin-bottom: 0.25rem;
+}
+
+
+
+
+/*  */

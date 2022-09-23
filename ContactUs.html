@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Contact Us - NECC</title>
+
+    <link rel="icon" href="Images/Logo.gif" type="image/png">
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Ray Wallace">
+    <meta name="description" content="Camera Club">
+    <meta name="keywords" content="Camera, Photography, Photo, Images,Photographer, Leominster, Lancaster, New England, Massachusetts">
+
+    <!-- Load some .css style files -->
+    <link rel="stylesheet" href="css_v3/main_v3.css">
+    <link rel="stylesheet" href="css_v3/layout_v3.css">
+
+
+    <!-- Load some Javascript Functions -->
+    <script defer src="Libraries/Helpers.js"> </script>
+    <script defer src="Libraries/Files.js"> </script>
+    <script defer src="Javascript/Misc.js"> </script>
+    <script defer src="Javascript/Init.js"> </script>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="">
+        <img src="Images/Logo.gif" alt="Logo">
+        <span>New England Camera Club</span>
+        <span><i>Share - Learn - Teach</i></span>
+      </div>
+    </header>
+
+    <menu>
+      <!-- Init.js will build (overwrite) the menus -->
+    </menu>
+
+
+    <div class="Content">
+      <h2>Contact Us</h2>
+
+      <section>
+        <p>For questions or more information about NECC, click
+          <a id="IDWebmaster" href="mailto:Ray@RipsPics.com?bcc=HoudiniJr@GMail.com&subject=NECC%20Information%20Request&body=EMail%20from%20NECC%20for%20more%20information" target="_blank" title="Webmaster EMail">
+          <mark>HERE</mark></a> to send EMail,
+          or fill in the information below and click the [SEND] button.
+        </p>
+        <p><b>THANKS</b></p>
+
+        <!--
+  		CREATE AN EMAIL FORM with associated input boxes
+        -->
+        <div class="EmailForm">
+          <label>YOUR NAME: <input id="mailNameID" type="text" autofocus="true" size=30></label>
+          <label>YOUR EMAIL: <input id="mailFromID" type="email" required="true" size=30></label>
+          <label>MESSAGE: <textarea id="mailMessageID" cols=60 rows=14></textarea></label>
+
+          <label class="SendEmail">SEND IT: <button onclick=sendEmailOnClick(event) type="button">SEND</button></label>
+        </div>
+      </div>
+
+      </section>
+
+    </div> <!-- End Content -->
+
+
+    <div class="BottomContent">
+    </div> <!-- End BottomContent -->
+
+
+    <footer>
+      <span>Copyright &copy; <span class="Year">2022</span> </span>
+      <a href="https://www.facebook.com/groups/475031105844954/"><img class="Icon" src="Images/FacebookLogo.png" alt="Icon"> Facebook</a>
+      <span>
+        <a href="mailto:Ray@RipsPics.com?bcc=HoudiniJr@GMail.com&subject=NECC%20Website&body=From%20NECC%20Website" target="_blank" title="Webmaster EMail">Ray@RipsPics.com</a>
+        <span class="Version">v0.x</span>
+      </span>
+    </footer>
+  </body>
+</html>
+
+
+
+<!--  -->

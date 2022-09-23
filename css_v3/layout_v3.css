@@ -1,0 +1,150 @@
+/*    layout_v3.css
+    Overall Layout
+  */
+
+* {
+  box-sizing: border-box;
+
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  height: 100vh;
+  width: 90%;
+  margin: 0px auto;
+  background-color: beige;
+
+  display: grid;
+  /* grid-template-columns: 100%; */
+  grid-template-rows: min-content max-content auto max-content max-content;
+}
+
+header, menu, .Content, .BottomContent, footer {
+  box-shadow: 4px 4px 6px var(--NECCGreen),  -2px 2px 4px var(--NECCGreen);
+}
+
+header {
+  position: relative;
+
+  /* background-color: beige; */
+  /* background-image: linear-gradient(to right top, #628462, #98b398, #98b398, #628462); */
+  background-image: linear-gradient(to right bottom, var(--NECCGreen), var(--NECCLightGreen), var(--NECCLightGreen), var(--NECCGreen));
+
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: 60px max-content;
+}
+header > div {
+  /* background-color: red; */
+  grid-column: 2;
+
+  padding-top: 5px;
+}
+header span {
+  display: block;
+  text-align: center;
+  /* margin: 0px auto; */
+}
+header img {
+  position: absolute;
+
+  grid-column: 1;
+  height: 64px;
+}
+header menu {
+  /* background-color: white; */
+  margin: auto auto;
+  grid-column: 2;
+}
+
+menu a {
+  /* background-color: beige; */
+
+  display: inline-block; /* So that min-width works */
+  min-width: 60px;
+
+  text-decoration: none;
+  box-shadow: 2px 2px 4px black;
+
+  text-align: center;
+
+  margin: 0px 6px;
+  padding: 1px 4px 3px 4px;
+}
+header img {
+  /* background-color: black; */
+  margin: auto 10px;
+}
+
+.Content {
+  background: linear-gradient(135deg, var(--NECCGreen), var(--NECCLightGreen)); */
+  background-image: linear-gradient(to right bottom, var(--NECCGreen), var(--NECCLightGreen), var(--NECCLightGreen), var(--NECCGreen));
+  scroll-behavior: smooth;
+  overflow: auto;
+
+  padding: 5px 10px;
+}
+
+.SlideShow {
+  box-shadow: 4px 4px 6px var(--NECCDarkGreen),  -2px 2px 4px var(--NECCDarkGreen);
+  display: grid;
+  grid-template-columns: repeat( auto-fill, minmax( max-content, 420px) ); /* Works but not auto sized :-( */
+}
+.SlideShow .PhotoFrame {
+  max-width: 100%;
+  margin-bottom: 10px;
+
+  display: grid;
+  grid-template-rows: max-content 1.5rem; /* Only need this if I want the space for the name taller than the font */
+}
+.SlideShow .PhotoFrame {
+  box-shadow: 4px 4px 6px var(--NECCDarkGreen),  -2px 2px 4px var(--NECCDarkGreen);
+}
+.PhotoFrame img {
+  margin: 4px auto;
+  width: 400px;
+}
+.PhotoFrame span {
+  text-align: center;
+  /* margin: auto auto; /* ONLY works here for horizantal, NOT vertical - propbably height is not sized */
+  align-self: center;
+}
+
+.BottomContent {
+  background-image: linear-gradient(to right top, #628462, #98b398, #98b398, #628462);
+
+  text-align: center;
+  padding: 4px 0px;
+
+  font-size: 0.8rem;  /* Make the same as img width */
+}
+
+footer {
+  background-color: beige;
+  padding: 4px 10px;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+
+  font-size: 0.8rem;
+
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+footer .Version {
+  font-size: 0.65em;
+}
+
+footer a {
+  margin: 0 auto; /* Center Facebook link */
+}
+
+
+
+
+
+/*  */

@@ -1,0 +1,39 @@
+/*    photos_v3.css
+
+    Styling specific to Photos.html
+
+ */
+
+
+.Categories {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: repeat( auto-fit, 256px );
+/*  grid-auto-rows: 160px;  /* As many rows as we need */
+}
+
+.Image {
+  display: grid;  /* let the cols and rows just flow through the page */
+  margin-bottom: 20px;
+}
+
+.Image img {
+  box-shadow: 6px 6px 12px black;
+
+  height: 128px;
+  margin: 0px auto;
+}
+
+.Image span {
+  box-shadow: 6px 6px 12px black;
+
+  margin: 2px auto 0px auto;  /* Center horizontaly */
+}
+
+
+.ImageCollection img {
+  box-shadow: 10px 10px 12px black;
+
+  margin: 10px 10px;
+}
