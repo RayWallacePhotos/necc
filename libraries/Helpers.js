@@ -34,7 +34,7 @@ let HelpersJsVersion = "1.8";
 
 // Import all with this statement (NOTE: change the directory as appropriate)
 //import {fullscreenToggle, hostName, pageName, capitalizeWords, isCellPhone, cloneObj,
-//        daysInMonth, loadScript, playSoundFile} from "../Javascript-Libraries/Helpers-Module.js";
+//        daysInMonth, loadScript, playSoundFile} from "../Javascript-libraries/Helpers-Module.js";
 
 
 // export {fullscreenToggle, pageName, hostName, capitalizeWords, isCellPhone, cloneObj, daysInMonth, loadScript, playSoundFile};
@@ -335,8 +335,8 @@ function playSoundFile2( fileName, volume = 0.01 ) {
 
 
 //
-// e.g. "http://127.0.0.1:3000/Images/Chris_Hamons-PublicDomain-DungeonCrawl_ProjectUtumnoTileset-32x32.png"
-//     becomes "Images/Chris_Hamons-PublicDomain-DungeonCrawl_ProjectUtumnoTileset-32x32.png"
+// e.g. "http://127.0.0.1:3000/images/Chris_Hamons-PublicDomain-DungeonCrawl_ProjectUtumnoTileset-32x32.png"
+//     becomes "images/Chris_Hamons-PublicDomain-DungeonCrawl_ProjectUtumnoTileset-32x32.png"
 //
 function pathFromURL( url ) {
   let path = decodeURI( url );

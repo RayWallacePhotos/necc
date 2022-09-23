@@ -27,7 +27,7 @@ var FileJsVersion = "1.7";
 // Import all with this statement (NOTE: change the directory as appropriate)
 //import {fileReplaceExt, fileFileOfImageTextFiles, loadNextImage, fileFileOfTextFiles, fileReadText, fileSaveText, fileSaveLargeText,
 //        fileSaveJson, fileSaveCanvas, fileReadJson, fileNamePrompt, fileLoadImage, jsonFromLocalStorage, jsonToLocalStorage}
-//        from "../Javascript-Libraries/Files-Module.js";
+//        from "../Javascript-libraries/Files-Module.js";
 
 
 // export {fileReplaceExt, fileFileOfImageTextFiles, loadNextImage, fileFileOfTextFiles, fileReadText, fileSaveText, fileSaveLargeText,
