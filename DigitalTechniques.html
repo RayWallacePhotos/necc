@@ -1,8 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <title>NECC</title>
+    <title>Digital Techniques - NECC</title>
 
     <link rel="icon" href="images/Logo.gif" type="image/png">
 
@@ -15,6 +14,7 @@
     <meta name="keywords" content="Camera, Photography, Photo, Images,Photographer, Leominster, Lancaster, New England, Massachusetts">
 
     <!-- Load some .css style files -->
+    <link rel="stylesheet" href="css_v3/digital_techniques.css">
     <link rel="stylesheet" href="css_v3/main_v3.css">
     <link rel="stylesheet" href="css_v3/layout_v3.css">
 
@@ -43,18 +43,26 @@
 
 
     <div class="Content">
-      <h1>HOME OF New England Camera Club</h1>
+      <h2>Digital Techniques</h2>
 
-      <section>
+      <p>Here are many of the Digital Techniques that the club has had over the years.</p>
+      <p>The Techniques are writen by a variety of members (past and pressent).</p>
+      <p>Most of these are pdf files and can easily be downloaded or printed</p>
 
-        <h4>Notice that the club has changed it's name to New England Camera Club (NECC)</h4>
+      <section class="DigitalTechniques">
 
-        <p>NECC (New England Camera Club) is a vibrant group of photographers of all ages and photographic abilities. We meet on a regular basis to share our interest in photography. We are a dynamic group of people helping each other and having fun making photographs. </p>
-
-        <h4> Purchse clothing with the new NECC Logo at</h4>
-          <a href="https://NECameraClub.ItemOrder.com"> <img src="images/NewEnglandCameraClub_Logo.png" alt=""> https://NECameraClub.ItemOrder.com</a>
+        <!-- Filled in by Javascript
+          For EACH document:
+           `<div class="RollUpDown">`;  // Gets RollDown class when clicked
+           `  <div class="Title" onclick=rollUpDownOnClick(event)>PDF: ${fileName}</div>`;
+           `  <div class="Content">`;
+           `    <object type="application/pdf" data="${dir}${fileName}"> </object>`;
+           `  </div>`;
+           `</div>`;
+       -->
+        <h4></h4>
+        <p>
         </p>
-        <p>Brought to you in association with Northeast Promotion and Apparel. </p>
 
       </section>
 
@@ -62,12 +70,6 @@
 
 
     <div class="BottomContent">
-      <p>You can find active content on our
-        <a href="https://www.facebook.com/groups/475031105844954/"><img class="Icon" src="images/FacebookLogo.png" alt="Icon"> Facebook</a> page
-      </p>
-
-      <img class="Icon" src="images/Logo.gif" alt="NECCC">  NECC is affiliated with
-      <img class="Icon" src="images/NECCC.jpg" alt="NECCC"> NECCC (New England Camera Club Council)
     </div> <!-- End BottomContent -->
 
 
