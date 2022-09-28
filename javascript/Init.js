@@ -7,7 +7,7 @@
 //
 
 
-const Version = "V1.01";
+const Version = "V1.02";
 const FirstYear = "2018";
 
 const MenuEntries = [
