@@ -1,0 +1,75 @@
+
+			   DIGITAL TECHNIQUE
+
+			BACK OFF THE BACKGROUND
+
+
+This digital technique will blur and fade the background to bring more
+attention to your main subject.
+
+
+Open an image
+
+Duplicate layer
+	Press ^J (control-J or cmd-J)
+
+Select the main object
+	Select the magnetic lasso (or your favorite selection method)
+	Use the selction tool to trace a selection around the main image
+
+Invert selection
+	On select menu click "Inverse"
+
+Create layer mask
+	Click "Add Layer Mask" icon
+
+Blur this duplicate layer
+	Click on the layer icon to select it instead of the mask
+	On Filter menu select "Blur" and click "Guasian Blur"
+	Adjust Radius until the background is blury, but still
+	distinguishable
+
+Reselect previous selection
+	On select menu click "ReSelect"
+
+Create Hue/Saturation adjustment layer
+	Click Adjustment Layer icon
+	Select "Hue/Saturation"
+	Darken background by moving the "Lightness" slider to the left
+	Fade background by moving the "Saturation" slider to the left
+	Go back to "Layers" tab by clicking on it
+
+Blur the mask edges
+	Ensure the mask is still selected by clicking on it's icon
+	On Filter menu select "Blur" and click "Guasian Blur"
+	Adjust Radius until the mask edge is a little blury
+
+Adjust mask edges
+	Select a large soft brush
+	Set foreground color to white
+	Touch up edges around subject that look like they are bleeding
+	into the background
+
+Save as a .tif file format to preserver layers for possible future edits
+
+
+
+
+===============================================
+			RESIZE FOR COMPETITION
+
+Resize for competition
+	Select crop tool
+	Set size to (a maximum of) 1024 px x 768 px (px = pixels)
+	You can leave resolution (dpi) blank
+	If you prefer a value for dpi, 72 and 96 are reasonable values
+	for displays
+
+	For a portrait oriented image (taller than it is wide), set
+	the height value to 768 px and leave the width blank
+
+Save as
+	Your Name$Class A$Hope It Wins.jpg
+	NOTE: Change "Class A", to "Class B", "Class A" or "Masters"
+
+
