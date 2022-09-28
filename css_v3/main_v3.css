@@ -67,10 +67,6 @@ header {
   text-transform: capitalize;
 }
 
-header img {
-  transform: translate(10px, -6px) rotate( 45deg );
-}
-
 footer {
   color: var(--NECCGreen);
 }

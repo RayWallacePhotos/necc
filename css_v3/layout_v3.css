@@ -77,7 +77,8 @@ menu a {
 }
 header img {
   /* background-color: black; */
-  margin: auto 10px;
+  margin: auto 20px;
+  transform: translateY(-6px) rotate( 45deg );
 }
 
 .Content {
