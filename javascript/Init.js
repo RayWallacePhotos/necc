@@ -16,7 +16,7 @@ const MenuEntries = [
         {url:"PhotoTrips.html", button:"Photo Trips", init:photoTripsInit},
         {url:"Competition.html", button:"Competition", init:competitionInit},
         {url:"Photos.html", button:"Photos", init:photosInit},
-        {url:"DigitalTechniques.html", button:"DigitalTechniques", init:digitalTechniquesInit},
+        {url:"DigitalTechniques.html", button:"Digital Techniques", init:digitalTechniquesInit},
         {url:"About.html", button:"About", init:null},
         {url:"FindUs.html", button:"FindUs", init:null},
         {url:"ContactUs.html", button:"Contact Us", init:null}
