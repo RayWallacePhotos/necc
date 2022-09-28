@@ -5,8 +5,8 @@
 body {
  /* Define a variable (--) for Old NECC webpage green. Useage var(--NECCGreen) */
  /* NOTE: NOTE: NOTE: This do NOT work in Internet Explorer!!! No support as of IE 11 */
- --NECCGreen: #628462;
  --NECCLightGreen: #98b398;
+ --NECCGreen: #628462;
  --NECCDarkGreen: #415841;
  --NECCYellow: #c2b624;
 }
