@@ -8,6 +8,9 @@
 
 
 
+let RolledDownElement = null; // So we can roll it up when it is clicked again or another technique is clicked
+
+
 function digitalTechniquesInit(  ) {
   let elementHtml = "";
   const dir = "../digital_techniques/";
@@ -57,7 +60,6 @@ function extension( fileName ) {
 }
 
 
-let RolledDownElement = null;
 function rollUpDownOnClick( event ) {
   if( RolledDownElement ) {
     // Roll up the previuosly rolled down element (if there was one)
