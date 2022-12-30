@@ -4,7 +4,8 @@
 //        Misc Helper Classes and functions
 //
 //  20 Sep 2022 Created
-//
+//  30 Dec 2022 Added loading="lazy" for <img>'s
+
 
 
 /*
@@ -71,7 +72,7 @@ function photosInit( ) {
       element.innerHTML = "";
       for( let fileName of fileNames ) {
         nameText = fileName.replace(/-/g, " - ").replace(/_/g, " ")
-        if( fileName ) element.innerHTML += `<span class="PhotoFrame"><img src="photos/${fileName}"><span>${nameText}</span></span>`;
+        if( fileName ) element.innerHTML += `<span class="PhotoFrame"><img loading="lazy" src="photos/${fileName}"><span>${nameText}</span></span>`;
       }
     }
   });
