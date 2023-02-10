@@ -115,7 +115,8 @@ function displayCSVFile( elementID, trClasses="" ) {
               lineDate = new Date(cell);
               if( lineDate.toString() != "Invalid Date" ) {
                 // Compare dates and change oldDateClass to either "OldDateClass" or ""
-                if( lineDate.getTime() < Date.now() ) {
+                if( lineDate.getTime() <= Date.now() ) {
+
                   oldDateClass = "OldDateClass";
                 }
                 else {
