@@ -1,0 +1,49 @@
+/*
+ *  Administrate.css
+ */
+
+
+.SelectList, .SelectedItem {
+  box-shadow: 2px 2px 4px black;
+  margin-top: 20px;
+  padding: 4px;
+}
+
+.SelectList {
+  height: 7rem;
+  overflow: auto;
+
+  display: grid;
+  gap: 10px;
+  grid-template-columns: auto max-content 1fr;
+}
+
+.SelectList span {
+  border-bottom: 1px solid  var(--NECCDarkGreen);
+
+  cursor: pointer;
+}
+
+.SelectList span:hover {
+  background-color: var(--NECCLightGreen);
+  color: red;
+}
+
+.SelectedItem {
+  caret-color: red;  /* Edit cursor color */
+
+  display: grid;
+  gap: 10px;
+  grid-template-columns: auto 1fr;
+}
+
+.SelectedItem span {
+  /* padding: 0px; */
+  line-height: 0.7rem;
+}
+
+
+
+
+
+ /*  */
