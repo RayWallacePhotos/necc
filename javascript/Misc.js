@@ -47,6 +47,10 @@ function sendEmailOnClick( event ) {
 
 function meetingsInit( ) {
   displayCSVFile( "meetingsID" );
+
+   // DEBUG TESTING for editing meetings.csv table/file
+//  let table = meetingsID.querySelector( "table" );
+//  table.contentEditable = true;
 }
 
 
