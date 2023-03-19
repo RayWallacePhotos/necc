@@ -82,8 +82,8 @@ header img {
 }
 
 .Content {
-  background: linear-gradient(135deg, var(--NECCGreen), var(--NECCLightGreen)); */
-  background-image: linear-gradient(to right bottom, var(--NECCGreen), var(--NECCLightGreen), var(--NECCLightGreen), var(--NECCGreen));
+ background: linear-gradient(135deg, var(--NECCGreen), var(--NECCLightGreen));
+  /* background-image: linear-gradient(to right bottom, var(--NECCGreen), var(--NECCLightGreen), var(--NECCLightGreen), var(--NECCGreen)); */
   scroll-behavior: smooth;
   overflow: auto;
 
