@@ -22,7 +22,7 @@ function digitalTechniquesInit(  ) {
 
       for( let fileName of fileNames ) {
         elementHtml += `<div class="RollUpDown">`;
-        elementHtml += `  <div class="Title" onclick=rollUpDownOnClick(event)>${fileName}</div>`;
+        elementHtml += `  <div class="Title" onclick="rollUpDownOnClick(event)" oncontextmenu="rollUpDownOnContext(event)">${fileName}</div>`;
         elementHtml += `  <div class="Content">`;
 
         if( extension(fileName) == ".pdf" ) {
@@ -61,6 +61,7 @@ function extension( fileName ) {
 
 
 function rollUpDownOnClick( event ) {
+  console.log( `event.button : ${event.button}` );
   if( RolledDownElement ) {
     // Roll up the previuosly rolled down element (if there was one)
     RolledDownElement.parentElement.classList.remove( "RollDown" );
@@ -76,6 +77,13 @@ function rollUpDownOnClick( event ) {
     event.target.parentElement.scrollIntoView(true); // true = will be aligned to the top of the visible area of the scrollable ancestor.
     RolledDownElement = event.target;
   }
+}
+
+
+function rollUpDownOnContext( event ) {
+  event.preventDefault()
+  navigator.clipboard.writeText( event.target.parentElement.querySelector("div.Content object").data )
+  DialogOk( "COPIED to CLIPBOARD", "Link to this Technique was copied to clipboard", event.pageX, event.pageY )
 }
 
 
