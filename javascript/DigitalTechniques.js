@@ -81,12 +81,17 @@ function rollUpDownOnClick( event ) {
 
 
 function rollUpDownOnContext( event ) {
+  let linkText = event.target.parentElement.querySelector("div.Content object").data
+  event.preventDefault()
+
   if( isSecureContext ) {
-    event.preventDefault()
-    navigator.clipboard.writeText( event.target.parentElement.querySelector("div.Content object").data )
+    navigator.clipboard.writeText( linkText )
     DialogOk( "COPIED to CLIPBOARD", "Link to this Technique was copied to clipboard", event.pageX, event.pageY )
   }
-  console.log( `Clipboard is only available with https:// OR localhost` );
+  else {
+    DialogOk( "Select and ctl-C", linkText, event.pageX, event.pageY )
+    console.log( `Clipboard is only available with https:// OR localhost` );
+  }
 }
 
 
