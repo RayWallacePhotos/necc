@@ -670,114 +670,114 @@ function cssColorDefaults( ) {
 
 
 function setDialogboxStyelsheet( ) {
-  cssColorDefaults( );
-
-  cssStylesheet( "DialogBox", `
-    /*
-     * DIALOG BOX CLASSES
-     */
-     /*
-      *   Add class of DlgInput to anything you want clickable and to allow it to return a value
-      *
-      *      class DlgDialogBox
-      *  --------------------------
-      *  |  TITLE   ......... O X |  Class DlgTitle {grid, grid-template-columns: max-content 1fr}
-      *  |------------------------|
-      *  | TBL TBL        TBR TBR |  Class DlgButtons {grid, grid-template-columns: 1fr max-content}, DlgButtonsLeft, DlgButtonsRight
-      *  |------------------------|
-      *  |   HEADER HD HD .....   |  Class DlgHeader {grid, repeat( auto-fit, minmax( 5rem, 1fr) )}
-      *  |------------------------|
-      *  |                        |  Class DlgBody
-      *  |   BODY BD BD ...       |          Class DlgLine {grid, repeat( auto-fit, minmax( 5rem, 1fr) )}
-      *  |   BODY BD BD ...       |
-      *  |                        |
-      *  |------------------------|
-      *  | BBL BBL         BR BBR |  Class DlgButtons {grid, grid-template-columns: 1fr max-content}, DlgButtonsLeft, DlgButtonsRight
-      *  |------------------------|
-      */
-    .DlgDialogBox {
-      position: absolute; /* <dialog> doesn't need this for some reason, but if we use a <div> for the DialogBox base element, then we do  */
-      padding: 4px;
-      border: solid 1px black;
-      border-radius: 8px;
-      background-image: linear-gradient(var(--NormalColor),var(--LightColor),var(--NormalColor));
-    }
-    .DlgDialogBox:hover {
-      border: solid 1px rgba(100, 100, 0, 0.9);
-      z-index: 10;
-    }
-
-    .DlgTitle {
-      box-shadow: 3px 3px 5px var(--DarkestColor);
-      margin-bottom: 4px;
-      padding-left: 0.25rem;
-      width: 100%;
-
-      display: grid;
-      /*                      title       [fullscreen box       eXit] */
-      grid-template-columns:   1fr    max-content;
-    }
-    .DlgTitle h2 {
-      margin-right: 2rem;
-    }
-    .DlgTitle button, .DlgTitle .DlgButton {
-      min-width: 1.6rem;
-    }
-
-    .DlgMenus, .DlgButtons {
-      background-color: var(--NormalColor);
-      border-bottom: solid 2px var(--DarkestColor);
-      border-radius: 4px;
-
-      display: grid;
-      grid-template-columns: 1fr max-content;
-    }
-
-    .DlgMenu {
-      display: inline; /* Incase someone uses a <div> as appose to a <span> */
-      margin-left: 10px;
-      padding: 0px 2px;
-
-      border-radius: 2px;
-      box-shadow: 1px 2px 4px black;
-
-      cursor: pointer;
-    }
-    .DlgMenu:hover {
-      /* Don't use "border", it changes the size of the element */
-      outline: solid 1px var(--LightColor);
-    }
-    .DlgMenu:active {
-      /* Don't use "border", it changes the size of the element */
-      outline: ridge 4px var(--LightColor);
-    }
-
-    .DlgHeader {
-      border-bottom: solid 1px var(--HarleyOrange);
-
-      display: grid;
-      grid-template-columns: repeat( auto-fit, minmax( 5rem, 1fr) );
-    }
-
-    .DlgBody {
-      border: solid 1px var(--DarkestColor);
-      border-radius: 4px;
-      box-shadow: inset -2px -2px 3px var(--DarkestColor);
-
-      max-width: 100%;  /* Don't let huge content let it get bigger than the dialog box */
-      min-height: 4rem;
-
-      margin: 0.3rem 0rem;
-      padding: 0.25rem;
-    }
-    .DlgBody img {
-      max-width: 100%; /* Don't let huge images go to full size */
-    }
-
-    .DlgInput {
-      cursor: pointer;
-    }
-  ` );
+  // cssColorDefaults( );
+  //
+  // cssStylesheet( "DialogBox", `
+  //   /*
+  //    * DIALOG BOX CLASSES
+  //    */
+  //    /*
+  //     *   Add class of DlgInput to anything you want clickable and to allow it to return a value
+  //     *
+  //     *      class DlgDialogBox
+  //     *  --------------------------
+  //     *  |  TITLE   ......... O X |  Class DlgTitle {grid, grid-template-columns: max-content 1fr}
+  //     *  |------------------------|
+  //     *  | TBL TBL        TBR TBR |  Class DlgButtons {grid, grid-template-columns: 1fr max-content}, DlgButtonsLeft, DlgButtonsRight
+  //     *  |------------------------|
+  //     *  |   HEADER HD HD .....   |  Class DlgHeader {grid, repeat( auto-fit, minmax( 5rem, 1fr) )}
+  //     *  |------------------------|
+  //     *  |                        |  Class DlgBody
+  //     *  |   BODY BD BD ...       |          Class DlgLine {grid, repeat( auto-fit, minmax( 5rem, 1fr) )}
+  //     *  |   BODY BD BD ...       |
+  //     *  |                        |
+  //     *  |------------------------|
+  //     *  | BBL BBL         BR BBR |  Class DlgButtons {grid, grid-template-columns: 1fr max-content}, DlgButtonsLeft, DlgButtonsRight
+  //     *  |------------------------|
+  //     */
+  //   .DlgDialogBox {
+  //     position: absolute; /* <dialog> doesn't need this for some reason, but if we use a <div> for the DialogBox base element, then we do  */
+  //     padding: 4px;
+  //     border: solid 1px black;
+  //     border-radius: 8px;
+  //     background-image: linear-gradient(var(--NormalColor),var(--LightColor),var(--NormalColor));
+  //   }
+  //   .DlgDialogBox:hover {
+  //     border: solid 1px rgba(100, 100, 0, 0.9);
+  //     z-index: 10;
+  //   }
+  //
+  //   .DlgTitle {
+  //     box-shadow: 3px 3px 5px var(--DarkestColor);
+  //     margin-bottom: 4px;
+  //     padding-left: 0.25rem;
+  //     width: 100%;
+  //
+  //     display: grid;
+  //     /*                      title       [fullscreen box       eXit] */
+  //     grid-template-columns:   1fr    max-content;
+  //   }
+  //   .DlgTitle h2 {
+  //     margin-right: 2rem;
+  //   }
+  //   .DlgTitle button, .DlgTitle .DlgButton {
+  //     min-width: 1.6rem;
+  //   }
+  //
+  //   .DlgMenus, .DlgButtons {
+  //     background-color: var(--NormalColor);
+  //     border-bottom: solid 2px var(--DarkestColor);
+  //     border-radius: 4px;
+  //
+  //     display: grid;
+  //     grid-template-columns: 1fr max-content;
+  //   }
+  //
+  //   .DlgMenu {
+  //     display: inline; /* Incase someone uses a <div> as appose to a <span> */
+  //     margin-left: 10px;
+  //     padding: 0px 2px;
+  //
+  //     border-radius: 2px;
+  //     box-shadow: 1px 2px 4px black;
+  //
+  //     cursor: pointer;
+  //   }
+  //   .DlgMenu:hover {
+  //     /* Don't use "border", it changes the size of the element */
+  //     outline: solid 1px var(--LightColor);
+  //   }
+  //   .DlgMenu:active {
+  //     /* Don't use "border", it changes the size of the element */
+  //     outline: ridge 4px var(--LightColor);
+  //   }
+  //
+  //   .DlgHeader {
+  //     border-bottom: solid 1px var(--HarleyOrange);
+  //
+  //     display: grid;
+  //     grid-template-columns: repeat( auto-fit, minmax( 5rem, 1fr) );
+  //   }
+  //
+  //   .DlgBody {
+  //     border: solid 1px var(--DarkestColor);
+  //     border-radius: 4px;
+  //     box-shadow: inset -2px -2px 3px var(--DarkestColor);
+  //
+  //     max-width: 100%;  /* Don't let huge content let it get bigger than the dialog box */
+  //     min-height: 4rem;
+  //
+  //     margin: 0.3rem 0rem;
+  //     padding: 0.25rem;
+  //   }
+  //   .DlgBody img {
+  //     max-width: 100%; /* Don't let huge images go to full size */
+  //   }
+  //
+  //   .DlgInput {
+  //     cursor: pointer;
+  //   }
+  // ` );
 }
 
 
