@@ -9,10 +9,17 @@ body {
  --NECCGreen: #628462;
  --NECCDarkGreen: #415841;
  --NECCYellow: #c2b624;
+
+  line-height: 1.24rem;
 }
 
 h4 {
   margin-top: 1rem;
+}
+
+h5 {
+  margin-top: 0.5rem;
+  margin-left: 1rem;
 }
 
 p {
