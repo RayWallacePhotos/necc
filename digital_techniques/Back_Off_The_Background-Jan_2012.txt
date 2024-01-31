@@ -60,7 +60,7 @@ Save as a .tif file format to preserver layers for possible future edits
 
 Resize for competition
 	Select crop tool
-	Set size to (a maximum of) 1024 px x 768 px (px = pixels)
+	Set size to (a maximum of) 1920 px x 1440 px (px = pixels)
 	You can leave resolution (dpi) blank
 	If you prefer a value for dpi, 72 and 96 are reasonable values
 	for displays
@@ -69,7 +69,6 @@ Resize for competition
 	the height value to 768 px and leave the width blank
 
 Save as
-	Your Name$Class A$Hope It Wins.jpg
-	NOTE: Change "Class A", to "Class B", "Class A" or "Masters"
+	Save the resized image as a .jpeg
 
 
