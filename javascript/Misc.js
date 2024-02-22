@@ -78,7 +78,8 @@ function competitionResultsInit( ) {
   })
 
 
-  fileReadText( filename, result => {
+  // DEBUG Changed to go up one level from javascript/ to /
+  fileReadText( "../" + filename, result => {
     competitionResultsID.innerHTML = result.text
 
     competitionResultsID.addEventListener( "click", event => {
