@@ -5,6 +5,8 @@
 //
 //  20 Sep 2022 Created
 //  30 Dec 2022 Added loading="lazy" for <img>'s
+//  21 Feb 2024 Added competitionResultsInit()
+//
 
 
 
@@ -54,15 +56,79 @@ function meetingsInit( ) {
 }
 
 
+
 function photoTripsInit( ) {
   displayCSVFile( "photoTripsID", "Striped" );
 }
+
 
 
 function competitionInit( ) {
   displayCSVFile( "scanvengerListID", "Striped" );
   displayCSVFile( "assignedSubjectsID", "Striped" );
 }
+
+
+
+function competitionResultsInit( ) {
+  let filename = competitionResultsID.innerHTML
+
+  LargeImageID.addEventListener( "click", event => {
+    LargeImageID.classList.add( "Hidden" );
+  })
+
+
+  fileReadText( filename, result => {
+    competitionResultsID.innerHTML = result.text
+
+    competitionResultsID.addEventListener( "click", event => {
+      if( event.target.tagName == "IMG" && event.altKey ) {
+        let id = event.target.src.slice(-12,-4)
+
+        LargeImageID.classList.remove( "Hidden" );
+
+        LargeImageID.src = `https://ccocne.photoclubservices.com/ImageZoom2.aspx?ImageSize=2&ImageId=${id}`
+        // LargeImageID.src = "https://picsum.photos/200/300"  // This works
+
+// // DEBUG
+//         // Error "No 'Access-Control-Allow-Origin' header is present"
+//         fetch( `https://ccocne.photoclubservices.com/ImageZoom2.aspx?ImageSize=2&ImageId=${id}`,
+//            {mode:"cors", headers:{Origin: 'ccocne.photoclubservices.com'} } ) // cors error without headers
+//         // fetch( `https://ccocne.photoclubs}ervices.com/ImageZoom2.aspx?ImageSize=2&ImageId=${id}`, {mode:"no-cors"} )
+//         // fetch( `https://ccocne.photoclubservices.com/ImageZoom2.aspx?ImageSize=2&ImageId=${id}`, {mode:"same-origin"} ) // NOT the same origin
+//         // fetch( `https://picsum.photos/200/300` )
+//
+//         // .then( result => result.blob() )
+//         // .then( aBlob => {
+//         //   console.log( aBlob ) // type "", size 0
+//         //
+//         //   competitionResultsID.src = URL.createObjectURL( aBlob )
+//         //   competitionResultsID.onload = event => {
+//         //     URL.revokeObjectURL( objUrl )
+//         //   }
+//
+//         .then( response => {
+//           if( !response.ok ) console.error( `fetch failed: ${response.status}::"${response.statusText}"`)
+//           console.log( response )
+//
+//         // .then( response => response.text() )
+//         // .then( data => {
+//         //   console.log( data )  // ""
+//
+//         // .then( response => response.json() ) // Unexpected end of input
+//         // .then( data => {
+//         //   console.log( data )
+//         //   console.log( JSON.stringify(data) )
+//
+//         } ) // END fetch & .then
+//         .catch( error => {
+//           console.error( error )
+//         })
+      } // END if tagName
+    } ) // END addEventListener()
+  } ) // END fileReadText()
+}
+
 
 
 function photosInit( ) {

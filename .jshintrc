@@ -1,0 +1,28 @@
+//
+//  RWWJ .jshintrc config file for Atom's linter jshint plugin
+//
+//  See full list of options (i.e. example .jshintrc file) at:
+//    https://github.com/jshint/jshint/blob/main/examples/.jshintrc
+//
+//  See jshint docs at:
+//    https://jshint.com/docs/
+//
+
+
+//       NOTE NOTE NOTE   Must use capital W to disable Warnings    "-W0##":true    NOTE NOTE NOTE
+
+
+{
+  "esversion": 13,  // {int} Specify the ECMAScript version to which the code must adhere
+  "browser": true,  // Web Browser (allows window, document, etc)
+  "devel": true,    // Development/debugging (alert, confirm, etc)
+//  "undef": true,  // true: Require all non-global variables to be declared (prevents global leaks) NOTE: RWWJ Do NOT want this!!!
+  "boss": true,     // true: Tolerate assignments where comparisons would be expected
+  "debug": true,    // true: Allow debugger statements e.g. browser breakpoints
+  "-W018": true,    // Disable "Confusing use of '!'"
+  "loopfunc": true, // same as "-W083" Suppress warnings about functions inside of loops
+  "asi": true,      // true: Tolerate Automatic Semicolon Insertion <<by browser/js engine>> (i.e. semicolons not required)
+  "eqnull": true,   // true: Tolerate use of '== null' comparision instead of '=== null'
+  "-W078": true     // Disable "Setter is defined without getter"
+}
+

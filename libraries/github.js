@@ -118,6 +118,9 @@ function fileShaGitHub( filename, user, repo, callback ) {
   options = {
     method: 'GET',
     headers: {
+// BUG DEBUG FIX --- github revoked this peronal token, so it is NO longer useable
+//        It was revoked because this file was part of a commit, which is a SECURITY issue!!!!!
+//        I need to be reading this from a .env file (or simillar file that i add to .gitignore)
       Authorization:  `Token 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`, // Don't need this for reading, but allows 5000/hour instead of 60/hour
     }
   };

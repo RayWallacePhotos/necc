@@ -125,6 +125,9 @@ iframe {
   text-align: right; /* Need label to be display block (or a <div>) for this to work */
 }
 
+.Hidden, .HideContent {
+  display: none;
+}
 
 
 

@@ -4,10 +4,12 @@
 //        Misc Helper Classes and functions
 //
 //  15 Sep 2022 Created
+//  21 Feb 2024 Added CompetitionResults
+//              V1.3
 //
 
 
-const Version = "V1.02";
+const Version = "V1.3";
 const FirstYear = "2018";
 
 const MenuEntries = [
@@ -15,6 +17,7 @@ const MenuEntries = [
         {url:"Meetings.html", button:"Meetings", init:meetingsInit},
         {url:"PhotoTrips.html", button:"Photo Trips", init:photoTripsInit},
         {url:"Competition.html", button:"Competition", init:competitionInit},
+        {url:"CompetitionResults.html", button:"Competition Results", init:competitionResultsInit},
         {url:"Photos.html", button:"Photos", init:photosInit},
         {url:"DigitalTechniques.html", button:"Digital Techniques", init:digitalTechniquesInit},
         {url:"About.html", button:"About", init:null},

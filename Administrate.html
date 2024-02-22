@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>NECC</title>
+
+    <link rel="icon" href="images/Logo.gif">             <!-- Browser tab favicon -->
+    <link rel="shortcut icon" href="images/Logo.gif">    <!-- Android shortcut icon -->
+    <link rel="apple-touch-icon" href="images/Logo.gif"> <!-- Apple shortcut icon -->
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Ray Wallace">
+    <meta name="description" content="Camera Club">
+    <meta name="keywords" content="Camera, Photography, Photo, Images,Photographer, Leominster, Lancaster, New England, Massachusetts">
+
+    <!-- Load some .css style files -->
+    <link rel="stylesheet" href="/css_v3/Administrate.css">
+    <link rel="stylesheet" href="css_v3/main_v3.css">
+    <link rel="stylesheet" href="css_v3/layout_v3.css">
+
+
+    <!-- Load some Javascript Functions -->
+    <script defer src="libraries/github.js"> </script>
+    <script defer src="libraries/Helpers.js"> </script>
+    <script defer src="libraries/Files.js"> </script>
+    <script defer src="javascript/Administrate.js"> </script>
+    <script defer src="javascript/DigitalTechniques.js"> </script>
+    <script defer src="javascript/Misc.js"> </script>
+    <script defer src="javascript/Init.js"> </script>
+  </head>
+
+
+  <body>
+      <header>
+        <div class="">
+          <img src="images/Logo.gif" alt="Logo">
+          <span>New England Camera Club</span>
+          <span><i>Share - Learn - Teach</i></span>
+        </div>
+      </header>
+
+      <menu>
+        <!-- Init.js will build (overwrite) the menus -->
+      </menu>
+
+
+      <div class="Content">
+        <h1>ADMINISTRATE</h1>
+
+        <section>
+          <button type="button" onclick="fileFromGitHubOnClick(event)">FILE FROM GITHUB</button>
+          <button type="button" onclick="fileToGitHubOnClick(event)">FILE TO GITHUB</button>
+          <button type="button" onclick="editCalendarOnClick(event)">EDIT CALENDAR</button>
+
+          <img width = "128px" id = "RandomEMojiID" >
+
+          <!--
+          29 Nov 2022, Competion
+          13 Dec 2022, Christmas party
+          ICON   DATE  DESCRIPTION
+          -->
+          <div class="SelectList" id="SelectListID">
+            <span> &#9999;&#65039; </span> <span> 29 Nov 2022 </span> <span> Competion </span>
+            <span> &#9999;&#65039; </span> <span> 13 Dec 2022 </span> <span> Christmas party </span>
+          </div>
+
+         <!--
+         29 Nov 2022, Competion
+         , Categories are: Pictorial and Nature
+         , Assigned subjects are: Minimalism
+
+         13 Dec 2022, Christmas party
+         , Details to follow
+         ,,
+        -->
+        <div class="SelectedItem" id="SelectedItemID">
+          <span> 29 Nov 2022 </span> <span> Competion </span>
+          <span></span> <span> Categories are: Pictorial and Nature </span>
+          <span></span> <span> Assigned subjects are: Minimalism </span>
+        </div>
+        <!-- <div class="SelectedItem">
+          <span> 13 Dec 2022 </span> <span> Christmas party </span>
+          <span> Details to follow </span>
+        </div> -->
+
+        </section>
+
+      </div> <!-- End Content -->
+
+
+
+      <footer>
+        <span>Copyright &copy; <span class="Year">2022</span> </span>
+        <a href="https://www.facebook.com/groups/475031105844954/"><img class="Icon" src="images/FacebookLogo.png" alt="Icon"> Facebook</a>
+        <span>
+          <a href="mailto:Ray@RipsPics.com?bcc=HoudiniJr@GMail.com&subject=NECC%20Website&body=From%20NECC%20Website" target="_blank" title="Webmaster EMail">Ray@RipsPics.com</a>
+          <span class="Version">v0.x</span>
+        </span>
+      </footer>
+
+  </body>
+</html>
+
+
+
+<!--  -->
