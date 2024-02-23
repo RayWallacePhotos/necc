@@ -17,5 +17,29 @@
   left: 40px;
 }
 
+table {
+  border-radius: 0.2rem;
+}
+
+thead {
+  /* background-color: var(--NECCLightGreen); */
+  box-shadow: 2px 2px 4px var(--NECCDarkGreen);
+}
+th {
+  background-color: var(--NECCLightGreen);
+}
+th {
+  border-top-left-radius:  0.2rem;
+  border-top-right-radius: 0.2rem;
+}
+td {
+  border-radius: 0.2rem;
+}
+tr img {
+  box-shadow: 4px 4px 2px var(--NECCDarkGreen), -2px -2px 4px var(--NECCDarkGreen);
+  border-radius: 0.2rem;
+}
+
+
 
 /*  */
