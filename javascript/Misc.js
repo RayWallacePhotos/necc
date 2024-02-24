@@ -93,13 +93,14 @@ function competitionResultsInit( ) {
 // DEBUG        https://ccocne.photoclubservices.com/I/21931313/image-0207061900.jpg?J=64&Size=3
 //   try 2      https://ccocne.photoclubservices.com/I/22003894/image-0208022500.jpg?J=64&Size=3
 //    Changed I (ID), same filename.jpg
-        LargeImageID.src = `https://ccocne.photoclubservices.com/I/${id}/image-0207061900.jpg?J=64&Size=3`
+        // LargeImageID.src = `https://ccocne.photoclubservices.com/I/${id}/image-0207061900.jpg?J=64&Size=3`
         // LargeImageID.src = "https://picsum.photos/200/300"  // This works
+        LargeImageID.src = "./images/Logo.gif"
 
 // DEBUG
         // Error "No 'Access-Control-Allow-Origin' header is present"
-        fetch( `https://ccocne.photoclubservices.com/ImageZoom2.aspx?ImageSize=2&ImageId=${id}`, {mode:"cors"} ) // cors error
-        // fetch( `https://ccocne.photoclubs}ervices.com/ImageZoom2.aspx?ImageSize=2&ImageId=${id}`, {mode:"no-cors"} )
+        // fetch( `https://ccocne.photoclubservices.com/ImageZoom2.aspx?ImageSize=2&ImageId=${id}`, {mode:"cors"} ) // cors error
+        fetch( `https://ccocne.photoclubs}ervices.com/ImageZoom2.aspx?ImageSize=2&ImageId=${id}`, {mode:"no-cors"} )
         // fetch( `https://ccocne.photoclubservices.com/ImageZoom2.aspx?ImageSize=2&ImageId=${id}`, {mode:"same-origin"} ) // NOT the same origin
         // fetch( `https://picsum.photos/200/300` )
 
@@ -132,6 +133,7 @@ function competitionResultsInit( ) {
 
         } ) // END fetch & .then
         .catch( error => {
+          console.log( `fetch() .catch error:`)
           console.error( error )
         })
 
