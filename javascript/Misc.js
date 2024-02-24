@@ -88,43 +88,53 @@ function competitionResultsInit( ) {
 
         LargeImageID.classList.remove( "Hidden" );
 
-        LargeImageID.src = `https://ccocne.photoclubservices.com/ImageZoom2.aspx?ImageSize=2&ImageId=${id}`
+        // LargeImageID.src = `https://ccocne.photoclubservices.com/ImageZoom2.aspx?ImageSize=2&ImageId=${id}`
+        // LargeImageID.src = `https://ccocne.photoclubservices.com/ImageZoom2.aspx?ImageSize=2&ImageId=${id}`
+// DEBUG        https://ccocne.photoclubservices.com/I/21931313/image-0207061900.jpg?J=64&Size=3
+//   try 2      https://ccocne.photoclubservices.com/I/22003894/image-0208022500.jpg?J=64&Size=3
+//    Changed I (ID), same filename.jpg
+        LargeImageID.src = `https://ccocne.photoclubservices.com/I/${id}/image-0207061900.jpg?J=64&Size=3`
         // LargeImageID.src = "https://picsum.photos/200/300"  // This works
 
-// // DEBUG
-//         // Error "No 'Access-Control-Allow-Origin' header is present"
-//         fetch( `https://ccocne.photoclubservices.com/ImageZoom2.aspx?ImageSize=2&ImageId=${id}`,
-//            {mode:"cors", headers:{Origin: 'ccocne.photoclubservices.com'} } ) // cors error without headers
-//         // fetch( `https://ccocne.photoclubs}ervices.com/ImageZoom2.aspx?ImageSize=2&ImageId=${id}`, {mode:"no-cors"} )
-//         // fetch( `https://ccocne.photoclubservices.com/ImageZoom2.aspx?ImageSize=2&ImageId=${id}`, {mode:"same-origin"} ) // NOT the same origin
-//         // fetch( `https://picsum.photos/200/300` )
-//
-//         // .then( result => result.blob() )
-//         // .then( aBlob => {
-//         //   console.log( aBlob ) // type "", size 0
-//         //
-//         //   competitionResultsID.src = URL.createObjectURL( aBlob )
-//         //   competitionResultsID.onload = event => {
-//         //     URL.revokeObjectURL( objUrl )
-//         //   }
-//
-//         .then( response => {
-//           if( !response.ok ) console.error( `fetch failed: ${response.status}::"${response.statusText}"`)
-//           console.log( response )
-//
-//         // .then( response => response.text() )
-//         // .then( data => {
-//         //   console.log( data )  // ""
-//
-//         // .then( response => response.json() ) // Unexpected end of input
-//         // .then( data => {
-//         //   console.log( data )
-//         //   console.log( JSON.stringify(data) )
-//
-//         } ) // END fetch & .then
-//         .catch( error => {
-//           console.error( error )
-//         })
+// DEBUG
+        // Error "No 'Access-Control-Allow-Origin' header is present"
+        fetch( `https://ccocne.photoclubservices.com/ImageZoom2.aspx?ImageSize=2&ImageId=${id}`, {mode:"cors"} ) // cors error
+        // fetch( `https://ccocne.photoclubs}ervices.com/ImageZoom2.aspx?ImageSize=2&ImageId=${id}`, {mode:"no-cors"} )
+        // fetch( `https://ccocne.photoclubservices.com/ImageZoom2.aspx?ImageSize=2&ImageId=${id}`, {mode:"same-origin"} ) // NOT the same origin
+        // fetch( `https://picsum.photos/200/300` )
+
+        // .then( result => result.blob() )
+        // .then( aBlob => {
+        //   console.log( aBlob ) // type "", size 0
+        //
+        //   competitionResultsID.src = URL.createObjectURL( aBlob )
+        //   competitionResultsID.onload = event => {
+        //     URL.revokeObjectURL( objUrl )
+        //   }
+
+        // .then( response => {
+        //   if( !response.ok ) console.error( `fetch failed: ${response.status}::"${response.statusText}"`)
+        //   else console.log( response )
+
+        .then( response => {
+          if( !response.ok ) console.error( `fetch failed: ${response.status}::"${response.statusText}"`)
+          else console.log( response )
+
+          return response.text()
+        })
+        .then( data => {
+          console.log( data )  // ""
+
+        // .then( response => response.json() ) // Unexpected end of input
+        // .then( data => {
+        //   console.log( data )
+        //   console.log( JSON.stringify(data) )
+
+        } ) // END fetch & .then
+        .catch( error => {
+          console.error( error )
+        })
+
       } // END if tagName
     } ) // END addEventListener()
   } ) // END fileReadText()
