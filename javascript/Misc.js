@@ -95,27 +95,16 @@ function competitionResultsInit( ) {
 //    Changed I (ID), same filename.jpg
         // LargeImageID.src = `https://ccocne.photoclubservices.com/I/${id}/image-0207061900.jpg?J=64&Size=3`
         // LargeImageID.src = "https://picsum.photos/200/300"  // This works
-        LargeImageID.src = "./images/Logo.gif"
+        LargeImageID.src = "./images/CameraIcon-RWWJ-64x64.png"
 
 // DEBUG
         // Error "No 'Access-Control-Allow-Origin' header is present"
         // fetch( `https://ccocne.photoclubservices.com/ImageZoom2.aspx?ImageSize=2&ImageId=${id}`, {mode:"cors"} ) // cors error
-        fetch( `https://ccocne.photoclubs}ervices.com/ImageZoom2.aspx?ImageSize=2&ImageId=${id}`, {mode:"no-cors"} )
+        fetch( `https://ccocne.photoclubs}ervices.com/ImageZoom2.aspx?ImageSize=2&ImageId=${id}`,
+          {mode:"no-cors", headers: {"Content-Type":"text/plain"} } )
+          // {mode:"no-cors", headers: {"Content-Type":"text/html"} } )
         // fetch( `https://ccocne.photoclubservices.com/ImageZoom2.aspx?ImageSize=2&ImageId=${id}`, {mode:"same-origin"} ) // NOT the same origin
         // fetch( `https://picsum.photos/200/300` )
-
-        // .then( result => result.blob() )
-        // .then( aBlob => {
-        //   console.log( aBlob ) // type "", size 0
-        //
-        //   competitionResultsID.src = URL.createObjectURL( aBlob )
-        //   competitionResultsID.onload = event => {
-        //     URL.revokeObjectURL( objUrl )
-        //   }
-
-        // .then( response => {
-        //   if( !response.ok ) console.error( `fetch failed: ${response.status}::"${response.statusText}"`)
-        //   else console.log( response )
 
         .then( response => {
           if( !response.ok ) console.error( `fetch failed: ${response.status}::"${response.statusText}"`)
