@@ -53,8 +53,33 @@
         </p>
 
         <div class="Container">
+          <div id="SelectionAreaID">
+            <label for="DateSelectionID">Select Competition Date
+              <select id="DateSelectionID">
+                <!--
+                  <option value="Jan 2024">Jan 2024</option>
+                  <option value="Feb 2024">Feb 2024</option>
+                -->
+              </select>
+            </label>
+
+            <label class="Hidden" for="UserSelectionID">Select User
+              <select id="UserSelectionID">
+                <!--
+                  <option value="**All**">**All Users**</option>
+                  <option value="Judy Lombard">Judy Lombard</option>
+                  <option value="Patrick McCarthy">Patrick McCarthy</option>
+                -->
+              </select>
+            </label>
+          </div>
+
+          <p class="Indent">NOTE: Hover over thumbnail for larger image<p>
+
       	  <!-- Use Javascript to create table from (or insert) the .html file named below -->
-  	      <div id="competitionResultsID">competition_scores.html</div>
+          <div id="scoresFilesID" class="Hidden">scores_feb_2024.html, scores_Jan_2024.html, scores_Sep_2023-Feb_2024.html</div>
+          <div id="competitionResultsID"></div>
+
 
           <img id="LargeImageID" class="Hidden Float" src="">
         </div>

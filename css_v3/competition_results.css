@@ -2,6 +2,7 @@
 
 .Container {
   position: relative;
+  margin-top: 1.5rem;
 }
 
 #LargeImageID {
@@ -15,6 +16,10 @@
   position: absolute;
   top: 20px;
   left: 40px;
+}
+
+.Indent {
+  margin-left: 1.5rem;
 }
 
 table {
@@ -38,7 +43,26 @@ td {
 tr img {
   box-shadow: 4px 4px 2px var(--NECCDarkGreen), -2px -2px 4px var(--NECCDarkGreen);
   border-radius: 0.2rem;
+
+  height: 64px;
 }
+
+tr img:hover {
+  height: 256px;
+}
+
+#SelectionAreaID {
+  display: grid;
+  /* grid-template-columns: 1fr 1fr; */
+  /* grid-template-columns: repeat( auto-fill, minmax(240px, 1fr) ); */
+  grid-template-columns: repeat( auto-fit, minmax(15em, 1fr) );
+
+  /* No effect */
+  /* justify-content: space-evenly; */
+  /* justify-content: center; */
+  /* justify-content: start; */
+}
+
 
 
 

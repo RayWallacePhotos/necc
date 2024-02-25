@@ -378,6 +378,7 @@ function loadNextFile( next, fileList, callback ) {
 //
 // An object with fileName (or url) and text of file (url), is passed to the callback,
 // i.e. callback({fileName:"",text:""})
+//    Where text is null if could not read file 
 //
 // Takes either a url OR a fileName
 //

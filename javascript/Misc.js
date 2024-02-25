@@ -71,55 +71,80 @@ function competitionInit( ) {
 
 
 function competitionResultsInit( ) {
-  let filename = competitionResultsID.innerHTML
+  let dates = ""
+  let authors = `<option value="**All**">**All Users**</option>`
+
+  for( let filename of scoresFilesID.innerText.split(",") ) { // scores_feb_2024.html, scores_jan_2024.html
+    let dateStr = capitalizeWords( filename.trim().slice(7,-5).replace("_", " ") )
+    dates += `<option value="${dateStr}">${dateStr}</option>`
+  }
+  DateSelectionID.innerHTML = dates
+
+  UserSelectionID.innerHTML = authors
 
   LargeImageID.addEventListener( "click", event => {
     LargeImageID.classList.add( "Hidden" );
   })
 
 
-  // DEBUG Changed to go up one level from javascript/ to /
+  DateSelectionID.addEventListener( "change", event => {
+    let filename = `scores/scores_${event.target.value.toLowerCase().replaceAll(" ", "_")}.html`
+
+    displayScores( filename )
+  } )
+
+
+  UserSelectionID.addEventListener( "change", event => {
+    let author = event.target.value
+    if( author == "**All**" ) {
+
+    }
+    else {
+console.log( `DEBUG: competitionResultsInit(): Add code to show ONLY entries for this author "${author}"` )
+
+      displayScores( filename )
+    }
+  } )
+
+
+  let date = DateSelectionID.children[DateSelectionID.selectedIndex].value
+  displayScores( `scores/scores_${date.toLowerCase().replaceAll(" ", "_")}.html` )
+}
+
+
+
+function displayScores( filename ) {
+
   fileReadText( "../" + filename, result => {
-    competitionResultsID.innerHTML = result.text
+    if( result.text ) {
+      let authorsDomStr = `<option value="**All**">**All Users**</option>`
 
-    competitionResultsID.addEventListener( "click", event => {
-      if( event.target.tagName == "IMG" && event.altKey ) {
-        let id = event.target.src.slice(-12,-4)
+      competitionResultsID.innerHTML = result.text
 
-// // DEBUG
-//        LargeImageID.classList.remove( "Hidden" );
+      for( let author of JSON.parse(AuthorsListID.innerText) ) {
+        let authorStr = author.trim()
+        authorsDomStr += `<option value="${authorStr}">${authorStr}</option>`
+console.log( `DEBUG: displayScores(): Add code to show ONLY entries for this author "${author}"` )
+      }
+      UserSelectionID.innerHTML = authorsDomStr
 
-        // LargeImageID.src = `https://ccocne.photoclubservices.com/I/${id}/image-0207061900.jpg?J=64&Size=3`
-        // LargeImageID.src = "https://picsum.photos/200/300"  // This works
-        // LargeImageID.src = "./images/CameraIcon-RWWJ-64x64.png"
-
-// // DEBUG
-//         fetch( `https://ccocne.photoclubs}ervices.com/ImageZoom2.aspx?ImageSize=2&ImageId=${id}`,
-//           {mode:"no-cors", headers: {"Content-Type":"text/plain"} } )
-//
-//         .then( response => {
-//           if( !response.ok ) console.error( `fetch failed: ${response.status}::"${response.statusText}"`)
-//           else console.log( response )
-//
-//           return response.text()
-//         })
-//         .then( data => {
-//           console.log( data )  // ""
-//
-//         // .then( response => response.json() ) // Unexpected end of input
-//         // .then( data => {
-//         //   console.log( data )
-//         //   console.log( JSON.stringify(data) )
-//
-//         } ) // END fetch & .then
-//         .catch( error => {
-//           console.log( `fetch() .catch error:`)
-//           console.error( error )
-//         })
-
-      } // END if tagName
-    } ) // END addEventListener()
+    }
+    else competitionResultsID.innerHTML = ""
   } ) // END fileReadText()
+
+
+
+
+  // competitionResultsID.addEventListener( "click", event => {
+  //   // DEBUG Only hiding the click behind the alt key for testing purposes
+  //   if( event.target.tagName == "IMG" && event.altKey ) {
+  //     // let id = event.target.src.slice(-12,-4)
+  //     let bigImgPath = event.target.src.replace( "/scores_thumbnails_", "/scores_big_images_" )
+  //
+  //     LargeImageID.classList.remove( "Hidden" );
+  //     LargeImageID.src = bigImgPath
+  //   } // END if tagName
+  // } ) // END addEventListener()
 }
 
 
