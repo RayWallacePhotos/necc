@@ -88,7 +88,9 @@ function competitionResultsInit( ) {
 
 
   DateSelectionID.addEventListener( "change", event => {
-    let filename = `scores/scores_${event.target.value.toLowerCase().replaceAll(" ", "_")}.html`
+  // DEBUG
+    // let filename = `scores/scores_${event.target.value.toLowerCase().replaceAll(" ", "_")}.html`
+    let filename = `scores/scores_${event.target.value.replaceAll(" ", "_")}.html`
 
     let author = UserSelectionID.children[UserSelectionID.selectedIndex].value
     displayScores( filename, author )
@@ -98,26 +100,29 @@ function competitionResultsInit( ) {
   UserSelectionID.addEventListener( "change", event => {
     let author = event.target.value
 
-console.log( `start: ${UserSelectionID.selectedIndex}: ${event.target.value}` );
-
     let date = DateSelectionID.children[DateSelectionID.selectedIndex].value
-    let filename = `scores/scores_${date.toLowerCase().replaceAll(" ", "_")}.html`
+  // DEBUG
+    // let filename = `scores/scores_${date.toLowerCase().replaceAll(" ", "_")}.html`
+    let filename = `scores/scores_${date.replaceAll(" ", "_")}.html`
     displayScores( filename, author )
-
-console.log( `end: ${UserSelectionID.selectedIndex}: ${event.target.value}` );
   } )
 
 
   let date = DateSelectionID.children[DateSelectionID.selectedIndex].value
   // let author = AuthorsListID.children[AuthorsListID.selectedIndex].value  // AuthorsListID is in scores .html, which isn't not loaded yet
   let author = "**ALL**"
-  displayScores( `scores/scores_${date.toLowerCase().replaceAll(" ", "_")}.html`, author )
+// DEBUG
+  // displayScores( `scores/scores_${date.toLowerCase().replaceAll(" ", "_")}.html`, author )
+  displayScores( `scores/scores_${date.replaceAll(" ", "_")}.html`, author )
 }
 
 
 
 function displayScores( filename, requestedAuthor ) {
   let authorStillExists = false
+
+// DEBUG filename case
+console.log( `filename : ${filename}` );
 
   requestedAuthor = requestedAuthor.trim()
 
