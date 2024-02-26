@@ -24,9 +24,9 @@ function sendEmailOnClick( event ) {
 	var emailBody = "";
 	var msg = "";
 
-	var nameBox = document.getElementById("mailNameID");
-	var fromBox = document.getElementById("mailFromID");
-	var messageBox = document.getElementById("mailMessageID");
+	var nameBox = document.getElementById("MailNameID");
+	var fromBox = document.getElementById("MailFromID");
+	var messageBox = document.getElementById("MailMessageID");
 
 	emailName = nameBox.value;
 	emailFrom = `<${fromBox.value}>`;
@@ -48,24 +48,24 @@ function sendEmailOnClick( event ) {
 
 
 function meetingsInit( ) {
-  displayCSVFile( "meetingsID" );
+  displayCSVFile( "MeetingsID" );
 
    // DEBUG TESTING for editing meetings.csv table/file
-//  let table = meetingsID.querySelector( "table" );
+//  let table = MeetingsID.querySelector( "table" );
 //  table.contentEditable = true;
 }
 
 
 
 function photoTripsInit( ) {
-  displayCSVFile( "photoTripsID", "Striped" );
+  displayCSVFile( "PhotoTripsID", "Striped" );
 }
 
 
 
 function competitionInit( ) {
-  displayCSVFile( "scanvengerListID", "Striped" );
-  displayCSVFile( "assignedSubjectsID", "Striped" );
+  displayCSVFile( "ScanvengerListID", "Striped" );
+  displayCSVFile( "AssignedSubjectsID", "Striped" );
 }
 
 
@@ -74,7 +74,7 @@ function competitionResultsInit( ) {
   let dates = ""
   let authors = `<option value="**All**">**All Users**</option>`
 
-  for( let filename of scoresFilesID.innerText.split(",") ) { // scores_feb_2024.html, scores_jan_2024.html
+  for( let filename of ScoresFilesID.innerText.split(",") ) { // i.e. scores_Feb_2024.html, scores_Jan_2024.html
     let dateStr = capitalizeWords( filename.trim().slice(7,-5).replace("_", " ") )
     dates += `<option value="${dateStr}">${dateStr}</option>`
   }
@@ -90,52 +90,83 @@ function competitionResultsInit( ) {
   DateSelectionID.addEventListener( "change", event => {
     let filename = `scores/scores_${event.target.value.toLowerCase().replaceAll(" ", "_")}.html`
 
-    displayScores( filename )
+    let author = UserSelectionID.children[UserSelectionID.selectedIndex].value
+    displayScores( filename, author )
   } )
 
 
   UserSelectionID.addEventListener( "change", event => {
     let author = event.target.value
-    if( author == "**All**" ) {
 
-    }
-    else {
-console.log( `DEBUG: competitionResultsInit(): Add code to show ONLY entries for this author "${author}"` )
+console.log( `start: ${UserSelectionID.selectedIndex}: ${event.target.value}` );
 
-      displayScores( filename )
-    }
+    let date = DateSelectionID.children[DateSelectionID.selectedIndex].value
+    let filename = `scores/scores_${date.toLowerCase().replaceAll(" ", "_")}.html`
+    displayScores( filename, author )
+
+console.log( `end: ${UserSelectionID.selectedIndex}: ${event.target.value}` );
   } )
 
 
   let date = DateSelectionID.children[DateSelectionID.selectedIndex].value
-  displayScores( `scores/scores_${date.toLowerCase().replaceAll(" ", "_")}.html` )
+  // let author = AuthorsListID.children[AuthorsListID.selectedIndex].value  // AuthorsListID is in scores .html, which isn't not loaded yet
+  let author = "**ALL**"
+  displayScores( `scores/scores_${date.toLowerCase().replaceAll(" ", "_")}.html`, author )
 }
 
 
 
-function displayScores( filename ) {
+function displayScores( filename, requestedAuthor ) {
+  let authorStillExists = false
+
+  requestedAuthor = requestedAuthor.trim()
 
   fileReadText( "../" + filename, result => {
     if( result.text ) {
       let authorsDomStr = `<option value="**All**">**All Users**</option>`
 
-      competitionResultsID.innerHTML = result.text
+      CompetitionResultsID.innerHTML = result.text
 
+      // Build new Author selection list
+      let prevousUserIndex = -1
+      let index = 1 // Account for "**ALL**" which is not in the AuthorsListID, but is always in the UserSelectionID
       for( let author of JSON.parse(AuthorsListID.innerText) ) {
         let authorStr = author.trim()
         authorsDomStr += `<option value="${authorStr}">${authorStr}</option>`
-console.log( `DEBUG: displayScores(): Add code to show ONLY entries for this author "${author}"` )
+
+        if( requestedAuthor == authorStr ) {
+          authorStillExists = true
+          prevousUserIndex = index
+        }
+
+        ++index
       }
       UserSelectionID.innerHTML = authorsDomStr
 
+      if( authorStillExists && requestedAuthor != "**ALL**" ) {
+        UserSelectionID.selectedIndex = prevousUserIndex
+
+        // Need index of Author header
+        let authorIndex
+        let th = CompetitionResultsID.querySelectorAll("th")
+        for( let next = 0, found = false; next < th.length && !found; next++ ) {
+          found = th[next].innerText == "Author"
+          if( found ) authorIndex = next
+        }
+
+        // Hide authors if needed
+        for( let entry of CompetitionResultsID.querySelectorAll("tbody tr") ) {
+          let authorName = entry.querySelectorAll("td")[authorIndex].innerText
+          if( requestedAuthor != authorName ) entry.classList.add( "Hidden" )
+        }
+      }
     }
-    else competitionResultsID.innerHTML = ""
+    else CompetitionResultsID.innerHTML = ""
   } ) // END fileReadText()
 
 
-
-
-  // competitionResultsID.addEventListener( "click", event => {
+  // Display larger image when click on thumbnail
+  // CompetitionResultsID.addEventListener( "click", event => {
   //   // DEBUG Only hiding the click behind the alt key for testing purposes
   //   if( event.target.tagName == "IMG" && event.altKey ) {
   //     // let id = event.target.src.slice(-12,-4)

@@ -47,12 +47,10 @@
       <h2>Competition Results</h2>
 
       <section>
+        <p>Results from recent camera club competition.</p>
+        <p class="Indent">NOTE: Hover over thumbnail for larger image.<p>
 
-        <p>
-      		Results from recent camera club competition.
-        </p>
-
-        <div class="Container">
+        <div class="Container Box">
           <div id="SelectionAreaID">
             <label for="DateSelectionID">Select Competition Date
               <select id="DateSelectionID">
@@ -63,7 +61,7 @@
               </select>
             </label>
 
-            <label class="Hidden" for="UserSelectionID">Select User
+            <label class="NotHidden" for="UserSelectionID">Select User
               <select id="UserSelectionID">
                 <!--
                   <option value="**All**">**All Users**</option>
@@ -74,11 +72,9 @@
             </label>
           </div>
 
-          <p class="Indent">NOTE: Hover over thumbnail for larger image<p>
-
       	  <!-- Use Javascript to create table from (or insert) the .html file named below -->
-          <div id="scoresFilesID" class="Hidden">scores_feb_2024.html, scores_Jan_2024.html, scores_Sep_2023-Feb_2024.html</div>
-          <div id="competitionResultsID"></div>
+          <div id="ScoresFilesID" class="Hidden">scores_Feb_2024.html, scores_Jan_2024.html, scores_Sep_2023-Feb_2024.html</div>
+          <div id="CompetitionResultsID"></div>
 
 
           <img id="LargeImageID" class="Hidden Float" src="">

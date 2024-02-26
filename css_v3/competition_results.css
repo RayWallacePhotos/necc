@@ -1,8 +1,17 @@
 
 
+section {
+  margin-top: 1rem;
+}
+
 .Container {
   position: relative;
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.Box {
+  border: ridge 4px var(--NECCDarkGreen);
+  border-radius: 0.3rem;
 }
 
 #LargeImageID {
@@ -51,16 +60,8 @@ tr img:hover {
   height: 256px;
 }
 
-#SelectionAreaID {
-  display: grid;
-  /* grid-template-columns: 1fr 1fr; */
-  /* grid-template-columns: repeat( auto-fill, minmax(240px, 1fr) ); */
-  grid-template-columns: repeat( auto-fit, minmax(15em, 1fr) );
-
-  /* No effect */
-  /* justify-content: space-evenly; */
-  /* justify-content: center; */
-  /* justify-content: start; */
+#SelectionAreaID label {
+  margin-left: 2rem;
 }
 
 
