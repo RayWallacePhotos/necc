@@ -1,5 +1,7 @@
 /*      main_v3.css
    Majority of styling goes here
+
+ *   3 Mar 2024 Added Cursor class 
  */
 
 body {
@@ -127,6 +129,10 @@ iframe {
 
 .Hidden, .HideContent {
   display: none;
+}
+
+.Cursor {
+  cursor: pointer;
 }
 
 

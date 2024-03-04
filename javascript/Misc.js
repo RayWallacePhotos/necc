@@ -6,6 +6,9 @@
 //  20 Sep 2022 Created
 //  30 Dec 2022 Added loading="lazy" for <img>'s
 //  21 Feb 2024 Added competitionResultsInit()
+//   3 Mar 2024 Added support for adding event to Google Calendar by clicking on date
+//              by adding addCalendarEntryOnClick() and addCalendarEntry()
+//              Fixed oldDateClass so it is in quotes
 //
 
 
@@ -205,11 +208,13 @@ function photosInit( ) {
 
 function displayCSVFile( elementID, trClasses="" ) {
   let element = document.getElementById( elementID );
+  let tableCaption = "<caption>*Click on a date to add meeting to your Google Calendar if you use it.</caption>"
   let tableRows = "";
   let firstCell = true;
   let firstCellDate = null;
   let lineDate;
   let fistCellInRow;
+  let cursorClass = "";
   let oldDateClass = "";
   let calendar = false; // For now, set this to true IF the firstCell is a valid javascript Date
 
@@ -232,10 +237,11 @@ function displayCSVFile( elementID, trClasses="" ) {
             if( firstCell ) {
               firstCell = false;
               firstCellDate = new Date(cell);
-              if( firstCellDate.toString() != "Invalid Date" ) calendar = true; // Treat this csv file as a calendar
+              if( firstCellDate.toString() != "Invalid Date" )  calendar = true; // Treat this csv file as a calendar
             }
             if( firstCellInRow && calendar && cell ) {
               firstCellInRow = false;
+              cursorClass = "Cursor"
               lineDate = new Date(cell);
               if( lineDate.toString() != "Invalid Date" ) {
                 // Compare dates and change oldDateClass to either "OldDateClass" or ""
@@ -248,17 +254,77 @@ function displayCSVFile( elementID, trClasses="" ) {
                 }
               }
             }
+            else cursorClass = ""
 
-            tableRows += `<td class=${oldDateClass}>${cell}</td>`;
+            tableRows += `<td class="${cursorClass} ${oldDateClass}">${cell}</td>`;
           }
 
           tableRows += `</tr>`;
         }
       }
-      element.innerHTML = `<table>${tableRows}</table>`;
+      element.innerHTML = `<table>${tableCaption}<tbody onclick="addCalendarEntryOnClick(event)">${tableRows}</tbody></table>`;
     }
   });
 }
+
+
+
+function addCalendarEntryOnClick( event ) {
+  let target = event.target
+  let row = event.target.parentElement
+  let date
+  let title = ""
+  let description = ""
+
+  // Ensure we clicked on a date cell
+  if( target.tagName == "TD" && row.children[0] == event.target && row.children[0].innerHTML ) {
+    date = row.children[0].innerText
+    title = row.children[1].innerText
+
+    description += row.children[1].innerText
+
+    let siblingRow = row.nextSibling
+    while( siblingRow && !siblingRow.children[0].innerHTML ) {
+      description += "\n" + siblingRow.children[1].innerText
+
+      siblingRow = siblingRow.nextSibling
+    }
+
+    console.log( date )
+    console.log( description )
+
+    addCalendarEntry( date, title, description )
+  }
+}
+
+
+
+//
+// NOTE: For docs, please see: https://github.com/InteractionDesignFoundation/add-event-to-calendar-docs/blob/main/services/google.md
+//    Timezone:    ctz=America/New_York
+//           Leave off Z suffix if specifying timezone
+//    Date Time:   YYYYMMDDTHHmmSSZ/YYYYMMDDTHHmmSSZ
+//           i.e. 20240310T013000Z/20240310T013000Z
+//           Leave off Z suffix for users timezone. Can also ADD ctz=  to specify timezone
+//    Title:       text=
+//    Description: details=
+//    Location:    location=
+//           A location that Google maps will understand (Lunenburg Walmart, 45 Page Hill Rd Lunenburg MA, etc..)
+//    Website:     sprop=website:www.NewEnglandCameraClub.org
+//           Did NOT do anything
+//
+function addCalendarEntry( date, title, description ) {
+  title        = "Camera Club - " + title
+  let locationName = "College Church basement, 337 Main St Lancaster MA"
+  let startDateTime // YYYYMMDDTHHmmSSZ
+  let endDateTime   // YYYYMMDDTHHmmSSZ
+  startDateTime = new Date(date).toISOString().replace(/[-:\.]/g, "").split("T")[0]+"T19000000"  // 7:00pm
+  endDateTime   = new Date(date).toISOString().replace(/[-:\.]/g, "").split("T")[0]+"T21000000"  // to 9:00pm
+
+  // Encode spaces etc.. and create calendar event
+  window.open( encodeURI(`https://calendar.google.com/calendar/r/eventedit?ctz=America/New_York&text=${title}&location=${locationName}&details=${description}&dates=${startDateTime}/${endDateTime}&sprop=website:www.NewEnglandCameraClub.org`) )
+}
+
 
 
 //
