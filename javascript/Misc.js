@@ -124,9 +124,6 @@ function competitionResultsInit( ) {
 function displayScores( filename, requestedAuthor ) {
   let authorStillExists = false
 
-// DEBUG filename case
-console.log( `filename : ${filename}` );
-
   requestedAuthor = requestedAuthor.trim()
 
   fileReadText( "../" + filename, result => {
@@ -289,9 +286,6 @@ function addCalendarEntryOnClick( event ) {
 
       siblingRow = siblingRow.nextSibling
     }
-
-    console.log( date )
-    console.log( description )
 
     addCalendarEntry( date, title, description )
   }
