@@ -9,6 +9,8 @@
 //   3 Mar 2024 Added support for adding event to Google Calendar by clicking on date
 //              by adding addCalendarEntryOnClick() and addCalendarEntry()
 //              Fixed oldDateClass so it is in quotes
+//   5 Mar 2025 Fixed time in the addCalendarEntry()
+//              Tweaked displayCSVFile() a bit
 //
 
 
@@ -207,37 +209,34 @@ function displayCSVFile( elementID, trClasses="" ) {
   let element = document.getElementById( elementID );
   let tableCaption = "<caption>*Click on a date to add meeting to your Google Calendar if you use it.</caption>"
   let tableRows = "";
-  let firstCell = true;
   let firstCellDate = null;
+  let cellInRowNumber
   let lineDate;
   let fistCellInRow;
   let cursorClass = "";
   let oldDateClass = "";
-  let calendar = false; // For now, set this to true IF the firstCell is a valid javascript Date
+  let calendar = false; // For now, set this to true IF the first cell is a valid javascript Date
 
   fileReadText( element.innerText, textObj => {
     tableRows = "";
 
     if( textObj.text ) {
-      let lines = textObj.text.split( "\n" ); // Get an array of the lines
+      let lines = textObj.text.trim().split( "\n" ); // Get an array of the lines
+
+      // Determine if this csv file is a calendar
+      firstCellDate = new Date(splitCSV(lines[0])[0]);
+      if( firstCellDate.toString() != "Invalid Date" )  calendar = true; // Treat this csv file as a calendar
 
       for( let line of lines ) {
         if( line = line.trim() ) {
           let cells = splitCSV( line ); // Get an array of csv cell data
-          firstCellInRow = true;
+          cellInRowNumber = 0;  // first cell in row
 
           tableRows += `<tr class=${trClasses}>`;
 
           for( let cell of cells ) {
-
             // Bunch of code to handle calendar like csv files, to mark old/past dates with a OldDateClass so css can style them diff
-            if( firstCell ) {
-              firstCell = false;
-              firstCellDate = new Date(cell);
-              if( firstCellDate.toString() != "Invalid Date" )  calendar = true; // Treat this csv file as a calendar
-            }
-            if( firstCellInRow && calendar && cell ) {
-              firstCellInRow = false;
+            if( calendar && cellInRowNumber == 0 && cell ) {
               cursorClass = "Cursor"
               lineDate = new Date(cell);
               if( lineDate.toString() != "Invalid Date" ) {
@@ -254,11 +253,13 @@ function displayCSVFile( elementID, trClasses="" ) {
             else cursorClass = ""
 
             tableRows += `<td class="${cursorClass} ${oldDateClass}">${cell}</td>`;
-          }
+
+            ++cellInRowNumber;
+          } // END for( cells )
 
           tableRows += `</tr>`;
-        }
-      }
+        } // END if( line )
+      } // END for( lines )
       element.innerHTML = `<table>${tableCaption}<tbody onclick="addCalendarEntryOnClick(event)">${tableRows}</tbody></table>`;
     }
   });
@@ -270,6 +271,7 @@ function addCalendarEntryOnClick( event ) {
   let target = event.target
   let row = event.target.parentElement
   let date
+  let time = ""
   let title = ""
   let description = ""
 
@@ -281,13 +283,23 @@ function addCalendarEntryOnClick( event ) {
     description += row.children[1].innerText
 
     let siblingRow = row.nextSibling
+
+    // Get the time from the second row
+    let timePieces = siblingRow.children[1].innerText.split( " " )  // e.g. 7:30 PM
+    let amPm = timePieces.length < 2 ? "" : timePieces[1].trim().toUpperCase()
+    let startHour  = (parseInt(timePieces[0].split(":")[0]) + (amPm == "PM" ? 12 : 0)).toString().padStart(2,"0")
+    let endHour  = (parseInt(timePieces[0].split(":")[0]) + (amPm == "PM" ? 12 : 0) + 2).toString().padStart(2,"0")
+    let minutes = parseInt(timePieces[0].split(":")[1]).toString().padStart(2,"0")
+    let startTime = `${startHour}${minutes}00000`
+    let endTime   = `${endHour}${minutes}00000`
+
     while( siblingRow && !siblingRow.children[0].innerHTML ) {
       description += "\n" + siblingRow.children[1].innerText
 
       siblingRow = siblingRow.nextSibling
     }
 
-    addCalendarEntry( date, title, description )
+    addCalendarEntry( date, startTime, endTime, title, description )
   }
 }
 
@@ -307,13 +319,13 @@ function addCalendarEntryOnClick( event ) {
 //    Website:     sprop=website:www.NewEnglandCameraClub.org
 //           Did NOT do anything
 //
-function addCalendarEntry( date, title, description ) {
+function addCalendarEntry( date, startTime, endTime, title, description ) {
   title        = "Camera Club - " + title
   let locationName = "College Church basement, 337 Main St Lancaster MA"
   let startDateTime // YYYYMMDDTHHmmSSZ
   let endDateTime   // YYYYMMDDTHHmmSSZ
-  startDateTime = new Date(date).toISOString().replace(/[-:\.]/g, "").split("T")[0]+"T19000000"  // 7:00pm
-  endDateTime   = new Date(date).toISOString().replace(/[-:\.]/g, "").split("T")[0]+"T21000000"  // to 9:00pm
+  startDateTime = new Date(date).toISOString().replace(/[-:\.]/g, "").split("T")[0]+`T${startTime}`  // 19000000   7:00pm
+  endDateTime   = new Date(date).toISOString().replace(/[-:\.]/g, "").split("T")[0]+`T${endTime}`  // to 21000000  9:00pm
 
   // Encode spaces etc.. and create calendar event
   window.open( encodeURI(`https://calendar.google.com/calendar/r/eventedit?ctz=America/New_York&text=${title}&location=${locationName}&details=${description}&dates=${startDateTime}/${endDateTime}&sprop=website:www.NewEnglandCameraClub.org`) )

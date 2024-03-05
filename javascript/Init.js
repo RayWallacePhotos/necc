@@ -6,12 +6,14 @@
 //  15 Sep 2022 Created
 //  21 Feb 2024 Added CompetitionResults
 //              V1.3
-//   3 Feb 2024 Added Google Calendar support
+//   3 Mar 2024 Added Google Calendar support
 //              V1.4
+//   5 Mar 2024 Tweaked calendar code a bit
+//              V1.5
 //
 
 
-const Version = "V1.4";
+const Version = "V1.5";
 const FirstYear = "2018";
 
 const MenuEntries = [
