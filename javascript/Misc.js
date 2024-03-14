@@ -11,6 +11,7 @@
 //              Fixed oldDateClass so it is in quotes
 //   5 Mar 2025 Fixed time in the addCalendarEntry()
 //              Tweaked displayCSVFile() a bit
+//  14 Mar 2024 "Final" fix for OldDateClass
 //
 
 
@@ -239,9 +240,10 @@ function displayCSVFile( elementID, trClasses="" ) {
             if( calendar && cellInRowNumber == 0 && cell ) {
               cursorClass = "Cursor"
               lineDate = new Date(cell);
+              lineDate.setHours(21)  // Fix for OldDateClass - Edited on 14 Mar 2024
               if( lineDate.toString() != "Invalid Date" ) {
                 // Compare dates and change oldDateClass to either "OldDateClass" or ""
-                if( lineDate.getTime() <= Date.now() ) {
+                if( lineDate.getTime() < Date.now() ) {  // Fix for OldDateClass - Changed from <= on 14 Mar 2024
 
                   oldDateClass = "OldDateClass";
                 }
