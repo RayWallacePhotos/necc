@@ -12,6 +12,8 @@
 //   5 Mar 2025 Fixed time in the addCalendarEntry()
 //              Tweaked displayCSVFile() a bit
 //  14 Mar 2024 "Final" fix for OldDateClass
+//  17 Mar 2024 Modifed competitionResultsInit() and displayScores() to handle new FirstPlaceOnlyID checkbox
+//              Reworked displayScores() to improve performance for displaying/re-displaying the scores table
 //
 
 
@@ -88,14 +90,13 @@ function competitionResultsInit( ) {
 
   UserSelectionID.innerHTML = authors
 
+
   LargeImageID.addEventListener( "click", event => {
     LargeImageID.classList.add( "Hidden" );
   })
 
 
   DateSelectionID.addEventListener( "change", event => {
-  // DEBUG
-    // let filename = `scores/scores_${event.target.value.toLowerCase().replaceAll(" ", "_")}.html`
     let filename = `scores/scores_${event.target.value.replaceAll(" ", "_")}.html`
 
     let author = UserSelectionID.children[UserSelectionID.selectedIndex].value
@@ -107,9 +108,17 @@ function competitionResultsInit( ) {
     let author = event.target.value
 
     let date = DateSelectionID.children[DateSelectionID.selectedIndex].value
-  // DEBUG
-    // let filename = `scores/scores_${date.toLowerCase().replaceAll(" ", "_")}.html`
     let filename = `scores/scores_${date.replaceAll(" ", "_")}.html`
+    displayScores( filename, author )
+  } )
+
+
+  FirstPlaceOnlyID.addEventListener( "change", event => {
+    let date = DateSelectionID.children[DateSelectionID.selectedIndex].value
+    let filename = `scores/scores_${date.replaceAll(" ", "_")}.html`
+    let author = UserSelectionID.children[UserSelectionID.selectedIndex].value
+    // let author = "**ALL**"
+
     displayScores( filename, author )
   } )
 
@@ -117,28 +126,50 @@ function competitionResultsInit( ) {
   let date = DateSelectionID.children[DateSelectionID.selectedIndex].value
   // let author = AuthorsListID.children[AuthorsListID.selectedIndex].value  // AuthorsListID is in scores .html, which isn't not loaded yet
   let author = "**ALL**"
-// DEBUG
-  // displayScores( `scores/scores_${date.toLowerCase().replaceAll(" ", "_")}.html`, author )
   displayScores( `scores/scores_${date.replaceAll(" ", "_")}.html`, author )
 }
 
 
 
 function displayScores( filename, requestedAuthor ) {
+  let tempDom = document.createElement( "div" )
+  let awardIndex  = -1  // Not set yet
+  let authorIndex = -1  // ..
   let authorStillExists = false
 
   requestedAuthor = requestedAuthor.trim()
+  tempDom.innerHTML = ""
 
   fileReadText( "../" + filename, result => {
     if( result.text ) {
       let authorsDomStr = `<option value="**All**">**All Users**</option>`
 
-      CompetitionResultsID.innerHTML = result.text
+
+      // DEBUG Even more performance improvement would be to hand BOTH Award and Author Hidden class adding in ONE loop
+
+      // Improve performance by working on sort of a shadow DOM when adding "Hidden" class and then moving it to the real DOM
+      tempDom.innerHTML = result.text
+
+      // Need indexes of Award and Author headers
+      let th = tempDom.querySelectorAll("th")
+      for( let next = 0, found = false; next < th.length; next++ ) {
+        if( th[next].innerText == "Award" )   awardIndex = next
+        else if( th[next].innerText == "Author" )  authorIndex = next
+      }
+
+      // Hide non-First place if requested
+      if( FirstPlaceOnlyID.checked ) {
+        for( let entry of tempDom.querySelectorAll("tbody tr") ) {
+          let awardName = entry.querySelectorAll("td")[awardIndex].innerText
+          if( "First" != awardName ) entry.classList.add( "Hidden" )
+        }
+      }
 
       // Build new Author selection list
       let prevousUserIndex = -1
       let index = 1 // Account for "**ALL**" which is not in the AuthorsListID, but is always in the UserSelectionID
-      for( let author of JSON.parse(AuthorsListID.innerText) ) {
+      let authorsListID = tempDom.querySelector( "#AuthorsListID" )
+      for( let author of JSON.parse(authorsListID.innerText) ) {
         let authorStr = author.trim()
         authorsDomStr += `<option value="${authorStr}">${authorStr}</option>`
 
@@ -154,22 +185,14 @@ function displayScores( filename, requestedAuthor ) {
       if( authorStillExists && requestedAuthor != "**ALL**" ) {
         UserSelectionID.selectedIndex = prevousUserIndex
 
-        // Need index of Author header
-        let authorIndex
-        let th = CompetitionResultsID.querySelectorAll("th")
-        for( let next = 0, found = false; next < th.length && !found; next++ ) {
-          found = th[next].innerText == "Author"
-          if( found ) authorIndex = next
-        }
-
         // Hide authors if needed
-        for( let entry of CompetitionResultsID.querySelectorAll("tbody tr") ) {
+        for( let entry of tempDom.querySelectorAll("tbody tr") ) {
           let authorName = entry.querySelectorAll("td")[authorIndex].innerText
           if( requestedAuthor != authorName ) entry.classList.add( "Hidden" )
         }
       }
-    }
-    else CompetitionResultsID.innerHTML = ""
+    } // END if(result)
+    CompetitionResultsID.innerHTML = tempDom.innerHTML
   } ) // END fileReadText()
 
 

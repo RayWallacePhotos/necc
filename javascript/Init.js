@@ -10,11 +10,17 @@
 //              V1.4
 //   5 Mar 2024 Tweaked calendar code a bit
 //              V1.5
+// 17 Mar 2024  Modifed CompetitionResults.html and Misc.js to handle new FirstPlaceOnlyID checkbox
+//              Improved performance in displayScores()
+//              V1.6
 //
 
 
-const Version = "V1.5";
+
+const Version = "V1.6";
 const FirstYear = "2018";
+
+
 
 const MenuEntries = [
         {url:"index.html", button:"Home", init:null},
