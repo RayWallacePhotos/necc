@@ -14,12 +14,6 @@ section {
   border-radius: 0.3rem;
 }
 
-#LargeImageID {
-  border: 2px solid purple;
-  width: 512px;
-  height: 512px;
-}
-
 .Float {
   display: inline;
   position: absolute;

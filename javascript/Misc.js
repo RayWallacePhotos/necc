@@ -14,6 +14,7 @@
 //  14 Mar 2024 "Final" fix for OldDateClass
 //  17 Mar 2024 Modifed competitionResultsInit() and displayScores() to handle new FirstPlaceOnlyID checkbox
 //              Reworked displayScores() to improve performance for displaying/re-displaying the scores table
+//              Some rework/simplifying code in displayScores()
 //
 
 
@@ -91,11 +92,6 @@ function competitionResultsInit( ) {
   UserSelectionID.innerHTML = authors
 
 
-  LargeImageID.addEventListener( "click", event => {
-    LargeImageID.classList.add( "Hidden" );
-  })
-
-
   DateSelectionID.addEventListener( "change", event => {
     let filename = `scores/scores_${event.target.value.replaceAll(" ", "_")}.html`
 
@@ -137,7 +133,6 @@ function displayScores( filename, requestedAuthor ) {
   let authorIndex = -1  // ..
   let authorStillExists = false
 
-  requestedAuthor = requestedAuthor.trim()
   tempDom.innerHTML = ""
 
   fileReadText( "../" + filename, result => {
@@ -157,23 +152,14 @@ function displayScores( filename, requestedAuthor ) {
         else if( th[next].innerText == "Author" )  authorIndex = next
       }
 
-      // Hide non-First place if requested
-      if( FirstPlaceOnlyID.checked ) {
-        for( let entry of tempDom.querySelectorAll("tbody tr") ) {
-          let awardName = entry.querySelectorAll("td")[awardIndex].innerText
-          if( "First" != awardName ) entry.classList.add( "Hidden" )
-        }
-      }
-
       // Build new Author selection list
       let prevousUserIndex = -1
       let index = 1 // Account for "**ALL**" which is not in the AuthorsListID, but is always in the UserSelectionID
-      let authorsListID = tempDom.querySelector( "#AuthorsListID" )
-      for( let author of JSON.parse(authorsListID.innerText) ) {
-        let authorStr = author.trim()
-        authorsDomStr += `<option value="${authorStr}">${authorStr}</option>`
+      let authorsList = tempDom.querySelector( "#AuthorsListID" ).innerText
+      for( let author of JSON.parse(authorsList) ) {
+        authorsDomStr += `<option value="${author}">${author}</option>`
 
-        if( requestedAuthor == authorStr ) {
+        if( requestedAuthor == author ) {
           authorStillExists = true
           prevousUserIndex = index
         }
@@ -182,31 +168,26 @@ function displayScores( filename, requestedAuthor ) {
       }
       UserSelectionID.innerHTML = authorsDomStr
 
-      if( authorStillExists && requestedAuthor != "**ALL**" ) {
-        UserSelectionID.selectedIndex = prevousUserIndex
+      if( authorStillExists )  UserSelectionID.selectedIndex = prevousUserIndex
 
-        // Hide authors if needed
+      if( authorStillExists || FirstPlaceOnlyID.checked ) {
         for( let entry of tempDom.querySelectorAll("tbody tr") ) {
-          let authorName = entry.querySelectorAll("td")[authorIndex].innerText
-          if( requestedAuthor != authorName ) entry.classList.add( "Hidden" )
+          let cells = entry.querySelectorAll("td")
+
+          // Hide authors if needed
+          if( authorStillExists ) {
+            if( requestedAuthor != cells[authorIndex].innerText ) entry.classList.add( "Hidden" )
+          }
+
+          // Hide non-First place if requested
+          if( FirstPlaceOnlyID.checked ) {
+            if( "First" != cells[awardIndex].innerText ) entry.classList.add( "Hidden" )
+          }
         }
       }
     } // END if(result)
     CompetitionResultsID.innerHTML = tempDom.innerHTML
   } ) // END fileReadText()
-
-
-  // Display larger image when click on thumbnail
-  // CompetitionResultsID.addEventListener( "click", event => {
-  //   // DEBUG Only hiding the click behind the alt key for testing purposes
-  //   if( event.target.tagName == "IMG" && event.altKey ) {
-  //     // let id = event.target.src.slice(-12,-4)
-  //     let bigImgPath = event.target.src.replace( "/scores_thumbnails_", "/scores_big_images_" )
-  //
-  //     LargeImageID.classList.remove( "Hidden" );
-  //     LargeImageID.src = bigImgPath
-  //   } // END if tagName
-  // } ) // END addEventListener()
 }
 
 

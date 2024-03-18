@@ -13,11 +13,13 @@
 // 17 Mar 2024  Modifed CompetitionResults.html and Misc.js to handle new FirstPlaceOnlyID checkbox
 //              Improved performance in displayScores()
 //              V1.6
+//              Reworkd displayScores() some more
+//              V1.7
 //
 
 
 
-const Version = "V1.6";
+const Version = "V1.7";
 const FirstYear = "2018";
 
 
