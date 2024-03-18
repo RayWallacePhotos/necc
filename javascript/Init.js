@@ -15,11 +15,13 @@
 //              V1.6
 //              Reworkd displayScores() some more
 //              V1.7
+// 18 Mar 2024  Added First place icon and cursor for inputs
+//              V1.8
 //
 
 
 
-const Version = "V1.7";
+const Version = "V1.8";
 const FirstYear = "2018";
 
 

@@ -58,6 +58,10 @@ tr img:hover {
   margin-left: 2rem;
 }
 
+select:hover, input:hover, input + img:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 3px var(--NECCYellow);
+}
 
 
 
