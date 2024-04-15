@@ -17,11 +17,13 @@
 //              V1.7
 // 18 Mar 2024  Added First place icon and cursor for inputs
 //              V1.8
+// 15 Apr 2024  Replaced Files.js v1.7 with latest files.js v1.17
+//              V1.9
 //
 
 
 
-const Version = "V1.8";
+const Version = "V1.9";
 const FirstYear = "2018";
 
 

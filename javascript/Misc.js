@@ -15,6 +15,7 @@
 //  17 Mar 2024 Modifed competitionResultsInit() and displayScores() to handle new FirstPlaceOnlyID checkbox
 //              Reworked displayScores() to improve performance for displaying/re-displaying the scores table
 //              Some rework/simplifying code in displayScores()
+//  15 Apr 2024 Changed competitionResultsInit() to read filenames from  .json instead of mbedded in CompetitionResults.html
 //
 
 
@@ -83,46 +84,51 @@ function competitionResultsInit( ) {
   let dates = ""
   let authors = `<option value="**All**">**All Users**</option>`
 
-  for( let filename of ScoresFilesID.innerText.split(",") ) { // i.e. scores_Feb_2024.html, scores_Jan_2024.html
-    let dateStr = capitalizeWords( filename.trim().slice(7,-5).replace("_", " ") )
-    dates += `<option value="${dateStr}">${dateStr}</option>`
-  }
-  DateSelectionID.innerHTML = dates
+  fileReadJson( "CompetitionResults.json", result => {
+    if( result.jsonObj ) {
+      for( let filename of result.jsonObj ) { // i.e. scores_Feb_2024.html, scores_Jan_2024.html
+        let dateStr = capitalizeWords( filename.trim().slice(7,-5).replace("_", " ") )
+        dates += `<option value="${dateStr}">${dateStr}</option>`
+      }
+    }
 
-  UserSelectionID.innerHTML = authors
+    DateSelectionID.innerHTML = dates
 
-
-  DateSelectionID.addEventListener( "change", event => {
-    let filename = `scores/scores_${event.target.value.replaceAll(" ", "_")}.html`
-
-    let author = UserSelectionID.children[UserSelectionID.selectedIndex].value
-    displayScores( filename, author )
-  } )
+    UserSelectionID.innerHTML = authors
 
 
-  UserSelectionID.addEventListener( "change", event => {
-    let author = event.target.value
+    DateSelectionID.addEventListener( "change", event => {
+      let filename = `scores/scores_${event.target.value.replaceAll(" ", "_")}.html`
+
+      let author = UserSelectionID.children[UserSelectionID.selectedIndex].value
+      displayScores( filename, author )
+    } )
+
+
+    UserSelectionID.addEventListener( "change", event => {
+      let author = event.target.value
+
+      let date = DateSelectionID.children[DateSelectionID.selectedIndex].value
+      let filename = `scores/scores_${date.replaceAll(" ", "_")}.html`
+      displayScores( filename, author )
+    } )
+
+
+    FirstPlaceOnlyID.addEventListener( "change", event => {
+      let date = DateSelectionID.children[DateSelectionID.selectedIndex].value
+      let filename = `scores/scores_${date.replaceAll(" ", "_")}.html`
+      let author = UserSelectionID.children[UserSelectionID.selectedIndex].value
+      // let author = "**ALL**"
+
+      displayScores( filename, author )
+    } )
+
 
     let date = DateSelectionID.children[DateSelectionID.selectedIndex].value
-    let filename = `scores/scores_${date.replaceAll(" ", "_")}.html`
-    displayScores( filename, author )
-  } )
-
-
-  FirstPlaceOnlyID.addEventListener( "change", event => {
-    let date = DateSelectionID.children[DateSelectionID.selectedIndex].value
-    let filename = `scores/scores_${date.replaceAll(" ", "_")}.html`
-    let author = UserSelectionID.children[UserSelectionID.selectedIndex].value
-    // let author = "**ALL**"
-
-    displayScores( filename, author )
-  } )
-
-
-  let date = DateSelectionID.children[DateSelectionID.selectedIndex].value
-  // let author = AuthorsListID.children[AuthorsListID.selectedIndex].value  // AuthorsListID is in scores .html, which isn't not loaded yet
-  let author = "**ALL**"
-  displayScores( `scores/scores_${date.replaceAll(" ", "_")}.html`, author )
+    // let author = AuthorsListID.children[AuthorsListID.selectedIndex].value  // AuthorsListID is in scores .html, which isn't not loaded yet
+    let author = "**ALL**"
+    displayScores( `scores/scores_${date.replaceAll(" ", "_")}.html`, author )
+  } ) // END fileReadJson()
 }
 
 
