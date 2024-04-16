@@ -16,6 +16,7 @@
 //              Reworked displayScores() to improve performance for displaying/re-displaying the scores table
 //              Some rework/simplifying code in displayScores()
 //  15 Apr 2024 Changed competitionResultsInit() to read filenames from  .json instead of mbedded in CompetitionResults.html
+//  15 Apr 2024 Fixed competitionResultsInit() so the "_" replacement is global replace
 //
 
 
@@ -87,7 +88,7 @@ function competitionResultsInit( ) {
   fileReadJson( "CompetitionResults.json", result => {
     if( result.jsonObj ) {
       for( let filename of result.jsonObj ) { // i.e. scores_Feb_2024.html, scores_Jan_2024.html
-        let dateStr = capitalizeWords( filename.trim().slice(7,-5).replace("_", " ") )
+        let dateStr = capitalizeWords( filename.trim().slice(7,-5).replace(/_/g, " ").replace(/-/g, " - ") )
         dates += `<option value="${dateStr}">${dateStr}</option>`
       }
     }
