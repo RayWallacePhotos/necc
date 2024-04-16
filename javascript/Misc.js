@@ -88,7 +88,7 @@ function competitionResultsInit( ) {
   fileReadJson( "CompetitionResults.json", result => {
     if( result.jsonObj ) {
       for( let filename of result.jsonObj ) { // i.e. scores_Feb_2024.html, scores_Jan_2024.html
-        let dateStr = capitalizeWords( filename.trim().slice(7,-5).replace(/_/g, " ").replace(/-/g, " - ") )
+        let dateStr = capitalizeWords( filename.trim().slice(7,-5).replace(/_/g, " ") )
         dates += `<option value="${dateStr}">${dateStr}</option>`
       }
     }
