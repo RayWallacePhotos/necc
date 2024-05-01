@@ -217,6 +217,12 @@ function photosInit( ) {
 }
 
 
+//
+// For a csv spec/RFC see:
+//  https://datatracker.ietf.org/doc/html/rfc4180
+// ---OR---
+//  https://www.ietf.org/rfc/rfc4180.txt
+//
 function displayCSVFile( elementID, trClasses="" ) {
   let element = document.getElementById( elementID );
   let tableCaption = "<caption>*Click on a date to add meeting to your Google Calendar if you use it.</caption>"
