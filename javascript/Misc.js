@@ -17,6 +17,7 @@
 //              Some rework/simplifying code in displayScores()
 //  15 Apr 2024 Changed competitionResultsInit() to read filenames from  .json instead of mbedded in CompetitionResults.html
 //  15 Apr 2024 Fixed competitionResultsInit() so the "_" replacement is global replace
+//  13 May 2024 Fixed displayCSVFile() to only show Google Calendar caption IF the table is a calendar
 //
 
 
@@ -225,6 +226,7 @@ function photosInit( ) {
 //
 function displayCSVFile( elementID, trClasses="" ) {
   let element = document.getElementById( elementID );
+  // Fixed displayCSVFile() to only show Google Calendar caption IF the table is a calendar
   let tableCaption = "<caption>*Click on a date to add meeting to your Google Calendar if you use it.</caption>"
   let tableRows = "";
   let firstCellDate = null;
@@ -279,7 +281,7 @@ function displayCSVFile( elementID, trClasses="" ) {
           tableRows += `</tr>`;
         } // END if( line )
       } // END for( lines )
-      element.innerHTML = `<table>${tableCaption}<tbody onclick="addCalendarEntryOnClick(event)">${tableRows}</tbody></table>`;
+      element.innerHTML = `<table>${calendar?tableCaption:""}<tbody onclick="addCalendarEntryOnClick(event)">${tableRows}</tbody></table>`;
     }
   });
 }
