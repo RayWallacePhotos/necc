@@ -127,7 +127,7 @@ function competitionResultsInit( ) {
 
 
     let date = DateSelectionID.children[DateSelectionID.selectedIndex].value
-    // let author = AuthorsListID.children[AuthorsListID.selectedIndex].value  // AuthorsListID is in scores .html, which isn't not loaded yet
+    // let author = AuthorsListID.children[AuthorsListID.selectedIndex].value  // AuthorsListID is in scores .html, which isn't loaded yet
     let author = "**ALL**"
     displayScores( `scores/scores_${date.replaceAll(" ", "_")}.html`, author )
   } ) // END fileReadJson()

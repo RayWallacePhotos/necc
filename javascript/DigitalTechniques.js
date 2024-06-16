@@ -3,7 +3,8 @@
 //
 //        Misc Helper Classes and functions
 //
-//  27 Sep 2022 	Created
+//  27 Sep 2022  Created
+//  15 Jun 2024  Changed to using <details> and replaced rollUpDownOnClick() with rollUpDownOnToggle()
 //
 
 
@@ -21,34 +22,29 @@ function digitalTechniquesInit(  ) {
       let fileNames = textObj.text.split("\n");
 
       for( let fileName of fileNames ) {
-        elementHtml += `<div class="RollUpDown">`;
-        elementHtml += `  <div class="Title" onclick="rollUpDownOnClick(event)" oncontextmenu="rollUpDownOnContext(event)">${fileName}</div>`;
+        elementHtml += `<details class="RollUpDown"  ontoggle="rollUpDownOnToggle(event)">`;
+        elementHtml += `  <summary class="Title" oncontextmenu="rollUpDownOnContext(event)">${fileName}</summary>`;
         elementHtml += `  <div class="Content">`;
 
         if( extension(fileName) == ".pdf" ) {
           elementHtml += `    <object type="application/pdf" data="${dir}${fileName}"> </object>`;
         }
-        if( extension(fileName) == ".txt" ) {
+        else if( extension(fileName) == ".txt" ) {
           elementHtml += `    <object type="text/plain" data="${dir}${fileName}"> </object>`;
         }
-        if( extension(fileName) == ".html" ) {
+        else if( extension(fileName) == ".html" ) {
           elementHtml += `    <object type="text/html" data="${dir}${fileName}"> </object>`;
         }
 
         elementHtml += `  </div>`;
-        elementHtml += `</div>`;
-
-
-        // fileReadText( `$digital_techniques/${htmlFile}`, textObj => {
-        //   if( textObj.text ) {
-        //   }
-        // } );
+        elementHtml += `</details>`;
       }
 
       container.innerHTML = elementHtml;
     }
   } );
 }
+
 
 
 function extension( fileName ) {
@@ -60,24 +56,28 @@ function extension( fileName ) {
 }
 
 
-function rollUpDownOnClick( event ) {
-  console.log( `event.button : ${event.button}` );
-  if( RolledDownElement ) {
-    // Roll up the previuosly rolled down element (if there was one)
-    RolledDownElement.parentElement.classList.remove( "RollDown" );
 
-  }
-  if( RolledDownElement == event.target ) {
-    // No Element rolled down now, since we just rolled up the element clicked on
-    RolledDownElement = null;
-  }
-  else if( RolledDownElement != event.target ) {
-    // Roll it down and save it
-    event.target.parentElement.classList.add( "RollDown" );
-    event.target.parentElement.scrollIntoView(true); // true = will be aligned to the top of the visible area of the scrollable ancestor.
+function rollUpDownOnToggle( event ) {
+  if( event.target.open ) {
+    if( RolledDownElement ) {
+      RolledDownElement.classList.remove( "RollDown" );
+      RolledDownElement.removeAttribute("open");
+    }
+
+    event.target.classList.add( "RollDown" );
+
     RolledDownElement = event.target;
+
+    event.target.scrollIntoView(true); // true = will be aligned to the top of the visible area of the scrollable ancestor
+  }
+  else {
+    event.target.classList.remove( "RollDown" );
+
+    // Only clear if we just closed the last one open
+    if( RolledDownElement && RolledDownElement == event.target ) RolledDownElement = null;
   }
 }
+
 
 
 function rollUpDownOnContext( event ) {
@@ -93,18 +93,6 @@ function rollUpDownOnContext( event ) {
     console.log( `Clipboard is only available with https:// OR localhost` );
   }
 }
-
-
-function showDigitalTechniques( ) {
-
-
-}
-
-
-
-
-
-
 
 
 

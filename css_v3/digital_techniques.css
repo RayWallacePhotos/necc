@@ -19,9 +19,6 @@
   height: min-content; /* Will shrink to height of .Title when we shrink the .Content  */
 }
 
-.RollUpDown.RollDown {
-}
-
 .RollUpDown .Title {
   /* box-shadow: 4px 4px 2px var(--NECCDarkGreen), -2px -2px 2px var(--NECCGreen); */
   border-radius: 4px;
@@ -31,25 +28,22 @@
 
   cursor: pointer;
 }
-.RollUpDown .Title::before {
-/*  content: "\25bc"; /* DOWN ARROW. The html escape chars do NOT work here &dArr; or &#8595; */
-/*  content: " \21af \21b0 \21b1 \21b2 <-  \21b3 \21b4 \21b5 \21b6 --  \21b7 \21b8 \21b9 \21ba  ->  \21bc \21bd \21be \21bf"; */
+details summary {
+  /* Change the details arrow icon */
+  list-style-type: "\21b4  "; /* DOWN ARROW and some spacing. The html escape chars do NOT work here &dArr; or &#8595; */
+}
+details[open] summary {
+  /* Change the details arrow icon */
+  list-style-type: "\2612  "; /* [X] and some spacing. The html escape chars do NOT work here &dArr; or &#8595; */
+}
+.xxxRollUpDown .Title::before {
   content: "\21b4"; /* DOWN ARROW. The html escape chars do NOT work here &dArr; or &#8595; */
   font-weight: bolder;
   font-size: 1.8em; /* Only needed if we use "\21b4" */
   line-height: 0.2em; /* Only needed for 1.8em -size */
   margin-right: 4px;
 }
-.RollUpDown.RollDown .Title::before {
-  /* DOWN ARROW. The html escape chars do NOT work here &dArr; or &#8595; */
-  /* Arrows (triangles),
-   * Down Solid \25bc, Down Hollow \25bd
-   * Left Solid \25c0, Left Hollow \25c1
-   * Right Solid \25b7, Right Hollow \25b6
-   * Up Solid \25b3, Up Hollow \25b2
-   */
-  /* content: " \21af \21b0 \21b1 \21b2 <-  \21b3 \21b4 \21b5 \21b6 --  \21b7 \21b8 \21b9 \21ba  ->  \21bc \21bd \21be \21bf";  font-weight: bolder; */
-/*  content: "\25b3"; /* UP ARROW. The html escape chars do NOT work here &dArr; or &#8595; */
+.xxxRollUpDown.RollDown .Title::before {
   content: "\2612"; /* [X]. The html escape chars do NOT work here &dArr; or &#8595; */
 }
 .RollUpDown .Title:hover {
@@ -57,8 +51,9 @@
 }
 
 .RollUpDown .Content {
+  min-height: 680px;
+  /* Need a height in order for min-height to do anything */
   height: 0px;
-  opacity: 0;
   transition: opacity 0.75s ease-in-out, height 0.75s ease-in-out;
 
   /* Override other css .Content styles */
@@ -66,13 +61,6 @@
   overflow: hidden;
   margin: 0px 0px;
   padding: 0px 0px;
-}
-.RollUpDown.RollDown .Content {
-  min-height: 680px;
-
-  opacity: 1;
-
-  transition: opacity 0.75s ease-in-out, height 0.75s ease-in-out;
 }
 
 .RollUpDown object {

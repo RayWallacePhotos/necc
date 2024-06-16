@@ -15,7 +15,7 @@ Duplicate layer
 
 Select the main object
 	Select the magnetic lasso (or your favorite selection method)
-	Use the selction tool to trace a selection around the main image
+	Use the selection tool to trace a selection around the main image
 
 Invert selection
 	On select menu click "Inverse"
@@ -25,8 +25,8 @@ Create layer mask
 
 Blur this duplicate layer
 	Click on the layer icon to select it instead of the mask
-	On Filter menu select "Blur" and click "Guasian Blur"
-	Adjust Radius until the background is blury, but still
+	On Filter menu select "Blur" and click "Gaussian Blur"
+	Adjust Radius until the background is blurry, but still
 	distinguishable
 
 Reselect previous selection
@@ -41,8 +41,8 @@ Create Hue/Saturation adjustment layer
 
 Blur the mask edges
 	Ensure the mask is still selected by clicking on it's icon
-	On Filter menu select "Blur" and click "Guasian Blur"
-	Adjust Radius until the mask edge is a little blury
+	On Filter menu select "Blur" and click "Gaussian Blur"
+	Adjust Radius until the mask edge is a little blurry
 
 Adjust mask edges
 	Select a large soft brush
@@ -70,5 +70,3 @@ Resize for competition
 
 Save as
 	Save the resized image as a .jpeg
-
-
