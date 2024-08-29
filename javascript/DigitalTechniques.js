@@ -5,6 +5,7 @@
 //
 //  27 Sep 2022  Created
 //  15 Jun 2024  Changed to using <details> and replaced rollUpDownOnClick() with rollUpDownOnToggle()
+//               Removed the no longer need the css class RollDown from here and the .css file
 //
 
 
@@ -20,7 +21,6 @@ function digitalTechniquesInit(  ) {
   fileReadText( `digital_techniques.txt`, textObj => {
     if( textObj.text ) {
       let fileNames = textObj.text.split("\n");
-
       for( let fileName of fileNames ) {
         elementHtml += `<details class="RollUpDown"  ontoggle="rollUpDownOnToggle(event)">`;
         elementHtml += `  <summary class="Title" oncontextmenu="rollUpDownOnContext(event)">${fileName}</summary>`;
@@ -60,20 +60,15 @@ function extension( fileName ) {
 function rollUpDownOnToggle( event ) {
   if( event.target.open ) {
     if( RolledDownElement ) {
-      RolledDownElement.classList.remove( "RollDown" );
       RolledDownElement.removeAttribute("open");
     }
-
-    event.target.classList.add( "RollDown" );
 
     RolledDownElement = event.target;
 
     event.target.scrollIntoView(true); // true = will be aligned to the top of the visible area of the scrollable ancestor
   }
   else {
-    event.target.classList.remove( "RollDown" );
-
-    // Only clear if we just closed the last one open
+    // Only null if we just closed the last one open
     if( RolledDownElement && RolledDownElement == event.target ) RolledDownElement = null;
   }
 }
