@@ -33,7 +33,7 @@ function digitalTechniquesInit(  ) {
           elementHtml += `    <object type="text/plain" data="${dir}${fileName}"> </object>`;
         }
         else if( extension(fileName) == ".html" ) {
-          elementHtml += `    <object type="text/html" data="${dir}${fileName}"> </object>`;
+          elementHtml += `    <object  type="text/html" data="${dir}${fileName}"> </object>`;
         }
 
         elementHtml += `  </div>`;
