@@ -19,11 +19,13 @@
 //              V1.8
 // 15 Apr 2024  Replaced Files.js v1.7 with latest files.js v1.17
 //              V1.9
+//  7 Nov 2024  Fixed an issue in Misc.js addCalendarEntryOnClick() with some entries in the MeetingsList.csv
+//              V2.0
 //
 
 
 
-const Version = "V1.9";
+const Version = "V2.0";
 const FirstYear = "2018";
 
 

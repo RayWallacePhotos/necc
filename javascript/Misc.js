@@ -18,6 +18,7 @@
 //  15 Apr 2024 Changed competitionResultsInit() to read filenames from  .json instead of mbedded in CompetitionResults.html
 //  15 Apr 2024 Fixed competitionResultsInit() so the "_" replacement is global replace
 //  13 May 2024 Fixed displayCSVFile() to only show Google Calendar caption IF the table is a calendar
+//  7 Nov 2024  Fixed an issue in addCalendarEntryOnClick() with some entries in the MeetingsList.csv
 //
 
 
@@ -314,7 +315,7 @@ function addCalendarEntryOnClick( event ) {
     let startTime = `${startHour}${minutes}00000`
     let endTime   = `${endHour}${minutes}00000`
 
-    while( siblingRow && !siblingRow.children[0].innerHTML ) {
+    while( siblingRow && siblingRow.children.length > 1 && !siblingRow.children[0].innerHTML ) {
       description += "\n" + siblingRow.children[1].innerText
 
       siblingRow = siblingRow.nextSibling
