@@ -227,7 +227,7 @@ function photosInit( ) {
 //
 function displayCSVFile( elementID, trClasses="" ) {
   let element = document.getElementById( elementID );
-  // Fixed displayCSVFile() to only show Google Calendar caption IF the table is a calendar
+  // Fixed displayCSVFile() to only show Google Calendar caption IF the table looks to be a calendar
   let tableCaption = "<caption>*Click on a date to add meeting to your Google Calendar if you use it.</caption>"
   let tableRows = "";
   let firstCellDate = null;
