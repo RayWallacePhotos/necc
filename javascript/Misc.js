@@ -219,6 +219,7 @@ function photosInit( ) {
 }
 
 
+
 //
 // For a csv spec/RFC see:
 //  https://datatracker.ietf.org/doc/html/rfc4180
@@ -288,6 +289,86 @@ function displayCSVFile( elementID, trClasses="" ) {
 }
 
 
+//
+// Split line into an array of cells, based on csv rules
+//
+// Returns array of cell data
+//
+function splitCSV( line ) {
+  let cells = [];
+  let nextCell = 0;
+
+  while( line.length ) {
+    line = csvCell( line, cells ); // Calls csvQuotedCell() as needed
+  }
+
+  return cells;
+}
+
+
+//
+// Parse next csv cell from line
+//
+// Returns unused portion of line
+// Adds new cell data to end of cells array
+//
+function csvCell( line, cells ) {
+  let charIndex;
+
+  line = trimLeading( line );
+
+  if( line.length ) {
+    if( line[0] == '"' ) line = csvQuotedCell( line, cells );
+    else {
+      charIndex = line.indexOf(',');
+      if( charIndex != -1 ) {
+        cells[cells.length] = line.slice( 0, charIndex ).trim();
+        line = line.slice( charIndex + 1 ); // Skip to  after the comma
+      }
+      else {
+        // No next comma, so use rest of line as cell data
+        cells[cells.length] = line.trim();
+        line = ""; // Nothing left to parse
+      }
+    }
+  }
+
+  return line;
+}
+
+
+function csvQuotedCell( line, cells ) {
+  let charIndex;
+
+  line = line.slice(  1 ); // Skip the leading quote
+
+  line = trimLeading( line );
+
+  if( line.length ) {
+      charIndex = line.indexOf('"');
+      if( charIndex != -1 ) {
+        cells[cells.length] = line.slice( 0, charIndex );
+        line = line.slice( charIndex + 2 ); // Skip to after the quote and the comma
+      }
+      else {
+        // No next quote (that's an error), so use rest of line as cell data
+        cells[cells.length] = line;
+        line = ""; // Nothing left to parse
+      }
+  }
+
+  return line;
+}
+
+function trimLeading( line ) {
+  while( line[0] == ' ' || line[0] == '\t' ) {
+    line = line.slice( 1 );
+  }
+
+  return line;
+}
+
+
 
 function addCalendarEntryOnClick( event ) {
   let target = event.target
@@ -351,85 +432,6 @@ function addCalendarEntry( date, startTime, endTime, title, description ) {
 
   // Encode spaces etc.. and create calendar event
   window.open( encodeURI(`https://calendar.google.com/calendar/r/eventedit?ctz=America/New_York&text=${title}&location=${locationName}&details=${description}&dates=${startDateTime}/${endDateTime}&sprop=website:www.NewEnglandCameraClub.org`) )
-}
-
-
-
-//
-// Split line into an array of cells, based on csv rules
-//
-// Returns array of cell data
-//
-function splitCSV( line ) {
-  let cells = [];
-  let nextCell = 0;
-
-  while( line.length ) {
-    line = csvCell( line, cells ); // Calls csvQuotedCell() as needed
-  }
-
-  return cells;
-}
-
-//
-// Parse next csv cell from line
-//
-// Returns unused portion of line
-// Adds new cell data to end of cells array
-//
-function csvCell( line, cells ) {
-  let charIndex;
-
-  line = trimLeading( line );
-
-  if( line.length ) {
-    if( line[0] == '"' ) line = csvQuotedCell( line, cells );
-    else {
-      charIndex = line.indexOf(',');
-      if( charIndex != -1 ) {
-        cells[cells.length] = line.slice( 0, charIndex ).trim();
-        line = line.slice( charIndex + 1 ); // Skip to  after the comma
-      }
-      else {
-        // No next comma, so use rest of line as cell data
-        cells[cells.length] = line.trim();
-        line = ""; // Nothing left to parse
-      }
-    }
-  }
-
-  return line;
-}
-
-function csvQuotedCell( line, cells ) {
-  let charIndex;
-
-  line = line.slice(  1 ); // Skip the leading quote
-
-  line = trimLeading( line );
-
-  if( line.length ) {
-      charIndex = line.indexOf('"');
-      if( charIndex != -1 ) {
-        cells[cells.length] = line.slice( 0, charIndex );
-        line = line.slice( charIndex + 2 ); // Skip to after the quote and the comma
-      }
-      else {
-        // No next quote (that's an error), so use rest of line as cell data
-        cells[cells.length] = line;
-        line = ""; // Nothing left to parse
-      }
-  }
-
-  return line;
-}
-
-function trimLeading( line ) {
-  while( line[0] == ' ' || line[0] == '\t' ) {
-    line = line.slice( 1 );
-  }
-
-  return line;
 }
 
 
