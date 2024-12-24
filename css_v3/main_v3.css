@@ -9,6 +9,7 @@ body {
   --NECCLightGreen: #98b398;
   --NECCGreen: #628462;
   --NECCDarkGreen: #415841;
+  --NECCDarkestGreen: hsl(120, 25%, 20%);
   --NECCYellow: #a4d411;
 
   line-height: 1.24rem;
@@ -75,8 +76,21 @@ header {
   text-transform: capitalize;
 }
 
+button.HoudiniOnly {
+  background-color: hsla(17, 61%, 39%, 0.69);
+  border-radius: 6px;
+  box-shadow: 2px 2px 4px black;
+
+  margin-top: 4px;
+  padding: 2px 4px;
+}
+
 footer {
   color: var(--NECCGreen);
+}
+footer a.Houdini {
+  background-color: hsla(17, 61%, 39%, 0.69);
+  font-weight: bolder;
 }
 
 .Icon {
@@ -135,6 +149,12 @@ iframe {
   box-shadow: 2px 2px 3px var(--NECCYellow);
 }
 
+
+img.FirstPlaceImage {
+  margin: 0.5rem;
+  border: solid 1px var(--NECCDarkGreen);
+  box-shadow: 4px 4px 6px var(--NECCDarkestGreen),  -2px 2px 4px var(--NECCDarkestGreen);
+}
 
 
 

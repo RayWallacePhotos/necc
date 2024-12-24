@@ -21,14 +21,18 @@
 //              V1.9
 //  7 Nov 2024  Fixed an issue in Misc.js addCalendarEntryOnClick() with some entries in the MeetingsList.csv
 //              V2.0
+// 23 Dec 2024  Moved setupHoudini( ) to here from (the unused) Administrate.js
+//              V2.1
 //
 
 
 
-const Version = "V2.0";
+const Version = "V2.1";
 const FirstYear = "2018";
 
 
+
+var Houdini = false;
 
 const MenuEntries = [
         {url:"index.html", button:"Home", init:null},
@@ -58,6 +62,27 @@ function init( ) {
   // Create menus AND call init() routines, all based on the web page we are on
   createMenus( );
 
+  setupHoudini( );
+
+  loadFirstPlaceImagePaths( )
+}
+
+
+
+function loadFirstPlaceImagePaths( ) {
+  fileReadJson( "CompetionResultsFirst.json", result => {
+    if( result.jsonObj ) {
+      let firstPlaceImage = 0
+
+      firstPlaceImages = result.jsonObj
+
+      // Find <img class="FirstPlace"></img> entries and set their .src to the next firstPlaceImages in sequence
+      for( let image of document.querySelectorAll( ".FirstPlaceImage" ) ) {
+        image.src = firstPlaceImages[firstPlaceImage].image
+        if( ++firstPlaceImage >= firstPlaceImages.length ) firstPlaceImage = 0
+      }
+    }
+  } )
 }
 
 
@@ -84,6 +109,28 @@ function createMenus( ) {
   }
 
   menuElement.innerHTML = menusHtml;
+}
+
+
+function setupHoudini( ) {
+  // Add Houdini class to the footer (EMail) on the current html page (so I don't have to edit all .html files)
+  let emailElement = document.querySelectorAll( "footer a" )[1];
+
+  emailElement.addEventListener( "click", event => {
+    if( event.altKey ) {
+      let houdiniOnlyTags = document.querySelectorAll( ".HoudiniOnly" );
+
+      Houdini = !Houdini;
+
+      if( Houdini )  event.target.classList.add( "Houdini" );
+      else   event.target.classList.remove( "Houdini" );
+
+      for( let tag of houdiniOnlyTags ) {
+        if( Houdini ) tag.classList.remove( "Hidden" );
+        else tag.classList.add( "Hidden" );
+      }
+    }
+  } )
 }
 
 

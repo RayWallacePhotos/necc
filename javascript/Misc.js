@@ -19,6 +19,7 @@
 //  15 Apr 2024 Fixed competitionResultsInit() so the "_" replacement is global replace
 //  13 May 2024 Fixed displayCSVFile() to only show Google Calendar caption IF the table is a calendar
 //  7 Nov 2024  Fixed an issue in addCalendarEntryOnClick() with some entries in the MeetingsList.csv
+// 23 Dec 2024  Added saveCompetitionResultsOnClick( event ) to support the <button> added to CompetitionResults.html
 //
 
 
@@ -121,9 +122,8 @@ function competitionResultsInit( ) {
       let date = DateSelectionID.children[DateSelectionID.selectedIndex].value
       let filename = `scores/scores_${date.replaceAll(" ", "_")}.html`
       let author = UserSelectionID.children[UserSelectionID.selectedIndex].value
-      // let author = "**ALL**"
 
-      displayScores( filename, author )
+        displayScores( filename, author )
     } )
 
 
@@ -132,6 +132,33 @@ function competitionResultsInit( ) {
     let author = "**ALL**"
     displayScores( `scores/scores_${date.replaceAll(" ", "_")}.html`, author )
   } ) // END fileReadJson()
+}
+
+
+
+//
+// DEBUG Just a temporary way of storing a list of the First Place images into first_place.json
+//       Making easy to display them in "arbitrary" places on the site
+//
+// For now, get here by ALT-clicking EMail in fotter, then click "Save List" button that appears.
+// See competitionResults() function below
+//
+function saveCompetitionResultsOnClick( event ) {
+  let imageData = [ /* {image, subject, date, author, title, score, award} */ ]
+  let  rows = document.querySelectorAll( "tbody tr")
+
+  console.log( "Saving First Place list   ---   Need to write competitionResultsSaveFirst( ) code!" )
+
+  FirstPlaceOnlyID.parentElement.style.backgroundColor = "brown"
+
+  for( let row of rows ) {
+    let cols = row.querySelectorAll( "td" )
+    // Only save first place winners
+    // if( cols[6].innerText ) imageData.push( {image: cols[0].querySelector("img").src, subject: cols[1].innerText, date: cols[2].innerText, author: cols[3].innerText, title: cols[4].innerText, score: cols[5].innerText, award: cols[6].innerText } )
+    if( cols[6].innerText ) imageData.push( {image: cols[0].children[0].src, author: cols[3].innerText } )
+  }
+
+  fileSaveText( "CompetionResultsFirst.json", JSON.stringify(imageData, null, " ") )
 }
 
 
