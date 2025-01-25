@@ -150,8 +150,27 @@ iframe {
 }
 
 
-img.FirstPlaceImage {
+.FirstPlaceContainer {
+  display: inline-block;
+  position: relative;
+  height: max-content;
+
   margin: 0.5rem;
+}
+
+.Author {
+  position: absolute;
+  display: inline-block;
+
+  margin: 0.2rem;
+  padding: 0rem 0.2rem;
+  box-shadow: 4px 4px 6px var(--NECCDarkestGreen),  -2px 2px 4px var(--NECCDarkestGreen);
+  background-color: hsla(0, 0%, 65%, 0.41);
+
+  border-radius: 3px;
+}
+
+img.FirstPlaceImage {
   border: solid 1px var(--NECCDarkGreen);
   box-shadow: 4px 4px 6px var(--NECCDarkestGreen),  -2px 2px 4px var(--NECCDarkestGreen);
 }

@@ -70,18 +70,31 @@ function init( ) {
 
 
 function loadFirstPlaceImagePaths( ) {
-  fileReadJson( "CompetionResultsFirst.json", result => {
+  fileReadJson( "competitions_scores.json", result => {
     if( result.jsonObj ) {
-      let firstPlaceImage = 0
+      let images = result.jsonObj
 
-      firstPlaceImages = result.jsonObj
+      for( let entry of images[images.dates[0]].entries ) {
+        if(  entry.award ) {
+          let containerElement = document.createElement( "span" )
+          let img = document.createElement( "img" )
+          let authorElement = document.createElement( "span" )
 
-      // Find <img class="FirstPlace"></img> entries and set their .src to the next firstPlaceImages in sequence
-      for( let image of document.querySelectorAll( ".FirstPlaceImage" ) ) {
-        image.src = firstPlaceImages[firstPlaceImage].image
-        if( ++firstPlaceImage >= firstPlaceImages.length ) firstPlaceImage = 0
+          containerElement.classList.add( "FirstPlaceContainer" )
+          authorElement.classList.add( "Author" )
+
+          authorElement.innerText = entry.author
+          img.classList.add( "FirstPlaceImage" )
+          img.src = `${images[images.dates[0]].destDirs}${entry.filename}`
+
+          containerElement.appendChild( authorElement )
+          containerElement.appendChild( img )
+          FirstPlaceImagesID.appendChild( containerElement )
+        }
       }
+
     }
+    else console.error( `Could not read: competitions_scores.json`)
   } )
 }
 
