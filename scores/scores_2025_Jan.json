@@ -1,0 +1,693 @@
+{
+ "headers": [
+  "subject",
+  "date",
+  "author",
+  "title",
+  "score",
+  "award",
+  "filename"
+ ],
+ "dates": [
+  "2025-01-23"
+ ],
+ "2025-01-23": {
+  "entries": [
+   {
+    "subject": "Dogs / Coyote / Fox",
+    "date": "2025-01-23",
+    "author": "Monica Hamilton McCarthy",
+    "title": "Preston B&W",
+    "score": 26,
+    "award": "",
+    "filename": "Monica Hamilton McCarthy - 26.0 - ID_24669202.jpg"
+   },
+   {
+    "subject": "Dogs / Coyote / Fox",
+    "date": "2025-01-23",
+    "author": "Rosalie Tkachuk",
+    "title": "Their dog, Stella",
+    "score": 27.5,
+    "award": "",
+    "filename": "Rosalie Tkachuk, Rosalie - 27.5 - ID_24679798.jpg"
+   },
+   {
+    "subject": "Dogs / Coyote / Fox",
+    "date": "2025-01-23",
+    "author": "Lynette Veo",
+    "title": "George 3162",
+    "score": 28,
+    "award": "",
+    "filename": "Lynette Veo - 28.0 - ID_24663417.jpg"
+   },
+   {
+    "subject": "Dogs / Coyote / Fox",
+    "date": "2025-01-23",
+    "author": "Monica Hamilton McCarthy",
+    "title": "Preston sitting up",
+    "score": 25,
+    "award": "",
+    "filename": "Monica Hamilton McCarthy - 25.0 - ID_24669199.jpg"
+   },
+   {
+    "subject": "Dogs / Coyote / Fox",
+    "date": "2025-01-23",
+    "author": "Bruce Bindman",
+    "title": "Loki in Christmas Wear a",
+    "score": 27,
+    "award": "",
+    "filename": "Bruce Bindman - 27.0 - ID_24679186.jpg"
+   },
+   {
+    "subject": "Dogs / Coyote / Fox",
+    "date": "2025-01-23",
+    "author": "John Nault",
+    "title": "Jill's Dimond Art",
+    "score": 25,
+    "award": "",
+    "filename": "John Nault - 25.0 - ID_24677027.jpg"
+   },
+   {
+    "subject": "Dogs / Coyote / Fox",
+    "date": "2025-01-23",
+    "author": "Cynthia Rand",
+    "title": "I Love You Mommy",
+    "score": 30,
+    "award": "First",
+    "filename": "Cynthia Rand - 30.0 - ID_24683434.jpg"
+   },
+   {
+    "subject": "Dogs / Coyote / Fox",
+    "date": "2025-01-23",
+    "author": "Cynthia Rand",
+    "title": "Grey Fox Sighting!",
+    "score": 29,
+    "award": "",
+    "filename": "Cynthia Rand - 29.0 - ID_24683264.jpg"
+   },
+   {
+    "subject": "Dogs / Coyote / Fox",
+    "date": "2025-01-23",
+    "author": "Patrick McCarthy",
+    "title": "Cape Coyote",
+    "score": 27.5,
+    "award": "",
+    "filename": "Patrick McCarthy - 27.5 - ID_24682039.jpg"
+   },
+   {
+    "subject": "Dogs / Coyote / Fox",
+    "date": "2025-01-23",
+    "author": "Patrick McCarthy",
+    "title": "Coy Coyote",
+    "score": 28,
+    "award": "",
+    "filename": "Patrick McCarthy - 28.0 - ID_24669644.jpg"
+   },
+   {
+    "subject": "Dogs / Coyote / Fox",
+    "date": "2025-01-23",
+    "author": "Lynette Veo",
+    "title": "Duchess protecting her ball",
+    "score": 29,
+    "award": "",
+    "filename": "Lynette Veo - 29.0 - ID_24548979.jpg"
+   },
+   {
+    "subject": "Main Street City or Town Pictures",
+    "date": "2025-01-23",
+    "author": "Monica Hamilton McCarthy",
+    "title": "Manchester Main Street",
+    "score": 28,
+    "award": "",
+    "filename": "Monica Hamilton McCarthy - 28.0 - ID_24680257.jpg"
+   },
+   {
+    "subject": "Main Street City or Town Pictures",
+    "date": "2025-01-23",
+    "author": "Lee Millet",
+    "title": "Whoopie Pie Festival",
+    "score": 28.5,
+    "award": "",
+    "filename": "Lee Millet - 28.5 - ID_24680788.jpg"
+   },
+   {
+    "subject": "Main Street City or Town Pictures",
+    "date": "2025-01-23",
+    "author": "Bruce Bindman",
+    "title": "Bethesda MD Streets 090524 AB",
+    "score": 27,
+    "award": "",
+    "filename": "Bruce Bindman - 27.0 - ID_24635901.jpg"
+   },
+   {
+    "subject": "Main Street City or Town Pictures",
+    "date": "2025-01-23",
+    "author": "Eric Vickery",
+    "title": "Main Street",
+    "score": 29.5,
+    "award": "First",
+    "filename": "Eric Vickery - 29.5 - ID_24635871.jpg"
+   },
+   {
+    "subject": "Main Street City or Town Pictures",
+    "date": "2025-01-23",
+    "author": "Eric Vickery",
+    "title": "streetlight",
+    "score": 26,
+    "award": "",
+    "filename": "Eric Vickery - 26.0 - ID_24635863.jpg"
+   },
+   {
+    "subject": "Main Street City or Town Pictures",
+    "date": "2025-01-23",
+    "author": "Patrick McCarthy",
+    "title": "Down on Main Street",
+    "score": 26.5,
+    "award": "",
+    "filename": "Patrick McCarthy - 26.5 - ID_24681059.jpg"
+   },
+   {
+    "subject": "Main Street City or Town Pictures",
+    "date": "2025-01-23",
+    "author": "Patrick McCarthy",
+    "title": "Street Lights",
+    "score": 25,
+    "award": "",
+    "filename": "Patrick McCarthy - 25.0 - ID_24681032.jpg"
+   },
+   {
+    "subject": "Main Street City or Town Pictures",
+    "date": "2025-01-23",
+    "author": "Lynette Veo",
+    "title": "Venice island",
+    "score": 27,
+    "award": "",
+    "filename": "Lynette Veo - 27.0 - ID_24663352.jpg"
+   },
+   {
+    "subject": "Main Street City or Town Pictures",
+    "date": "2025-01-23",
+    "author": "Monica Hamilton McCarthy",
+    "title": "Falmouth Main Street",
+    "score": 26,
+    "award": "",
+    "filename": "Monica Hamilton McCarthy - 26.0 - ID_24680249.jpg"
+   },
+   {
+    "subject": "Monochrome",
+    "date": "2025-01-23",
+    "author": "Monica Hamilton McCarthy",
+    "title": "Train B&W",
+    "score": 27,
+    "award": "",
+    "filename": "Monica Hamilton McCarthy - 27.0 - ID_24680818.jpg"
+   },
+   {
+    "subject": "Monochrome",
+    "date": "2025-01-23",
+    "author": "Rosalie Tkachuk",
+    "title": "Queen Anne's lace in monochrome",
+    "score": 26.5,
+    "award": "",
+    "filename": "Rosalie Tkachuk, Rosalie - 26.5 - ID_24679844.jpg"
+   },
+   {
+    "subject": "Monochrome",
+    "date": "2025-01-23",
+    "author": "Lynette Veo",
+    "title": "boy on ice",
+    "score": 28,
+    "award": "",
+    "filename": "Lynette Veo - 28.0 - ID_24683159.jpg"
+   },
+   {
+    "subject": "Monochrome",
+    "date": "2025-01-23",
+    "author": "Rosalie Tkachuk",
+    "title": "IMG 4802 copy.jpg abandoned house for camera ",
+    "score": 27,
+    "award": "",
+    "filename": "Rosalie Tkachuk, Rosalie - 27.0 - ID_24680052.jpg"
+   },
+   {
+    "subject": "Monochrome",
+    "date": "2025-01-23",
+    "author": "Lynette Veo",
+    "title": "buttermilk falls 1277",
+    "score": 28.5,
+    "award": "",
+    "filename": "Lynette Veo - 28.5 - ID_24681091.jpg"
+   },
+   {
+    "subject": "Monochrome",
+    "date": "2025-01-23",
+    "author": "Monica Hamilton McCarthy",
+    "title": "Jamestown light B&W",
+    "score": 29.5,
+    "award": "First",
+    "filename": "Monica Hamilton McCarthy - 29.5 - ID_24670693.jpg"
+   },
+   {
+    "subject": "Monochrome",
+    "date": "2025-01-23",
+    "author": "Patrick McCarthy",
+    "title": "Shadows on Train Tracks",
+    "score": 28.5,
+    "award": "",
+    "filename": "Patrick McCarthy - 28.5 - ID_24669555.jpg"
+   },
+   {
+    "subject": "Monochrome",
+    "date": "2025-01-23",
+    "author": "George Ann Millet",
+    "title": "Milk House",
+    "score": 27,
+    "award": "",
+    "filename": "George Ann Millet - 27.0 - ID_24683825.jpg"
+   },
+   {
+    "subject": "Monochrome",
+    "date": "2025-01-23",
+    "author": "Bruce Bindman",
+    "title": "Arlington House 09042024 B&W copy",
+    "score": 29,
+    "award": "First",
+    "filename": "Bruce Bindman - 29.0 - ID_24674176.jpg"
+   },
+   {
+    "subject": "Monochrome",
+    "date": "2025-01-23",
+    "author": "George Ann Millet",
+    "title": "Red Neck Storage",
+    "score": 29,
+    "award": "First",
+    "filename": "George Ann Millet - 29.0 - ID_24683809.jpg"
+   },
+   {
+    "subject": "Monochrome",
+    "date": "2025-01-23",
+    "author": "Patrick McCarthy",
+    "title": "Riders on the Storm",
+    "score": 28,
+    "award": "",
+    "filename": "Patrick McCarthy - 28.0 - ID_24669563.jpg"
+   },
+   {
+    "subject": "Monochrome",
+    "date": "2025-01-23",
+    "author": "Lee Millet",
+    "title": "Little Brick Building",
+    "score": 27,
+    "award": "",
+    "filename": "Lee Millet - 27.0 - ID_24680826.jpg"
+   },
+   {
+    "subject": "Monochrome",
+    "date": "2025-01-23",
+    "author": "Lee Millet",
+    "title": "Lowell's on the River",
+    "score": 29,
+    "award": "First",
+    "filename": "Lee Millet - 29.0 - ID_24680834.jpg"
+   },
+   {
+    "subject": "Monochrome",
+    "date": "2025-01-23",
+    "author": "Eric Vickery",
+    "title": "Denali Ruth Glacier",
+    "score": 28.5,
+    "award": "",
+    "filename": "Eric Vickery - 28.5 - ID_24635928.jpg"
+   },
+   {
+    "subject": "Monochrome",
+    "date": "2025-01-23",
+    "author": "Eric Vickery",
+    "title": "radical peak",
+    "score": 28,
+    "award": "",
+    "filename": "Eric Vickery - 28.0 - ID_24635936.jpg"
+   },
+   {
+    "subject": "Monochrome",
+    "date": "2025-01-23",
+    "author": "Cynthia Rand",
+    "title": "Baby Barred Owl Dreams About His Future",
+    "score": 29,
+    "award": "First",
+    "filename": "Cynthia Rand - 29.0 - ID_24683361.jpg"
+   },
+   {
+    "subject": "Motion Blur or Cloud Smoothing.",
+    "date": "2025-01-23",
+    "author": "Lynette Veo",
+    "title": "blur",
+    "score": 25,
+    "award": "",
+    "filename": "Lynette Veo - 25.0 - ID_24663379.jpg"
+   },
+   {
+    "subject": "Motion Blur or Cloud Smoothing.",
+    "date": "2025-01-23",
+    "author": "Eric Vickery",
+    "title": "island sunset clouds",
+    "score": 29.5,
+    "award": "",
+    "filename": "Eric Vickery - 29.5 - ID_24636126.jpg"
+   },
+   {
+    "subject": "Motion Blur or Cloud Smoothing.",
+    "date": "2025-01-23",
+    "author": "Monica Hamilton McCarthy",
+    "title": "Sky blur",
+    "score": 23,
+    "award": "",
+    "filename": "Monica Hamilton McCarthy - 23.0 - ID_24681075.jpg"
+   },
+   {
+    "subject": "Motion Blur or Cloud Smoothing.",
+    "date": "2025-01-23",
+    "author": "Patrick McCarthy",
+    "title": "Sunset on Lake Ambajejus",
+    "score": 28,
+    "award": "",
+    "filename": "Patrick McCarthy - 28.0 - ID_24682047.jpg"
+   },
+   {
+    "subject": "Motion Blur or Cloud Smoothing.",
+    "date": "2025-01-23",
+    "author": "Monica Hamilton McCarthy",
+    "title": "Clouds to Swirl (1)",
+    "score": 27,
+    "award": "",
+    "filename": "Monica Hamilton McCarthy - 27.0 - ID_24680915.jpg"
+   },
+   {
+    "subject": "Motion Blur or Cloud Smoothing.",
+    "date": "2025-01-23",
+    "author": "Bruce Bindman",
+    "title": "Stone Church 10212024 Radial Blur Clouds",
+    "score": 26,
+    "award": "",
+    "filename": "Bruce Bindman - 26.0 - ID_24635367.jpg"
+   },
+   {
+    "subject": "Motion Blur or Cloud Smoothing.",
+    "date": "2025-01-23",
+    "author": "Patrick McCarthy",
+    "title": "Perfect Day",
+    "score": 29,
+    "award": "",
+    "filename": "Patrick McCarthy - 29.0 - ID_24681105.jpg"
+   },
+   {
+    "subject": "Motion Blur or Cloud Smoothing.",
+    "date": "2025-01-23",
+    "author": "Eric Vickery",
+    "title": "diamond beach clouds",
+    "score": 30,
+    "award": "First",
+    "filename": "Eric Vickery - 30.0 - ID_24636118.jpg"
+   },
+   {
+    "subject": "Nature",
+    "date": "2025-01-23",
+    "author": "Lynette Veo",
+    "title": "wintering at ; Bruces Pond",
+    "score": 28,
+    "award": "First",
+    "filename": "Lynette Veo - 28.0 - ID_24549037.jpg"
+   },
+   {
+    "subject": "Nature",
+    "date": "2025-01-23",
+    "author": "Monica Hamilton McCarthy",
+    "title": "Red Morph, Gray Tree",
+    "score": 27,
+    "award": "",
+    "filename": "Monica Hamilton McCarthy - 27.0 - ID_24680737.jpg"
+   },
+   {
+    "subject": "Nature",
+    "date": "2025-01-23",
+    "author": "Rosalie Tkachuk",
+    "title": "Soft fall colors",
+    "score": 28,
+    "award": "First",
+    "filename": "Rosalie Tkachuk, Rosalie - 28.0 - ID_24680109.jpg"
+   },
+   {
+    "subject": "Nature",
+    "date": "2025-01-23",
+    "author": "Monica Hamilton McCarthy",
+    "title": "Canada Goose 2",
+    "score": 26,
+    "award": "",
+    "filename": "Monica Hamilton McCarthy - 26.0 - ID_24680753.jpg"
+   },
+   {
+    "subject": "Nature",
+    "date": "2025-01-23",
+    "author": "Lynette Veo",
+    "title": "3 on a branch 4012",
+    "score": 25,
+    "award": "",
+    "filename": "Lynette Veo - 25.0 - ID_24663271.jpg"
+   },
+   {
+    "subject": "Nature",
+    "date": "2025-01-23",
+    "author": "Patrick McCarthy",
+    "title": "In Bloom",
+    "score": 29,
+    "award": "",
+    "filename": "Patrick McCarthy - 29.0 - ID_24669571.jpg"
+   },
+   {
+    "subject": "Nature",
+    "date": "2025-01-23",
+    "author": "George Ann Millet",
+    "title": "Barred Owl profile",
+    "score": 27,
+    "award": "",
+    "filename": "George Ann Millet - 27.0 - ID_24683728.jpg"
+   },
+   {
+    "subject": "Nature",
+    "date": "2025-01-23",
+    "author": "Patrick McCarthy",
+    "title": "Master Lumberjack",
+    "score": 27.5,
+    "award": "",
+    "filename": "Patrick McCarthy - 27.5 - ID_24669598.jpg"
+   },
+   {
+    "subject": "Nature",
+    "date": "2025-01-23",
+    "author": "John Nault",
+    "title": "Old Mill Waterfall",
+    "score": 25,
+    "award": "",
+    "filename": "John Nault - 25.0 - ID_24677035.jpg"
+   },
+   {
+    "subject": "Nature",
+    "date": "2025-01-23",
+    "author": "George Ann Millet",
+    "title": "Blue Jays",
+    "score": 29.3,
+    "award": "First",
+    "filename": "George Ann Millet - 29.3 - ID_24683817.jpg"
+   },
+   {
+    "subject": "Nature",
+    "date": "2025-01-23",
+    "author": "Lee Millet",
+    "title": "Wood Ducks",
+    "score": 28,
+    "award": "",
+    "filename": "Lee Millet - 28.0 - ID_24680885.jpg"
+   },
+   {
+    "subject": "Nature",
+    "date": "2025-01-23",
+    "author": "Lee Millet",
+    "title": "Beaver",
+    "score": 28,
+    "award": "",
+    "filename": "Lee Millet - 28.0 - ID_24680877.jpg"
+   },
+   {
+    "subject": "Nature",
+    "date": "2025-01-23",
+    "author": "Eric Vickery",
+    "title": "fog island",
+    "score": 30,
+    "award": "First",
+    "filename": "Eric Vickery - 30.0 - ID_24636088.jpg"
+   },
+   {
+    "subject": "Nature",
+    "date": "2025-01-23",
+    "author": "Cynthia Rand",
+    "title": "I Think It's Time To Duck!",
+    "score": 30,
+    "award": "First",
+    "filename": "Cynthia Rand - 30.0 - ID_24683191.jpg"
+   },
+   {
+    "subject": "Nature",
+    "date": "2025-01-23",
+    "author": "Eric Vickery",
+    "title": "winter geese",
+    "score": 29.5,
+    "award": "",
+    "filename": "Eric Vickery - 29.5 - ID_24636061.jpg"
+   },
+   {
+    "subject": "Pictorial",
+    "date": "2025-01-23",
+    "author": "Rosalie Tkachuk",
+    "title": "The old and the new bridges",
+    "score": 22,
+    "award": "",
+    "filename": "Rosalie Tkachuk, Rosalie - 22.0 - ID_24677647.jpg"
+   },
+   {
+    "subject": "Pictorial",
+    "date": "2025-01-23",
+    "author": "Lynette Veo",
+    "title": "a cool day at the beach",
+    "score": 25,
+    "award": "",
+    "filename": "Lynette Veo - 25.0 - ID_24663263.jpg"
+   },
+   {
+    "subject": "Pictorial",
+    "date": "2025-01-23",
+    "author": "Monica Hamilton McCarthy",
+    "title": "Christmas Day Sunset 2024",
+    "score": 26,
+    "award": "",
+    "filename": "Monica Hamilton McCarthy - 26.0 - ID_24680273.jpg"
+   },
+   {
+    "subject": "Pictorial",
+    "date": "2025-01-23",
+    "author": "Monica Hamilton McCarthy",
+    "title": "Snow train",
+    "score": 28,
+    "award": "First",
+    "filename": "Monica Hamilton McCarthy - 28.0 - ID_24678724.jpg"
+   },
+   {
+    "subject": "Pictorial",
+    "date": "2025-01-23",
+    "author": "Patrick McCarthy",
+    "title": "Industrial Sunrise",
+    "score": 26,
+    "award": "",
+    "filename": "Patrick McCarthy - 26.0 - ID_24669636.jpg"
+   },
+   {
+    "subject": "Pictorial",
+    "date": "2025-01-23",
+    "author": "George Ann Millet",
+    "title": "Double Decker",
+    "score": 25,
+    "award": "",
+    "filename": "George Ann Millet - 25.0 - ID_24683736.jpg"
+   },
+   {
+    "subject": "Pictorial",
+    "date": "2025-01-23",
+    "author": "John Nault",
+    "title": "Amanda And My Dad",
+    "score": 22,
+    "award": "",
+    "filename": "John Nault - 22.0 - ID_24677043.jpg"
+   },
+   {
+    "subject": "Pictorial",
+    "date": "2025-01-23",
+    "author": "Patrick McCarthy",
+    "title": "Float Plane Touchdown",
+    "score": 29,
+    "award": "First",
+    "filename": "Patrick McCarthy - 29.0 - ID_24682128.jpg"
+   },
+   {
+    "subject": "Pictorial",
+    "date": "2025-01-23",
+    "author": "John Nault",
+    "title": "Megan Star",
+    "score": 26,
+    "award": "",
+    "filename": "John Nault - 26.0 - ID_24677051.jpg"
+   },
+   {
+    "subject": "Pictorial",
+    "date": "2025-01-23",
+    "author": "George Ann Millet",
+    "title": "Gathering Sap",
+    "score": 27,
+    "award": "",
+    "filename": "George Ann Millet - 27.0 - ID_24683787.jpg"
+   },
+   {
+    "subject": "Pictorial",
+    "date": "2025-01-23",
+    "author": "Bruce Bindman",
+    "title": "Arlington National Cemetary with Washington M",
+    "score": 27,
+    "award": "",
+    "filename": "Bruce Bindman - 27.0 - ID_24679011.jpg"
+   },
+   {
+    "subject": "Pictorial",
+    "date": "2025-01-23",
+    "author": "Eric Vickery",
+    "title": "cloud sunburst",
+    "score": 30,
+    "award": "",
+    "filename": "Eric Vickery - 30.0 - ID_24636045.jpg"
+   },
+   {
+    "subject": "Pictorial",
+    "date": "2025-01-23",
+    "author": "Eric Vickery",
+    "title": "shore rainbow",
+    "score": 28,
+    "award": "",
+    "filename": "Eric Vickery - 28.0 - ID_24636037.jpg"
+   },
+   {
+    "subject": "Pictorial",
+    "date": "2025-01-23",
+    "author": "Lee Millet",
+    "title": "Chickadee on a Stick",
+    "score": 28.5,
+    "award": "",
+    "filename": "Lee Millet - 28.5 - ID_24680893.jpg"
+   },
+   {
+    "subject": "Pictorial",
+    "date": "2025-01-23",
+    "author": "Lee Millet",
+    "title": "Horse with no Mane",
+    "score": 27.5,
+    "award": "",
+    "filename": "Lee Millet - 27.5 - ID_24680907.jpg"
+   },
+   {
+    "subject": "Pictorial",
+    "date": "2025-01-23",
+    "author": "Cynthia Rand",
+    "title": "Short-eared Owl Pauses Briefly",
+    "score": 30,
+    "award": "First",
+    "filename": "Cynthia Rand - 30.0 - ID_24683132.jpg"
+   }
+  ]
+ }
+}

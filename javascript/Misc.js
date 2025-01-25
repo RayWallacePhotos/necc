@@ -20,6 +20,7 @@
 //  13 May 2024 Fixed displayCSVFile() to only show Google Calendar caption IF the table is a calendar
 //  7 Nov 2024  Fixed an issue in addCalendarEntryOnClick() with some entries in the MeetingsList.csv
 // 23 Dec 2024  Added saveCompetitionResultsOnClick( event ) to support the <button> added to CompetitionResults.html
+// 31 Dec 2024  Contrary to previous entry, we never did have saveCompetitionResultsOnClick() in here and don't use it at all now
 //
 
 
@@ -84,146 +85,11 @@ function competitionInit( ) {
 
 
 
+//
+// Main init code is in CompetitionResults.js
+//
 function competitionResultsInit( ) {
-  let dates = ""
-  let authors = `<option value="**All**">**All Users**</option>`
-
-  fileReadJson( "CompetitionResults.json", result => {
-    if( result.jsonObj ) {
-      for( let filename of result.jsonObj ) { // i.e. scores_Feb_2024.html, scores_Jan_2024.html
-        let dateStr = capitalizeWords( filename.trim().slice(7,-5).replace(/_/g, " ") )
-        dates += `<option value="${dateStr}">${dateStr}</option>`
-      }
-    }
-
-    DateSelectionID.innerHTML = dates
-
-    UserSelectionID.innerHTML = authors
-
-
-    DateSelectionID.addEventListener( "change", event => {
-      let filename = `scores/scores_${event.target.value.replaceAll(" ", "_")}.html`
-
-      let author = UserSelectionID.children[UserSelectionID.selectedIndex].value
-      displayScores( filename, author )
-    } )
-
-
-    UserSelectionID.addEventListener( "change", event => {
-      let author = event.target.value
-
-      let date = DateSelectionID.children[DateSelectionID.selectedIndex].value
-      let filename = `scores/scores_${date.replaceAll(" ", "_")}.html`
-      displayScores( filename, author )
-    } )
-
-
-    FirstPlaceOnlyID.addEventListener( "change", event => {
-      let date = DateSelectionID.children[DateSelectionID.selectedIndex].value
-      let filename = `scores/scores_${date.replaceAll(" ", "_")}.html`
-      let author = UserSelectionID.children[UserSelectionID.selectedIndex].value
-
-        displayScores( filename, author )
-    } )
-
-
-    let date = DateSelectionID.children[DateSelectionID.selectedIndex].value
-    // let author = AuthorsListID.children[AuthorsListID.selectedIndex].value  // AuthorsListID is in scores .html, which isn't loaded yet
-    let author = "**ALL**"
-    displayScores( `scores/scores_${date.replaceAll(" ", "_")}.html`, author )
-  } ) // END fileReadJson()
-}
-
-
-
-//
-// DEBUG Just a temporary way of storing a list of the First Place images into first_place.json
-//       Making easy to display them in "arbitrary" places on the site
-//
-// For now, get here by ALT-clicking EMail in fotter, then click "Save List" button that appears.
-// See competitionResults() function below
-//
-function saveCompetitionResultsOnClick( event ) {
-  let imageData = [ /* {image, subject, date, author, title, score, award} */ ]
-  let  rows = document.querySelectorAll( "tbody tr")
-
-  console.log( "Saving First Place list   ---   Need to write competitionResultsSaveFirst( ) code!" )
-
-  FirstPlaceOnlyID.parentElement.style.backgroundColor = "brown"
-
-  for( let row of rows ) {
-    let cols = row.querySelectorAll( "td" )
-    // Only save first place winners
-    // if( cols[6].innerText ) imageData.push( {image: cols[0].querySelector("img").src, subject: cols[1].innerText, date: cols[2].innerText, author: cols[3].innerText, title: cols[4].innerText, score: cols[5].innerText, award: cols[6].innerText } )
-    if( cols[6].innerText ) imageData.push( {image: cols[0].children[0].src, author: cols[3].innerText } )
-  }
-
-  fileSaveText( "CompetionResultsFirst.json", JSON.stringify(imageData, null, " ") )
-}
-
-
-
-function displayScores( filename, requestedAuthor ) {
-  let tempDom = document.createElement( "div" )
-  let awardIndex  = -1  // Not set yet
-  let authorIndex = -1  // ..
-  let authorStillExists = false
-
-  tempDom.innerHTML = ""
-
-  fileReadText( "../" + filename, result => {
-    if( result.text ) {
-      let authorsDomStr = `<option value="**All**">**All Users**</option>`
-
-
-      // DEBUG Even more performance improvement would be to hand BOTH Award and Author Hidden class adding in ONE loop
-
-      // Improve performance by working on sort of a shadow DOM when adding "Hidden" class and then moving it to the real DOM
-      tempDom.innerHTML = result.text
-
-      // Need indexes of Award and Author headers
-      let th = tempDom.querySelectorAll("th")
-      for( let next = 0, found = false; next < th.length; next++ ) {
-        if( th[next].innerText == "Award" )   awardIndex = next
-        else if( th[next].innerText == "Author" )  authorIndex = next
-      }
-
-      // Build new Author selection list
-      let prevousUserIndex = -1
-      let index = 1 // Account for "**ALL**" which is not in the AuthorsListID, but is always in the UserSelectionID
-      let authorsList = tempDom.querySelector( "#AuthorsListID" ).innerText
-      for( let author of JSON.parse(authorsList) ) {
-        authorsDomStr += `<option value="${author}">${author}</option>`
-
-        if( requestedAuthor == author ) {
-          authorStillExists = true
-          prevousUserIndex = index
-        }
-
-        ++index
-      }
-      UserSelectionID.innerHTML = authorsDomStr
-
-      if( authorStillExists )  UserSelectionID.selectedIndex = prevousUserIndex
-
-      if( authorStillExists || FirstPlaceOnlyID.checked ) {
-        for( let entry of tempDom.querySelectorAll("tbody tr") ) {
-          let cells = entry.querySelectorAll("td")
-
-          // Hide authors if needed
-          if( authorStillExists ) {
-            if( requestedAuthor != cells[authorIndex].innerText ) entry.classList.add( "Hidden" )
-          }
-
-          // Hide non-First place if requested
-          if( FirstPlaceOnlyID.checked ) {
-            if( "First" != cells[awardIndex].innerText ) entry.classList.add( "Hidden" )
-          }
-        }
-      }
-    } // END if(result)
-    CompetitionResultsID.innerHTML = tempDom.innerHTML
-  } ) // END fileReadText()
+  competitionResultsInitContinued( )
 }
 
 

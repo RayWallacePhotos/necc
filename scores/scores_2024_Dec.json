@@ -1,0 +1,855 @@
+{
+ "headers": [
+  "subject",
+  "date",
+  "author",
+  "title",
+  "score",
+  "award",
+  "filename"
+ ],
+ "dates": [
+  "2024-12-12"
+ ],
+ "2024-12-12": {
+  "entries": [
+   {
+    "subject": "Architecture or Building",
+    "date": "2024-12-12",
+    "author": "John Nault",
+    "title": "Boston",
+    "score": 24,
+    "award": "",
+    "filename": "John Nault - 24.0 - ID_24327018.jpg"
+   },
+   {
+    "subject": "Architecture or Building",
+    "date": "2024-12-12",
+    "author": "Eric Vickery",
+    "title": "The Great Hall",
+    "score": 30,
+    "award": "First",
+    "filename": "Eric Vickery - 30.0 - ID_24326127.jpg"
+   },
+   {
+    "subject": "Architecture or Building",
+    "date": "2024-12-12",
+    "author": "Monica Hamilton McCarthy",
+    "title": "Highfield Hall",
+    "score": 27,
+    "award": "",
+    "filename": "Monica Hamilton McCarthy - 27.0 - ID_24325538.jpg"
+   },
+   {
+    "subject": "Architecture or Building",
+    "date": "2024-12-12",
+    "author": "Eric Vickery",
+    "title": "NYC cathedral",
+    "score": 29,
+    "award": "",
+    "filename": "Eric Vickery - 29.0 - ID_24326119.jpg"
+   },
+   {
+    "subject": "Architecture or Building",
+    "date": "2024-12-12",
+    "author": "John Nault",
+    "title": "A Nice Day in Boston",
+    "score": 23,
+    "award": "",
+    "filename": "John Nault - 23.0 - ID_24327026.jpg"
+   },
+   {
+    "subject": "Architecture or Building",
+    "date": "2024-12-12",
+    "author": "Monica Hamilton McCarthy",
+    "title": "Providence From the Water",
+    "score": 26,
+    "award": "",
+    "filename": "Monica Hamilton McCarthy - 26.0 - ID_24325511.jpg"
+   },
+   {
+    "subject": "Architecture or Building",
+    "date": "2024-12-12",
+    "author": "Patrick McCarthy",
+    "title": "Mt Auburn Chapel",
+    "score": 28,
+    "award": "",
+    "filename": "Patrick McCarthy - 28.0 - ID_24325309.jpg"
+   },
+   {
+    "subject": "Architecture or Building",
+    "date": "2024-12-12",
+    "author": "Patrick McCarthy",
+    "title": "Pink House, Red Tail",
+    "score": 29,
+    "award": "",
+    "filename": "Patrick McCarthy - 29.0 - ID_24325279.jpg"
+   },
+   {
+    "subject": "Architecture or Building",
+    "date": "2024-12-12",
+    "author": "Cynthia Rand",
+    "title": "Gale Free Library 2",
+    "score": 27,
+    "award": "",
+    "filename": "Cynthia Rand - 27.0 - ID_24332674.jpg"
+   },
+   {
+    "subject": "Architecture or Building",
+    "date": "2024-12-12",
+    "author": "Bruce Bindman",
+    "title": "St. John's Chapel, Groton School",
+    "score": 27,
+    "award": "",
+    "filename": "Bruce Bindman - 27.0 - ID_24326275.jpg"
+   },
+   {
+    "subject": "Architecture or Building",
+    "date": "2024-12-12",
+    "author": "Lynette Veo",
+    "title": "Mormon tabernacle Kansas city MO.",
+    "score": 25,
+    "award": "",
+    "filename": "Lynette Veo - 25.0 - ID_24328294.jpg"
+   },
+   {
+    "subject": "Architecture or Building",
+    "date": "2024-12-12",
+    "author": "Lee Millet",
+    "title": "Barn Swallowed",
+    "score": 27,
+    "award": "",
+    "filename": "Lee Millet - 27.0 - ID_24329398.jpg"
+   },
+   {
+    "subject": "Architecture or Building",
+    "date": "2024-12-12",
+    "author": "Rosalie Tkachuk",
+    "title": "Founders Hall, AUC campus. Constructed 1883 m",
+    "score": 26,
+    "award": "",
+    "filename": "Rosalie Tkachuk, Rosalie - 26.0 - ID_24317845.jpg"
+   },
+   {
+    "subject": "Digital - Stylized Filter Effects",
+    "date": "2024-12-12",
+    "author": "Lee Millet",
+    "title": "Barge",
+    "score": 25,
+    "award": "",
+    "filename": "Lee Millet - 25.0 - ID_24330019.jpg"
+   },
+   {
+    "subject": "Digital - Stylized Filter Effects",
+    "date": "2024-12-12",
+    "author": "Eric Vickery",
+    "title": "Stylized edges in St Cecilia",
+    "score": 27,
+    "award": "",
+    "filename": "Eric Vickery - 27.0 - ID_24326291.jpg"
+   },
+   {
+    "subject": "Digital - Stylized Filter Effects",
+    "date": "2024-12-12",
+    "author": "Lynette Veo",
+    "title": "digital 2424",
+    "score": 24,
+    "award": "",
+    "filename": "Lynette Veo - 24.0 - ID_24332089.jpg"
+   },
+   {
+    "subject": "Digital - Stylized Filter Effects",
+    "date": "2024-12-12",
+    "author": "Patrick McCarthy",
+    "title": "Beachwalk",
+    "score": 26,
+    "award": "",
+    "filename": "Patrick McCarthy - 26.0 - ID_24329843.jpg"
+   },
+   {
+    "subject": "Digital - Stylized Filter Effects",
+    "date": "2024-12-12",
+    "author": "Lee Millet",
+    "title": "Train",
+    "score": 26,
+    "award": "",
+    "filename": "Lee Millet - 26.0 - ID_24330027.jpg"
+   },
+   {
+    "subject": "Digital - Stylized Filter Effects",
+    "date": "2024-12-12",
+    "author": "Patrick McCarthy",
+    "title": "Draft Horses",
+    "score": 28,
+    "award": "First",
+    "filename": "Patrick McCarthy - 28.0 - ID_24329932.jpg"
+   },
+   {
+    "subject": "Digital - Stylized Filter Effects",
+    "date": "2024-12-12",
+    "author": "Eric Vickery",
+    "title": "Denali stylized filter",
+    "score": 27,
+    "award": "",
+    "filename": "Eric Vickery - 27.0 - ID_24326283.jpg"
+   },
+   {
+    "subject": "Macro",
+    "date": "2024-12-12",
+    "author": "Lynette Veo",
+    "title": "blueberry bread pudding",
+    "score": 23,
+    "award": "",
+    "filename": "Lynette Veo - 23.0 - ID_24328529.jpg"
+   },
+   {
+    "subject": "Macro",
+    "date": "2024-12-12",
+    "author": "Patrick McCarthy",
+    "title": "Bumblebee and Spear Thistle",
+    "score": 28,
+    "award": "",
+    "filename": "Patrick McCarthy - 28.0 - ID_23713801.jpg"
+   },
+   {
+    "subject": "Macro",
+    "date": "2024-12-12",
+    "author": "John Nault",
+    "title": "Snowman Tealight",
+    "score": 24,
+    "award": "",
+    "filename": "John Nault - 24.0 - ID_24324752.jpg"
+   },
+   {
+    "subject": "Macro",
+    "date": "2024-12-12",
+    "author": "Eric Vickery",
+    "title": "cone drop",
+    "score": 26,
+    "award": "",
+    "filename": "Eric Vickery - 26.0 - ID_24329045.jpg"
+   },
+   {
+    "subject": "Macro",
+    "date": "2024-12-12",
+    "author": "Rosalie Tkachuk",
+    "title": "MG 0573 copy.jpg #2",
+    "score": 25,
+    "award": "",
+    "filename": "Rosalie Tkachuk, Rosalie - 25.0 - ID_24327778.jpg"
+   },
+   {
+    "subject": "Macro",
+    "date": "2024-12-12",
+    "author": "Bruce Bindman",
+    "title": "Macro Coin AB",
+    "score": 28,
+    "award": "",
+    "filename": "Bruce Bindman - 28.0 - ID_24325325.jpg"
+   },
+   {
+    "subject": "Macro",
+    "date": "2024-12-12",
+    "author": "Cynthia Rand",
+    "title": "Butterfly on Flower",
+    "score": 30,
+    "award": "First",
+    "filename": "Cynthia Rand - 30.0 - ID_24332984.jpg"
+   },
+   {
+    "subject": "Macro",
+    "date": "2024-12-12",
+    "author": "Bruce Bindman",
+    "title": "Brevet Watch PARIS 1900",
+    "score": 24,
+    "award": "",
+    "filename": "Bruce Bindman - 24.0 - ID_24325392.jpg"
+   },
+   {
+    "subject": "Macro",
+    "date": "2024-12-12",
+    "author": "Eric Vickery",
+    "title": "purple macro flower",
+    "score": 27,
+    "award": "",
+    "filename": "Eric Vickery - 27.0 - ID_24329053.jpg"
+   },
+   {
+    "subject": "Macro",
+    "date": "2024-12-12",
+    "author": "Monica Hamilton McCarthy",
+    "title": "Macro Flower",
+    "score": 23,
+    "award": "",
+    "filename": "Monica Hamilton McCarthy - 23.0 - ID_24325651.jpg"
+   },
+   {
+    "subject": "Macro",
+    "date": "2024-12-12",
+    "author": "Monica Hamilton McCarthy",
+    "title": "Macro Flower 2",
+    "score": 24,
+    "award": "",
+    "filename": "Monica Hamilton McCarthy - 24.0 - ID_24325856.jpg"
+   },
+   {
+    "subject": "Macro",
+    "date": "2024-12-12",
+    "author": "Lee Millet",
+    "title": "Goldfinch on Sunflower",
+    "score": 28,
+    "award": "",
+    "filename": "Lee Millet - 28.0 - ID_24329401.jpg"
+   },
+   {
+    "subject": "Macro",
+    "date": "2024-12-12",
+    "author": "Lynette Veo",
+    "title": "rose with drops",
+    "score": 25,
+    "award": "",
+    "filename": "Lynette Veo - 25.0 - ID_23607335.jpg"
+   },
+   {
+    "subject": "Macro",
+    "date": "2024-12-12",
+    "author": "John Nault",
+    "title": "Fire",
+    "score": 24,
+    "award": "",
+    "filename": "John Nault - 24.0 - ID_24324779.jpg"
+   },
+   {
+    "subject": "Macro",
+    "date": "2024-12-12",
+    "author": "Lee Millet",
+    "title": "Juvenile Peregrine Falcon",
+    "score": 29,
+    "award": "",
+    "filename": "Lee Millet - 29.0 - ID_24329428.jpg"
+   },
+   {
+    "subject": "Monochrome",
+    "date": "2024-12-12",
+    "author": "Lynette Veo",
+    "title": "fishing with dad",
+    "score": 23,
+    "award": "",
+    "filename": "Lynette Veo - 23.0 - ID_24328634.jpg"
+   },
+   {
+    "subject": "Monochrome",
+    "date": "2024-12-12",
+    "author": "Rosalie Tkachuk",
+    "title": "Milkweed in the wind",
+    "score": 24,
+    "award": "",
+    "filename": "Rosalie Tkachuk, Rosalie - 24.0 - ID_24327611.jpg"
+   },
+   {
+    "subject": "Monochrome",
+    "date": "2024-12-12",
+    "author": "Monica Hamilton McCarthy",
+    "title": "Newport Mansion B&W",
+    "score": 25,
+    "award": "",
+    "filename": "Monica Hamilton McCarthy - 25.0 - ID_24328987.jpg"
+   },
+   {
+    "subject": "Monochrome",
+    "date": "2024-12-12",
+    "author": "Rosalie Tkachuk",
+    "title": "Abandoned house",
+    "score": 24,
+    "award": "",
+    "filename": "Rosalie Tkachuk, Rosalie - 24.0 - ID_24324973.jpg"
+   },
+   {
+    "subject": "Monochrome",
+    "date": "2024-12-12",
+    "author": "Jill wright",
+    "title": "Megan And Amanda",
+    "score": 24,
+    "award": "",
+    "filename": "Jill wright, ms. - 24.0 - ID_24324426.jpg"
+   },
+   {
+    "subject": "Monochrome",
+    "date": "2024-12-12",
+    "author": "Lynette Veo",
+    "title": "black and white trees",
+    "score": 26,
+    "award": "",
+    "filename": "Lynette Veo - 26.0 - ID_24328642.jpg"
+   },
+   {
+    "subject": "Monochrome",
+    "date": "2024-12-12",
+    "author": "Jill wright",
+    "title": "Me And Sarah",
+    "score": 24,
+    "award": "",
+    "filename": "Jill wright, ms. - 24.0 - ID_24324434.jpg"
+   },
+   {
+    "subject": "Monochrome",
+    "date": "2024-12-12",
+    "author": "Monica Hamilton McCarthy",
+    "title": "High Water Marks Providence",
+    "score": 27,
+    "award": "First",
+    "filename": "Monica Hamilton McCarthy - 27.0 - ID_24328995.jpg"
+   },
+   {
+    "subject": "Monochrome",
+    "date": "2024-12-12",
+    "author": "John Nault",
+    "title": "Jill Getting Dizzyer",
+    "score": 25,
+    "award": "",
+    "filename": "John Nault - 25.0 - ID_24324957.jpg"
+   },
+   {
+    "subject": "Monochrome",
+    "date": "2024-12-12",
+    "author": "Patrick McCarthy",
+    "title": "Dark Side of the Moon",
+    "score": 28,
+    "award": "First",
+    "filename": "Patrick McCarthy - 28.0 - ID_24331724.jpg"
+   },
+   {
+    "subject": "Monochrome",
+    "date": "2024-12-12",
+    "author": "George Ann Millet",
+    "title": "Nantucket in the Harbor",
+    "score": 27,
+    "award": "",
+    "filename": "George Ann Millet - 27.0 - ID_24333018.jpg"
+   },
+   {
+    "subject": "Monochrome",
+    "date": "2024-12-12",
+    "author": "Bruce Bindman",
+    "title": "Grist Mill Pond BB3 B&W",
+    "score": 23,
+    "award": "",
+    "filename": "Bruce Bindman - 23.0 - ID_24325287.jpg"
+   },
+   {
+    "subject": "Monochrome",
+    "date": "2024-12-12",
+    "author": "John Nault",
+    "title": "Christmas on Tolman Ave.",
+    "score": 26,
+    "award": "",
+    "filename": "John Nault - 26.0 - ID_24324949.jpg"
+   },
+   {
+    "subject": "Monochrome",
+    "date": "2024-12-12",
+    "author": "Patrick McCarthy",
+    "title": "Fox Kit Monochrome",
+    "score": 25,
+    "award": "",
+    "filename": "Patrick McCarthy - 25.0 - ID_24331732.jpg"
+   },
+   {
+    "subject": "Monochrome",
+    "date": "2024-12-12",
+    "author": "Lee Millet",
+    "title": "Headlight",
+    "score": 27,
+    "award": "",
+    "filename": "Lee Millet - 27.0 - ID_24330035.jpg"
+   },
+   {
+    "subject": "Monochrome",
+    "date": "2024-12-12",
+    "author": "Cynthia Rand",
+    "title": "Ready For Nightly Shenanigans",
+    "score": 27,
+    "award": "",
+    "filename": "Cynthia Rand - 27.0 - ID_24332747.jpg"
+   },
+   {
+    "subject": "Monochrome",
+    "date": "2024-12-12",
+    "author": "Eric Vickery",
+    "title": "piano strings",
+    "score": 29,
+    "award": "",
+    "filename": "Eric Vickery - 29.0 - ID_24326194.jpg"
+   },
+   {
+    "subject": "Monochrome",
+    "date": "2024-12-12",
+    "author": "Eric Vickery",
+    "title": "NYC wtc bw",
+    "score": 30,
+    "award": "First",
+    "filename": "Eric Vickery - 30.0 - ID_24326208.jpg"
+   },
+   {
+    "subject": "Monochrome",
+    "date": "2024-12-12",
+    "author": "Lee Millet",
+    "title": "Valdor",
+    "score": 29,
+    "award": "",
+    "filename": "Lee Millet - 29.0 - ID_24330043.jpg"
+   },
+   {
+    "subject": "Nature",
+    "date": "2024-12-12",
+    "author": "Jill wright",
+    "title": "Owl in my backyard",
+    "score": 23,
+    "award": "",
+    "filename": "Jill wright, ms. - 23.0 - ID_24324256.jpg"
+   },
+   {
+    "subject": "Nature",
+    "date": "2024-12-12",
+    "author": "Lynette Veo",
+    "title": "doing my hair",
+    "score": 24,
+    "award": "",
+    "filename": "Lynette Veo - 24.0 - ID_24332119.jpg"
+   },
+   {
+    "subject": "Nature",
+    "date": "2024-12-12",
+    "author": "Monica Hamilton McCarthy",
+    "title": "Sleepy Sunny Screech",
+    "score": 23,
+    "award": "",
+    "filename": "Monica Hamilton McCarthy - 23.0 - ID_24329835.jpg"
+   },
+   {
+    "subject": "Nature",
+    "date": "2024-12-12",
+    "author": "Lynette Veo",
+    "title": "wild flowers in red clay",
+    "score": 25,
+    "award": "",
+    "filename": "Lynette Veo - 25.0 - ID_24332097.jpg"
+   },
+   {
+    "subject": "Nature",
+    "date": "2024-12-12",
+    "author": "Linda Brooke",
+    "title": "Northern lights",
+    "score": 28,
+    "award": "First",
+    "filename": "Linda Brooke - 28.0 - ID_24323292.jpg"
+   },
+   {
+    "subject": "Nature",
+    "date": "2024-12-12",
+    "author": "Jill wright",
+    "title": "Look Who it is",
+    "score": 25,
+    "award": "",
+    "filename": "Jill wright, ms. - 25.0 - ID_24324248.jpg"
+   },
+   {
+    "subject": "Nature",
+    "date": "2024-12-12",
+    "author": "Monica Hamilton McCarthy",
+    "title": "Common Eider",
+    "score": 24,
+    "award": "",
+    "filename": "Monica Hamilton McCarthy - 24.0 - ID_24329959.jpg"
+   },
+   {
+    "subject": "Nature",
+    "date": "2024-12-12",
+    "author": "Linda Brooke",
+    "title": "Butterfly on thistle",
+    "score": 27,
+    "award": "",
+    "filename": "Linda Brooke - 27.0 - ID_24323306.jpg"
+   },
+   {
+    "subject": "Nature",
+    "date": "2024-12-12",
+    "author": "George Ann Millet",
+    "title": "Red Bellied Woodpecker",
+    "score": 26,
+    "award": "",
+    "filename": "George Ann Millet - 26.0 - ID_24332895.jpg"
+   },
+   {
+    "subject": "Nature",
+    "date": "2024-12-12",
+    "author": "John Nault",
+    "title": "Nesting Duck",
+    "score": 22,
+    "award": "",
+    "filename": "John Nault - 22.0 - ID_24327034.jpg"
+   },
+   {
+    "subject": "Nature",
+    "date": "2024-12-12",
+    "author": "Patrick McCarthy",
+    "title": "Alert Mama Bear",
+    "score": 30,
+    "award": "First",
+    "filename": "Patrick McCarthy - 30.0 - ID_24325252.jpg"
+   },
+   {
+    "subject": "Nature",
+    "date": "2024-12-12",
+    "author": "George Ann Millet",
+    "title": "Wading Killdeer",
+    "score": 27,
+    "award": "",
+    "filename": "George Ann Millet - 27.0 - ID_24332909.jpg"
+   },
+   {
+    "subject": "Nature",
+    "date": "2024-12-12",
+    "author": "John Nault",
+    "title": "Duck Swimming in Boston",
+    "score": 24,
+    "award": "",
+    "filename": "John Nault - 24.0 - ID_24327042.jpg"
+   },
+   {
+    "subject": "Nature",
+    "date": "2024-12-12",
+    "author": "Patrick McCarthy",
+    "title": "Faces in the tree",
+    "score": 29,
+    "award": "",
+    "filename": "Patrick McCarthy - 29.0 - ID_24331686.jpg"
+   },
+   {
+    "subject": "Nature",
+    "date": "2024-12-12",
+    "author": "Eric Vickery",
+    "title": "3 trees",
+    "score": 29,
+    "award": "First",
+    "filename": "Eric Vickery - 29.0 - ID_24329096.jpg"
+   },
+   {
+    "subject": "Nature",
+    "date": "2024-12-12",
+    "author": "Cynthia Rand",
+    "title": "Snowy Owl Takes Off",
+    "score": 26,
+    "award": "",
+    "filename": "Cynthia Rand - 26.0 - ID_24332933.jpg"
+   },
+   {
+    "subject": "Nature",
+    "date": "2024-12-12",
+    "author": "Lee Millet",
+    "title": "Peregrine Falcon in flight",
+    "score": 29,
+    "award": "First",
+    "filename": "Lee Millet - 29.0 - ID_24329452.jpg"
+   },
+   {
+    "subject": "Nature",
+    "date": "2024-12-12",
+    "author": "Cynthia Rand",
+    "title": "Alert Screech Owl",
+    "score": 28,
+    "award": "",
+    "filename": "Cynthia Rand - 28.0 - ID_24332763.jpg"
+   },
+   {
+    "subject": "Nature",
+    "date": "2024-12-12",
+    "author": "Eric Vickery",
+    "title": "grasses",
+    "score": 28,
+    "award": "",
+    "filename": "Eric Vickery - 28.0 - ID_24329118.jpg"
+   },
+   {
+    "subject": "Nature",
+    "date": "2024-12-12",
+    "author": "Lee Millet",
+    "title": "Merlin Fanning its tail",
+    "score": 28,
+    "award": "",
+    "filename": "Lee Millet - 28.0 - ID_24329444.jpg"
+   },
+   {
+    "subject": "Pictorial",
+    "date": "2024-12-12",
+    "author": "Linda Brooke",
+    "title": "Santa & the Grinch",
+    "score": 21,
+    "award": "",
+    "filename": "Linda Brooke - 21.0 - ID_24323225.jpg"
+   },
+   {
+    "subject": "Pictorial",
+    "date": "2024-12-12",
+    "author": "Linda Brooke",
+    "title": "Prague, Stone Bridge",
+    "score": 23,
+    "award": "",
+    "filename": "Linda Brooke - 23.0 - ID_24323284.jpg"
+   },
+   {
+    "subject": "Pictorial",
+    "date": "2024-12-12",
+    "author": "Jill wright",
+    "title": "Me And Melissa",
+    "score": 23,
+    "award": "",
+    "filename": "Jill wright, ms. - 23.0 - ID_24324361.jpg"
+   },
+   {
+    "subject": "Pictorial",
+    "date": "2024-12-12",
+    "author": "Jill wright",
+    "title": "Me And Laura",
+    "score": 24,
+    "award": "",
+    "filename": "Jill wright, ms. - 24.0 - ID_24324353.jpg"
+   },
+   {
+    "subject": "Pictorial",
+    "date": "2024-12-12",
+    "author": "Monica Hamilton McCarthy",
+    "title": "Watching the Sunset",
+    "score": 25,
+    "award": "",
+    "filename": "Monica Hamilton McCarthy - 25.0 - ID_24326011.jpg"
+   },
+   {
+    "subject": "Pictorial",
+    "date": "2024-12-12",
+    "author": "Monica Hamilton McCarthy",
+    "title": "Night Lights Tower Hill",
+    "score": 29,
+    "award": "First",
+    "filename": "Monica Hamilton McCarthy - 29.0 - ID_24329487.jpg"
+   },
+   {
+    "subject": "Pictorial",
+    "date": "2024-12-12",
+    "author": "George Ann Millet",
+    "title": "Great Blue with a snack",
+    "score": 22,
+    "award": "",
+    "filename": "George Ann Millet - 22.0 - ID_23612959.jpg"
+   },
+   {
+    "subject": "Pictorial",
+    "date": "2024-12-12",
+    "author": "Bruce Bindman",
+    "title": "Iwo Jima Memorial 091824 copy2B",
+    "score": 26,
+    "award": "",
+    "filename": "Bruce Bindman - 26.0 - ID_24309788.jpg"
+   },
+   {
+    "subject": "Pictorial",
+    "date": "2024-12-12",
+    "author": "Bruce Bindman",
+    "title": "Grist Mill Pond 10172024 B",
+    "score": 25,
+    "award": "",
+    "filename": "Bruce Bindman - 25.0 - ID_24309702.jpg"
+   },
+   {
+    "subject": "Pictorial",
+    "date": "2024-12-12",
+    "author": "John Nault",
+    "title": "Tire Art",
+    "score": 22,
+    "award": "",
+    "filename": "John Nault - 22.0 - ID_24324787.jpg"
+   },
+   {
+    "subject": "Pictorial",
+    "date": "2024-12-12",
+    "author": "George Ann Millet",
+    "title": "Egret",
+    "score": 22,
+    "award": "",
+    "filename": "George Ann Millet - 22.0 - ID_24332925.jpg"
+   },
+   {
+    "subject": "Pictorial",
+    "date": "2024-12-12",
+    "author": "John Nault",
+    "title": "Santa I Know Him",
+    "score": 27,
+    "award": "First",
+    "filename": "John Nault - 27.0 - ID_24324795.jpg"
+   },
+   {
+    "subject": "Pictorial",
+    "date": "2024-12-12",
+    "author": "Patrick McCarthy",
+    "title": "Snowy Owl",
+    "score": 25,
+    "award": "",
+    "filename": "Patrick McCarthy - 25.0 - ID_24331694.jpg"
+   },
+   {
+    "subject": "Pictorial",
+    "date": "2024-12-12",
+    "author": "Patrick McCarthy",
+    "title": "Happy Dog",
+    "score": 24,
+    "award": "",
+    "filename": "Patrick McCarthy - 24.0 - ID_24331708.jpg"
+   },
+   {
+    "subject": "Pictorial",
+    "date": "2024-12-12",
+    "author": "Lee Millet",
+    "title": "Old Stone Church With American Flag",
+    "score": 28,
+    "award": "",
+    "filename": "Lee Millet - 28.0 - ID_24330094.jpg"
+   },
+   {
+    "subject": "Pictorial",
+    "date": "2024-12-12",
+    "author": "Eric Vickery",
+    "title": "October moon set",
+    "score": 28,
+    "award": "",
+    "filename": "Eric Vickery - 28.0 - ID_24329126.jpg"
+   },
+   {
+    "subject": "Pictorial",
+    "date": "2024-12-12",
+    "author": "Cynthia Rand",
+    "title": "Snowy Owl Lands Softly",
+    "score": 29,
+    "award": "",
+    "filename": "Cynthia Rand - 29.0 - ID_24332801.jpg"
+   },
+   {
+    "subject": "Pictorial",
+    "date": "2024-12-12",
+    "author": "Eric Vickery",
+    "title": "early season lifeline",
+    "score": 30,
+    "award": "First",
+    "filename": "Eric Vickery - 30.0 - ID_24326224.jpg"
+   },
+   {
+    "subject": "Pictorial",
+    "date": "2024-12-12",
+    "author": "Lee Millet",
+    "title": "Great Gray Owl on Prey",
+    "score": 28,
+    "award": "",
+    "filename": "Lee Millet - 28.0 - ID_24329479.jpg"
+   }
+  ]
+ }
+}

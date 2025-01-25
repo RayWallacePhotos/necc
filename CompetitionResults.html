@@ -49,7 +49,6 @@
 
       <section>
         <p>Results from recent camera club competition.</p>
-        <button class="Hidden Houdini HoudiniOnly" onclick="saveCompetitionResultsOnClick(event)">Save List</button>
         <p class="Indent">NOTE: Hover over thumbnail for larger image.<p>
 
         <div class="Container Box">
@@ -63,7 +62,7 @@
               </select>
             </label>
 
-            <label class="NotHidden" for="UserSelectionID">Select User
+            <label for="UserSelectionID">Select User
               <select id="UserSelectionID">
                 <!--
                   <option value="**All**">**All Users**</option>
@@ -80,7 +79,7 @@
             </label>
           </div>
 
-          <!-- Javascript creates table of the .html files listed in the CompetitionResults.json file -->
+          <!-- Javascript creates table of the .html files listed in the competitions_scores.json (was CompetitionResults.json) file -->
           <div id="CompetitionResultsID"></div>
         </div>
 
