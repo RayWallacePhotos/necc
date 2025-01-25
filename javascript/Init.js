@@ -81,6 +81,7 @@ function loadFirstPlaceImagePaths( ) {
       for( let entry of images[images.dates[0]].entries ) {
         if(  entry.award ) {
           let containerElement = document.createElement( "span" )
+          let icon = document.createElement( "img" )
           let img = document.createElement( "img" )
           let authorElement = document.createElement( "span" )
 
@@ -88,10 +89,13 @@ function loadFirstPlaceImagePaths( ) {
           authorElement.classList.add( "Author" )
 
           authorElement.innerText = entry.author
+          icon.classList.add( "AwardIcon" )
+          icon.src = "../images/first_place_blue_ribbon.png"
           img.classList.add( "FirstPlaceImage" )
           img.loading = "lazy"
           img.src = `${images[images.dates[0]].destDirs}${entry.filename}`
 
+          containerElement.appendChild( icon )
           containerElement.appendChild( authorElement )
           containerElement.appendChild( img )
           FirstPlaceImagesID.appendChild( containerElement )
