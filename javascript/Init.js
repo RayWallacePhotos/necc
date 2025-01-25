@@ -23,11 +23,14 @@
 //              V2.0
 // 23 Dec 2024  Moved setupHoudini( ) to here from (the unused) Administrate.js
 //              V2.1
+// 25 Dec 2025  Added loadFirstPlaceImagePaths()
+//              Changed MenuEntries init for index.html to be loadFirstPlaceImagePaths()
+//              V2.2
 //
 
 
 
-const Version = "V2.1";
+const Version = "V2.2";
 const FirstYear = "2018";
 
 
@@ -35,7 +38,7 @@ const FirstYear = "2018";
 var Houdini = false;
 
 const MenuEntries = [
-        {url:"index.html", button:"Home", init:null},
+        {url:"index.html", button:"Home", init:loadFirstPlaceImagePaths},
         {url:"Meetings.html", button:"Meetings", init:meetingsInit},
         {url:"PhotoTrips.html", button:"Photo Trips", init:photoTripsInit},
         {url:"Competition.html", button:"Competition", init:competitionInit},
@@ -64,7 +67,8 @@ function init( ) {
 
   setupHoudini( );
 
-  loadFirstPlaceImagePaths( )
+  // if( window.FirstPlaceImagesID ) loadFirstPlaceImagePaths( )
+  // loadFirstPlaceImagePaths( )
 }
 
 
@@ -85,6 +89,7 @@ function loadFirstPlaceImagePaths( ) {
 
           authorElement.innerText = entry.author
           img.classList.add( "FirstPlaceImage" )
+          img.loading = "lazy"
           img.src = `${images[images.dates[0]].destDirs}${entry.filename}`
 
           containerElement.appendChild( authorElement )

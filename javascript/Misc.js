@@ -21,6 +21,7 @@
 //  7 Nov 2024  Fixed an issue in addCalendarEntryOnClick() with some entries in the MeetingsList.csv
 // 23 Dec 2024  Added saveCompetitionResultsOnClick( event ) to support the <button> added to CompetitionResults.html
 // 31 Dec 2024  Contrary to previous entry, we never did have saveCompetitionResultsOnClick() in here and don't use it at all now
+// 25 Jan 2025  Changed photosInit() to use the new competitions_results.json file
 //
 
 
@@ -96,20 +97,58 @@ function competitionResultsInit( ) {
 
 function photosInit( ) {
   let nameText;
-  let element = document.querySelector( ".SlideShow" );
 
-  fileReadText( element.innerText, textObj => {
-    if( textObj.text ) {
-      let fileNames = textObj.text.split( "\n" ); // Get an array of the lines
+  PhotosID.innerHTML = "";
 
-      element.innerHTML = "";
-      for( let fileName of fileNames ) {
-        nameText = fileName.replace(/-/g, " - ").replace(/_/g, " ")
-        if( fileName ) element.innerHTML += `<span class="PhotoFrame"><img loading="lazy" src="photos/${fileName}"><span>${nameText}</span></span>`;
+  fileReadJson( "competitions_scores.json", result => {
+    if( result.jsonObj ) {
+      let images = result.jsonObj
+
+      for( let entry of images[images.dates[0]].entries ) {
+        if(  Math.random() > 0.85 ) {
+          // element.innerHTML += `<span class="PhotoFrame"><img loading="lazy" src="photos/${fileName}"><span>${nameText}</span></span>`;
+          let frameElement = document.createElement( "span" )
+          let img = document.createElement( "img" )
+          let authorElement = document.createElement( "span" )
+
+          frameElement.classList.add( "PhotoFrame" )
+          // authorElement.classList.add( "Author" )
+
+          authorElement.innerText = `${entry.title} - ${entry.author}`
+          img.classList.add( "FirstPlaceImage" )
+          // DEBUG Add lazy loading to the other two places that load competion images
+          img.loading = "lazy"
+          img.src = `${images[images.dates[0]].destDirs}${entry.filename}`
+
+          frameElement.appendChild( img )
+          frameElement.appendChild( authorElement )
+          PhotosID.appendChild( frameElement )
+        }
       }
+
     }
-  });
+    else console.error( `Could not read: competitions_scores.json`)
+  } )
 }
+
+
+
+// function OLDphotosInit( ) {
+//   let nameText;
+//   let element = document.querySelector( ".SlideShow" );
+//
+//   fileReadText( element.innerText, textObj => {
+//     if( textObj.text ) {
+//       let fileNames = textObj.text.split( "\n" ); // Get an array of the lines
+//
+//       element.innerHTML = "";
+//       for( let fileName of fileNames ) {
+//         nameText = fileName.replace(/-/g, " - ").replace(/_/g, " ")
+//         if( fileName ) element.innerHTML += `<span class="PhotoFrame"><img loading="lazy" src="photos/${fileName}"><span>${nameText}</span></span>`;
+//       }
+//     }
+//   });
+// }
 
 
 

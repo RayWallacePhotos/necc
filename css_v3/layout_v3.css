@@ -90,19 +90,19 @@ header img {
   padding: 5px 10px;
 }
 
-.SlideShow {
+#PhotosID {
   box-shadow: 4px 4px 6px var(--NECCDarkGreen),  -2px 2px 4px var(--NECCDarkGreen);
   display: grid;
   grid-template-columns: repeat( auto-fill, minmax( max-content, 420px) ); /* Works but not auto sized :-( */
 }
-.SlideShow .PhotoFrame {
+#PhotosID .PhotoFrame {
   max-width: 100%;
   margin-bottom: 10px;
 
   display: grid;
   grid-template-rows: max-content 1.5rem; /* Only need this if I want the space for the name taller than the font */
 }
-.SlideShow .PhotoFrame {
+#PhotosID .PhotoFrame {
   box-shadow: 4px 4px 6px var(--NECCDarkGreen),  -2px 2px 4px var(--NECCDarkGreen);
 }
 .PhotoFrame img {
