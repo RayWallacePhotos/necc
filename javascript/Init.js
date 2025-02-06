@@ -109,8 +109,8 @@ function loadFirstPlaceImagePaths( ) {
 
 
 
-// DEBUG Menus visibly shift/bounce left/right when I change pages
-//   This is no better than OLD()
+//
+//
 //
 function createMenus( ) {
   let menuElement = document.querySelector( "menu" );

@@ -133,25 +133,6 @@ function photosInit( ) {
 
 
 
-// function OLDphotosInit( ) {
-//   let nameText;
-//   let element = document.querySelector( ".SlideShow" );
-//
-//   fileReadText( element.innerText, textObj => {
-//     if( textObj.text ) {
-//       let fileNames = textObj.text.split( "\n" ); // Get an array of the lines
-//
-//       element.innerHTML = "";
-//       for( let fileName of fileNames ) {
-//         nameText = fileName.replace(/-/g, " - ").replace(/_/g, " ")
-//         if( fileName ) element.innerHTML += `<span class="PhotoFrame"><img loading="lazy" src="photos/${fileName}"><span>${nameText}</span></span>`;
-//       }
-//     }
-//   });
-// }
-
-
-
 //
 // For a csv spec/RFC see:
 //  https://datatracker.ietf.org/doc/html/rfc4180
