@@ -26,11 +26,13 @@
 // 25 Dec 2025  Added loadFirstPlaceImagePaths()
 //              Changed MenuEntries init for index.html to be loadFirstPlaceImagePaths()
 //              V2.2
+// 20 Jan 2026  Updated Version, due to adding Digital Technique links in MeetingsList.csv 
+//              V2.3
 //
 
 
 
-const Version = "V2.2";
+const Version = "V2.3";
 const FirstYear = "2018";
 
 
