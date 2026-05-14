@@ -22,6 +22,8 @@
 // 23 Dec 2024  Added saveCompetitionResultsOnClick( event ) to support the <button> added to CompetitionResults.html
 // 31 Dec 2024  Contrary to previous entry, we never did have saveCompetitionResultsOnClick() in here and don't use it at all now
 // 25 Jan 2025  Changed photosInit() to use the new competitions_results.json file
+// 14 May 2026  Changed the way I check for Meetings when graying out old meetings (now look for elementID of MeetingsID)
+//              Added code to automate the Scavenger Hunt Year in displayCSVFile()
 //
 
 
@@ -158,9 +160,14 @@ function displayCSVFile( elementID, trClasses="" ) {
     if( textObj.text ) {
       let lines = textObj.text.trim().split( "\n" ); // Get an array of the lines
 
-      // Determine if this csv file is a calendar
-      firstCellDate = new Date(splitCSV(lines[0])[0]);
-      if( firstCellDate.toString() != "Invalid Date" )  calendar = true; // Treat this csv file as a calendar
+      // Determine if this csv file is a calendar (i.e. MeetingsList.csv, PhotoTripsList.csv)
+      calendar = elementID == "MeetingsID" || elementID == "PhotoTripsID" // Treat this csv file as a calendar
+
+      // Deal with inserting Scavenger Hunt Year into the HTML markup
+      firstCellDate = new Date( splitCSV(lines[0])[0] );
+      if( elementID == "ScanvengerListID" && firstCellDate.toString() != "Invalid Date" )  {
+        SummerScavengerID.querySelector( "h4" ).innerHTML = `Summer Scavenger Hunt ${firstCellDate.getFullYear()}`
+      }
 
       for( let line of lines ) {
         if( line = line.trim() ) {
@@ -178,7 +185,6 @@ function displayCSVFile( elementID, trClasses="" ) {
               if( lineDate.toString() != "Invalid Date" ) {
                 // Compare dates and change oldDateClass to either "OldDateClass" or ""
                 if( lineDate.getTime() < Date.now() ) {  // Fix for OldDateClass - Changed from <= on 14 Mar 2024
-
                   oldDateClass = "OldDateClass";
                 }
                 else {
