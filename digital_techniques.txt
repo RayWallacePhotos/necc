@@ -1,3 +1,11 @@
+Spirograph-Eric_Vickery.pdf
+Panorama-Eric_Vickery.pdf
+Magazine_cover-Eric_Vickery.pdf
+Illustrated_photo-Eric_Vickery.pdf
+Stylized_Layer_effect-Eric_Vickery.pdf
+Facial_Transplant-Eric_Vickery.pdf
+Bald_Sky_Remedy-Eric_Vickery.pdf
+
 Focus_stacking-Eric_Vickery-Oct_2021.pdf
 Monochrome-Eric_Vickery-Mar_2026.pdf
 Oil_Paint_Style-Eric_Vickery-Mar_2023.pdf
@@ -7,11 +15,7 @@ Auto_Blend-Eric_Vickery-Jan_2026.pdf
 Sepia_Toning-Eric_Vickery-Feb_2026.pdf
 Vertical_Motion_Blur-Eric_Vickery-Mar_2026.pdf
 Double_exposure-Eric_Vickery-Mar_2016.pdf
-Facial_Transplant-Eric_Vickery-Nov_2021.pdf
-Magazine_cover-Eric_Vickery-March_2018.pdf
-Panorama-Eric_Vickery-Dec_2022.pdf
 Starburst_Effect-Eric_Vickery-2025.pdf
-Stylized_Layer_effect-Eric_Vickery-Feb_2018.pdf
 Miniature_Scenes-Eric_Vickery-April_2016.html
 Sky_Replacement-Eric_Vickery_Feb_2024.pdf
 Polar_Planets-Eric_Vickery-Oct_2013.pdf
@@ -20,7 +24,6 @@ outside_of_frame-Ray_Wallace.html
 Borders_and_Mat-Chuck_Mathis-Nov_2011.pdf
 Cloud_Smooth-Eric_Vickery-Oct_2016.pdf
 Graduated_Lens_Flare-Eric_Vickery-April_2018.pdf
-Illustrated_photo-Eric_Vickery-Feb_2014.pdf
 Iris_Replacement-Eric_Vickery-Nov_2017.pdf
 National_Geographic_v2-Peter_Christoph-Oct_2014.pdf
 Selective_Color-Eric_Vickery-Jan_2016.pdf
