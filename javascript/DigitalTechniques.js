@@ -6,6 +6,7 @@
 //  27 Sep 2022  Created
 //  15 Jun 2024  Changed to using <details> and replaced rollUpDownOnClick() with rollUpDownOnToggle()
 //               Removed the no longer need the css class RollDown from here and the .css file
+//  22 Jul 2026  Changed digitalTechniquesInit() to allow dates in the digital_techniques.txt file
 //
 
 
@@ -21,9 +22,13 @@ function digitalTechniquesInit(  ) {
   fileReadText( `digital_techniques.txt`, textObj => {
     if( textObj.text ) {
       let fileNames = textObj.text.split("\n");
-      for( let fileName of fileNames ) {
+      for( let fileNameLine of fileNames ) {
+        let dateAndFile = splitCSV( fileNameLine )
+        let date = dateAndFile.length > 1 ? `${dateAndFile[0]}: ` : ""
+        let fileName = dateAndFile.length > 1 ? dateAndFile[1] : (dateAndFile.length > 0 ? dateAndFile[0] : "" )
+
         elementHtml += `<details class="RollUpDown"  ontoggle="rollUpDownOnToggle(event)">`;
-        elementHtml += `  <summary class="Title" oncontextmenu="rollUpDownOnContext(event)">${fileName}</summary>`;
+        elementHtml += `  <summary class="Title" oncontextmenu="rollUpDownOnContext(event)">${date} ${fileName}</summary>`;
         elementHtml += `  <div class="Content">`;
 
         if( extension(fileName) == ".pdf" ) {

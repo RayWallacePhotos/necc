@@ -26,7 +26,7 @@
 // 25 Dec 2025  Added loadFirstPlaceImagePaths()
 //              Changed MenuEntries init for index.html to be loadFirstPlaceImagePaths()
 //              V2.2
-// 20 Jan 2026  Updated Version, due to adding Digital Technique links in MeetingsList.csv 
+// 20 Jan 2026  Updated Version, due to adding Digital Technique links in MeetingsList.csv
 //              V2.3
 //
 
@@ -76,37 +76,39 @@ function init( ) {
 
 
 function loadFirstPlaceImagePaths( ) {
-  fileReadJson( "competitions_scores.json", result => {
-    if( result.jsonObj ) {
-      let images = result.jsonObj
+  if( window.FirstPlaceImagesID ) {
+    fileReadJson( "competitions_scores.json", result => {
+      if( result.jsonObj ) {
+        let images = result.jsonObj
 
-      for( let entry of images[images.dates[0]].entries ) {
-        if(  entry.award ) {
-          let containerElement = document.createElement( "span" )
-          let icon = document.createElement( "img" )
-          let img = document.createElement( "img" )
-          let authorElement = document.createElement( "span" )
+        for( let entry of images[images.dates[0]].entries ) {
+          if(  entry.award ) {
+            let containerElement = document.createElement( "span" )
+            let icon = document.createElement( "img" )
+            let img = document.createElement( "img" )
+            let authorElement = document.createElement( "span" )
 
-          containerElement.classList.add( "FirstPlaceContainer" )
-          authorElement.classList.add( "Author" )
+            containerElement.classList.add( "FirstPlaceContainer" )
+            authorElement.classList.add( "Author" )
 
-          authorElement.innerText = entry.author
-          icon.classList.add( "AwardIcon" )
-          icon.src = "../images/first_place_blue_ribbon.png"
-          img.classList.add( "FirstPlaceImage" )
-          img.loading = "lazy"
-          img.src = `${images[images.dates[0]].destDirs}${entry.filename}`
+            authorElement.innerText = entry.author
+            icon.classList.add( "AwardIcon" )
+            icon.src = "../images/first_place_blue_ribbon.png"
+            img.classList.add( "FirstPlaceImage" )
+            img.loading = "lazy"
+            img.src = `${images[images.dates[0]].destDirs}${entry.filename}`
 
-          containerElement.appendChild( icon )
-          containerElement.appendChild( authorElement )
-          containerElement.appendChild( img )
-          FirstPlaceImagesID.appendChild( containerElement )
+            containerElement.appendChild( icon )
+            containerElement.appendChild( authorElement )
+            containerElement.appendChild( img )
+            FirstPlaceImagesID.appendChild( containerElement )
+          }
         }
-      }
 
-    }
-    else console.error( `Could not read: competitions_scores.json`)
-  } )
+      }
+      else console.error( `Could not read: competitions_scores.json`)
+    } )
+  }
 }
 
 
