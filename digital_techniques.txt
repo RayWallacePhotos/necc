@@ -5,7 +5,7 @@
 11 Mar 2027, Stylized_Layer_effect-Eric_Vickery.pdf
 8 Apr 2027, Facial_Transplant-Eric_Vickery.pdf
 13 May 2027, Bald_Sky_Remedy-Eric_Vickery.pdf
-
+ >>> previous years <<<
 Focus_stacking-Eric_Vickery-Oct_2021.pdf
 Monochrome-Eric_Vickery-Mar_2026.pdf
 Oil_Paint_Style-Eric_Vickery-Mar_2023.pdf
