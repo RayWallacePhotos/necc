@@ -24,6 +24,7 @@
 // 25 Jan 2025  Changed photosInit() to use the new competitions_results.json file
 // 14 May 2026  Changed the way I check for Meetings when graying out old meetings (now look for elementID of MeetingsID)
 //              Added code to automate the Scavenger Hunt Year in displayCSVFile()
+// 13 Oct 2026  Changed photosInit() to use photos.json instead of competitions_scores.json
 //
 
 
@@ -96,18 +97,19 @@ function competitionResultsInit( ) {
 }
 
 
-
 function photosInit( ) {
   let nameText;
 
   PhotosID.innerHTML = "";
 
-  fileReadJson( "competitions_scores.json", result => {
+  // fileReadJson( "competitions_scores.json", result => {
+  fileReadJson( "photos.json", result => {
     if( result.jsonObj ) {
       let images = result.jsonObj
 
-      for( let entry of images[images.dates[0]].entries ) {
-        if(  Math.random() > 0.85 ) {
+      // for( let entry of images[images.dates[0]].entries ) {
+      for( let entry of images ) {
+        // if(  Math.random() > 0.85 ) {
           // element.innerHTML += `<span class="PhotoFrame"><img loading="lazy" src="photos/${fileName}"><span>${nameText}</span></span>`;
           let frameElement = document.createElement( "span" )
           let img = document.createElement( "img" )
@@ -120,16 +122,17 @@ function photosInit( ) {
           img.classList.add( "FirstPlaceImage" )
           // DEBUG Add lazy loading to the other two places that load competion images
           img.loading = "lazy"
-          img.src = `${images[images.dates[0]].destDirs}${entry.filename}`
+          // img.src = `${images[images.dates[0]].destDirs}${entry.filename}`
+          img.src = `./photos/${entry.filename}`
 
           frameElement.appendChild( img )
           frameElement.appendChild( authorElement )
           PhotosID.appendChild( frameElement )
-        }
+        // }
       }
-
     }
-    else console.error( `Could not read: competitions_scores.json`)
+    // else console.error( `Could not read: competitions_scores.json`)
+    else console.error( `Could not read: photos.json`)
   } )
 }
 
